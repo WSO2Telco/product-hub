@@ -25,7 +25,7 @@
         <!-- Copying p2 profile and osgi bundles-->
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/components</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/components</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/components</outputDirectory>
             <excludes>
                 <exclude>**/eclipse.ini</exclude>
                 <exclude>**/*.lock</exclude>

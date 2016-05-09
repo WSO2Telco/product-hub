@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
-       Copyright  (c) 2015-2016, WSO2.Telco Inc. (http://www.wso2telco.com) All Rights Reserved.
-  
-  WSO2.Telco Inc. licences this file to you under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-  
-    http://www.apache.org/licenses/LICENSE-2.0
-  
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
--->
+  ~  Copyright (c) 2005-2010, WSO2 Inc. (http://wso2.com) All Rights Reserved.
+  ~
+  ~  WSO2 Inc. licenses this file to you under the Apache License,
+  ~  Version 2.0 (the "License"); you may not use this file except
+  ~  in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing,
+  ~  software distributed under the License is distributed on an
+  ~  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~  KIND, either express or implied.  See the License for the
+  ~  specific language governing permissions and limitations
+  ~  under the License.
+  -->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
@@ -23,11 +26,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.wso2telco.product.hub</groupId>
-    <artifactId>hub-parent</artifactId>
+    <groupId>org.wso2.am</groupId>
+    <artifactId>am-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.8.0-SNAPSHOT</version>
-    <name>WSO2 Telco Hub  - Aggregator Module</name>
+    <version>1.10.0</version>
+    <name>WSO2 API Manager - Aggregator Module</name>
     <url>http://wso2.com/products/api-manager</url>
     <description>WSO2 API Manager</description>
 
@@ -39,30 +42,30 @@
     </licenses>
 
     <modules>
-        <!--module>modules/styles</module>
+        <module>modules/styles</module>
         <module>modules/org.wso2.am.multitenancy.dashboard.ui</module>
         <module>modules/org.wso2.stratos.apimgt.dashboard.ui</module>
         <module>modules/org.wso2.stratos.apimgt.login.ui</module>
-        <module>modules/features</module-->
+        <module>modules/features</module>
         <module>modules/p2-profile</module>
         <module>/modules/distribution/product/src/main/statistics</module>
         <module>modules/distribution</module>
         <!--module>modules/integration</module-->
-        <!--module>nested-categories</module-->
+        <module>nested-categories</module>
     </modules>
 
     <scm>
-        <url>https://github.com/WSO2Telco/product-hub.git</url>
-        <developerConnection>scm:git:https://github.com/WSO2Telco/product-hub.git</developerConnection>
-        <connection>scm:git:https://github.com/WSO2Telco/product-hub.git</connection>
-        <tag>HEAD</tag>
+        <url>https://github.com/wso2/product-apim.git</url>
+        <developerConnection>scm:git:https://github.com/wso2/product-apim.git</developerConnection>
+        <connection>scm:git:https://github.com/wso2/product-apim.git</connection>
+        <tag>v1.10.0-rc4</tag>
     </scm>
 
     <repositories>
         <repository>
-            <id>wso2Telco-nexus</id>
-            <name>WSO2 Telco internal Repository</name>
-            <url>http://maven.wso2telco.com/nexus/content/groups/public/</url>
+            <id>wso2-nexus</id>
+            <name>WSO2 internal Repository</name>
+            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>daily</updatePolicy>
@@ -183,6 +186,29 @@
         </pluginManagement>
     </build>
 
+    <organization>
+        <name>WSO2 Inc</name>
+        <url>http://wso2.com</url>
+    </organization>
+
+    <issueManagement>
+        <system>JIRA</system>
+        <url>http://wso2.org/jira/browse/APIMANAGER</url>
+    </issueManagement>
+
+    <mailingLists>
+        <mailingList>
+            <name>WSO2 API Manager Users' list</name>
+            <post>http://stackoverflow.com/questions/tagged/wso2</post>
+        </mailingList>
+        <mailingList>
+            <name>WSO2 API Manager Developers' List</name>
+            <post>mailto:dev@wso2.org</post>
+            <archive>http://mail.wso2.org/mailarchive/dev/</archive>
+            <subscribe>mailto:dev-request@wso2.org?subject=subscribe</subscribe>
+            <unsubscribe>mailto:dev-request@wso2.org?subject=unsubscribe</unsubscribe>
+        </mailingList>
+    </mailingLists>
 
     <dependencyManagement>
         <dependencies>
@@ -859,7 +885,7 @@
         <carbon.governance.version>4.5.8</carbon.governance.version>
 
         <!--carbon versions-->
-       <carbon.kernel.version>4.4.3</carbon.kernel.version>
+        <carbon.kernel.version>4.4.3</carbon.kernel.version>
         <apimserver.version>1.10.0</apimserver.version>
         <ws.feature.version>1.4.2</ws.feature.version>
 	

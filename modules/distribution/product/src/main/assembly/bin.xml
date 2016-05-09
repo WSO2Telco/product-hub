@@ -25,7 +25,7 @@
     <fileSets>
         <fileSet>
             <directory>target/wso2carbon-core-${carbon.platform.version}</directory>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}</outputDirectory>
             <excludes>
                 <exclude>**/conf/axis2/axis2.xml</exclude>
                 <exclude>**/conf/axis2/axis2.xml_NHTTP</exclude>
@@ -81,7 +81,7 @@
         </fileSet>
         <fileSet>
             <directory>target/wso2carbon-core-${carbon.platform.version}</directory>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}</outputDirectory>
             <includes>
                 <include>**/*.sh</include>
             </includes>
@@ -92,7 +92,7 @@
         </fileSet>
 	<fileSet>
           <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/components/lib</directory>
-          <outputDirectory>wso2telcohub-${pom.version}/repository/components/lib</outputDirectory>
+          <outputDirectory>wso2am-${pom.version}/repository/components/lib</outputDirectory>
 	    <includes>
                 <include>**/httpmime-4.2.5.jar</include>
 		<include>**/encoder-1.1.jar</include>
@@ -100,7 +100,7 @@
         </fileSet>
 	<fileSet>
           <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/lib/endorsed</directory>
-          <outputDirectory>wso2telcohub-${pom.version}/lib/endorsed</outputDirectory>
+          <outputDirectory>wso2am-${pom.version}/lib/endorsed</outputDirectory>
 	    <includes>
                 <include>**/Saxon-HE-9.4.jar</include>
             </includes>
@@ -128,7 +128,7 @@
         </fileSet-->
 	<fileSet>
             <directory>../../distribution/product/target/repository/database</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/database</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/database</outputDirectory>
             <includes>
                 <include>**/WSO2AM_DB.h2.db</include>
             </includes>
@@ -146,22 +146,22 @@
         </fileSet-->
 	<fileSet>
             <directory>src/main/assembly</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store/site/tenant_themes</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/deployment/server/jaggeryapps/store/site/tenant_themes</outputDirectory>
            <excludes>
                   <exclude>*</exclude>
           </excludes>
         </fileSet>
         <fileSet>
             <directory>src/main/conf/synapse-configs</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/deployment/server/synapse-configs</outputDirectory>
         </fileSet>
   	<fileSet>
             <directory>src/main/conf/synapse-configs/default/sequences</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/apim-synapse-config/</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources/apim-synapse-config/</outputDirectory>
         </fileSet>
 	    <fileSet>
            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/advanced/</directory>
-           <outputDirectory>wso2telcohub-${pom.version}/repository/conf/advanced</outputDirectory>
+           <outputDirectory>wso2am-${pom.version}/repository/conf/advanced</outputDirectory>
            <includes>
                <include>**/qpid-config.xml</include>
                <include>**/qpid-jmxremote.access</include>
@@ -170,7 +170,7 @@
         </fileSet>
 	<fileSet>
 	   <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/identity/</directory>
-	   <outputDirectory>wso2telcohub-${pom.version}/repository/conf/identity</outputDirectory>
+	   <outputDirectory>wso2am-${pom.version}/repository/conf/identity</outputDirectory>
 	</fileSet>
 
         <!-- Start API Manager related -->
@@ -178,7 +178,7 @@
             <directory>
                 ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dbscripts/identity/application-mgt/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/identity/application-mgt</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/identity/application-mgt</outputDirectory>
             <includes>
                 <include>**/**.sql</include>
             </includes>
@@ -187,7 +187,7 @@
             <directory>
                 ../resources/sql/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/apimgt</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/apimgt</outputDirectory>
             <includes>
                 <include>**/**.sql</include>
             </includes>
@@ -196,68 +196,68 @@
             <directory>
                 ../resources/migration-1.0.0_to_1.2.0/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.0.0_to_1.2.0</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/migration-1.0.0_to_1.2.0</outputDirectory>
         </fileSet>
 	<fileSet>
             <directory>
                 ../resources/migration-1.2.0_to_1.3.0/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.2.0_to_1.3.0</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/migration-1.2.0_to_1.3.0</outputDirectory>
         </fileSet>
         <fileSet>
             <directory>
                 ../resources/migration-1.3.0_to_1.4.0/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.3.0_to_1.4.0</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/migration-1.3.0_to_1.4.0</outputDirectory>
         </fileSet>
 
         <fileSet>
             <directory>
                 ../resources/migration-1.4.0_to_1.5.0/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.4.0_to_1.5.0</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/migration-1.4.0_to_1.5.0</outputDirectory>
         </fileSet>
 
 	<fileSet>
             <directory>
                 ../resources/migration-1.5.0_to_1.6.0/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.5.0_to_1.6.0</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/migration-1.5.0_to_1.6.0</outputDirectory>
         </fileSet>
 
 	<fileSet>
             <directory>
                 ../resources/migration-1.6.0_to_1.7.0/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.6.0_to_1.7.0</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/migration-1.6.0_to_1.7.0</outputDirectory>
         </fileSet>
 
 	<fileSet>
             <directory>
                 ../resources/migration-1.7.0_to_1.8.0/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.7.0_to_1.8.0</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/migration-1.7.0_to_1.8.0</outputDirectory>
         </fileSet>
 
     <fileSet>
         <directory>
             ../resources/migration-1.8.0_to_1.9.0/readme/
         </directory>
-        <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.8.0_to_1.9.0</outputDirectory>
+        <outputDirectory>wso2am-${pom.version}/dbscripts/migration-1.8.0_to_1.9.0</outputDirectory>
     </fileSet>
 
     <fileSet>
         <directory>
             ../statistics/target/
         </directory>
-        <outputDirectory>wso2telcohub-${pom.version}/dbscripts/stat/migration-1.9.0_to_1.10.0</outputDirectory>
+        <outputDirectory>wso2am-${pom.version}/dbscripts/stat/migration-1.9.0_to_1.10.0</outputDirectory>
     </fileSet>
 
     <fileSet>
         <directory>
             ../resources/stat/sql/
         </directory>
-        <outputDirectory>wso2telcohub-${pom.version}/dbscripts/stat/sql</outputDirectory>
+        <outputDirectory>wso2am-${pom.version}/dbscripts/stat/sql</outputDirectory>
         <includes>
             <include>**/**.sql</include>
         </includes>
@@ -265,7 +265,7 @@
 
 	<fileSet>
              <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-publisher/</directory>
-             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/publisher</outputDirectory>
+             <outputDirectory>wso2am-${pom.version}/repository/deployment/server/jaggeryapps/publisher</outputDirectory>
 	     <excludes>
 		<exclude>publisherLogo/**</exclude>
 		<exclude>publisherTheme/**</exclude>
@@ -276,7 +276,7 @@
          </fileSet>
          <fileSet>
              <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-store/</directory>
-             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store</outputDirectory>
+             <outputDirectory>wso2am-${pom.version}/repository/deployment/server/jaggeryapps/store</outputDirectory>
 	     <excludes>
 		<exclude>storeLogo/**</exclude>
 		<exclude>storeSite/**</exclude>
@@ -288,11 +288,11 @@
 
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/workflow-admin/</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/workflow-admin</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/deployment/server/jaggeryapps/workflow-admin</outputDirectory>
         </fileSet>
 	<fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/admin-dashboard/</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/admin-dashboard</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/deployment/server/jaggeryapps/admin-dashboard</outputDirectory>
         </fileSet>
 	<!--  copying modules xml -->
         <fileSet>
@@ -304,7 +304,7 @@
         </fileSet>
         <fileSet>
             <directory>../../jaggery</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/modules</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/modules</outputDirectory>
             <includes>
                 <include>**/**.xml</include>
             </includes>
@@ -312,11 +312,11 @@
 	<!-- Copying styles for tenants -->
         <fileSet>
             <directory>../../../modules/styles/service/src/main/resources/web/styles/images</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/resources/allthemes/Default/images</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/resources/allthemes/Default/images</outputDirectory>
         </fileSet>
         <fileSet>
             <directory>../../../modules/styles/service/src/main/resources/web/styles/css</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/resources/allthemes/Default/admin</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/resources/allthemes/Default/admin</outputDirectory>
         </fileSet>
 	<fileSet>
        	    <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/rxts</directory>
@@ -328,7 +328,7 @@
 	<!-- Jmeter Intergration Tests -->
  	<fileSet>
             <directory>../../integration/tests/src/test/resources/artifacts/AM/scripts</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/scripts</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources/scripts</outputDirectory>
             <includes>
                 <include>**/**.jmx</include>
             </includes>
@@ -336,7 +336,7 @@
 	<!-- Sample Jmeter scripts for Tenant Creation -->
 	<fileSet>
             <directory>../resources/scripts/tenant_Creation</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/scripts/tenantCreation</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources/scripts/tenantCreation</outputDirectory>
             <includes>
                 <include>**/**.jmx</include>
             </includes>
@@ -344,21 +344,21 @@
 	<!-- API Templates -->
 	<fileSet>
             <directory>../resources/api_templates</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/api_templates</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources/api_templates</outputDirectory>
             <includes>
                 <include>**/**.xml</include>
             </includes>
         </fileSet>
         <fileSet>
             <directory>src/main/conf/governance</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources</outputDirectory>
             <includes>
                 <include>**/**</include>
             </includes>
         </fileSet>
         <fileSet>
              <directory>../../samples</directory>
-             <outputDirectory>wso2telcohub-${pom.version}/samples</outputDirectory>
+             <outputDirectory>wso2am-${pom.version}/samples</outputDirectory>
              <includes>
                   <include>**/*.*</include>
              </includes>
@@ -371,7 +371,7 @@
 
         <fileSet>
             <directory>src/main/business-processes</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/business-processes</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/business-processes</outputDirectory>
             <includes>
                 <include>**/*.*</include>
             </includes>
@@ -379,7 +379,7 @@
 
         <fileSet>
             <directory>src/main/statistics/target</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/statistics</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/statistics</outputDirectory>
             <includes>
                 <include>**/*.*</include>
             </includes>
@@ -388,7 +388,7 @@
         <!-- API Custom Sequences -->
 	<fileSet>
             <directory>../resources/customsequences</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/customsequences</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources/customsequences</outputDirectory>
             <includes>
                 <include>**/**.xml</include>
             </includes>
@@ -474,7 +474,7 @@
         <!--Multitenancy related file -->
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/multitenancy</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/multitenancy</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/multitenancy</outputDirectory>
             <includes>
                 <include>**/stratos.xml</include>
                 <include>**/multitenancy-packages.xml</include>
@@ -484,7 +484,7 @@
 
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/resources/tenant</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources</outputDirectory>
             <includes>
                 <include>**/tenant-conf.json</include>
             </includes>
@@ -520,7 +520,7 @@
         <!-- Default Tiers -->
         <fileSet>
             <directory>../resources/default-tiers</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/default-tiers</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources/default-tiers</outputDirectory>
             <includes>
                 <include>**/**.xml</include>
             </includes>
@@ -544,7 +544,7 @@
             <directory>
                 ../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/dbscripts/metrics/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/metrics</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/dbscripts/metrics</outputDirectory>
             <includes>
                 <include>**/*.sql</include>
             </includes>
@@ -553,19 +553,19 @@
     <dependencySets>
         <!-- use the new tool to create a bundles -->
         <dependencySet>
-            <outputDirectory>wso2telcohub-${pom.version}/lib/core/WEB-INF/lib</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/lib/core/WEB-INF/lib</outputDirectory>
             <includes>
                 <include>org.wso2.carbon:org.wso2.carbon.mediator.bridge:jar</include>
             </includes>
         </dependencySet>
 
         <dependencySet>
-            <outputDirectory>wso2telcohub-${pom.version}/lib/core/WEB-INF/lib/</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/lib/core/WEB-INF/lib/</outputDirectory>
             <includes><include>org.apache.qpid.wso2:qpid-client:jar</include>
             </includes>
         </dependencySet>
         <dependencySet>
-            <outputDirectory>wso2telcohub-${pom.version}/samples/axis2Client/client_repo/modules</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/samples/axis2Client/client_repo/modules</outputDirectory>
             <includes>
                 <include>org.apache.axis2:addressing:mar</include>
                 <include>org.apache.rampart:rampart:mar</include>
@@ -574,7 +574,7 @@
             <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
         </dependencySet>
         <dependencySet>
-            <outputDirectory>wso2telcohub-${pom.version}/samples/axis2Server/repository/modules</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/samples/axis2Server/repository/modules</outputDirectory>
             <includes>
                 <include>org.apache.axis2:addressing:mar</include>
                 <include>org.apache.rampart:rampart:mar</include>
@@ -583,14 +583,14 @@
             <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
         </dependencySet>
         <dependencySet>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/axis2/client/lib</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/axis2/client/lib</outputDirectory>
             <includes>
                 <include>bouncycastle:bcprov-jdk15:jar</include>
             </includes>
             <outputFileNameMapping>${artifact.artifactId}.${artifact.extension}</outputFileNameMapping>
         </dependencySet>
 	<dependencySet>
-			<outputDirectory>wso2telcohub-${pom.version}/repository/deployment/client/modules</outputDirectory>
+			<outputDirectory>wso2am-${pom.version}/repository/deployment/client/modules</outputDirectory>
 			<includes>
 				<include>org.apache.rampart:rampart:mar</include>
 			</includes>
@@ -601,23 +601,23 @@
         <!--start of claim management feature-->
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/claim-config.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
         </file>
         <!--End of claim management feature-->
 
 
 	    <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/event-broker.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
         </file>
         <file>
             <source>src/main/conf/axis2.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>axis2.xml</destName>
         </file>
 	<file>
             <source>src/main/conf/axis2_blocking_client.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>axis2_blocking_client.xml</destName>
         </file>
 	<!--file>
@@ -632,66 +632,66 @@
         </file-->
 	<file>
             <source>src/main/conf/tenant-axis2.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>tenant-axis2.xml</destName>
         </file>
         <file>
             <source>src/main/conf/master-datasources.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/datasources</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/datasources</outputDirectory>
             <destName>master-datasources.xml</destName>
         </file>
         <file>
             <source>src/main/conf/registry.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>registry.xml</destName>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>src/main/conf/thrift-authentication.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>thrift-authentication.xml</destName>
         </file>
         <file>
             <source>src/main/conf/log4j.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>log4j.properties</destName>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/conf/synapse.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>synapse.properties</destName>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/conf/synapse-handlers.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>synapse-handlers.xml</destName>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>src/main/conf/datasources.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>datasources.properties</destName>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/conf/nhttp.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>nhttp.properties</destName>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/conf/passthru-http.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>passthru-http.properties</destName>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/conf/jndi.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <destName>jndi.properties</destName>
             <filtered>true</filtered>
         </file>
@@ -701,116 +701,116 @@
         </file-->
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/etc/logging-config.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/etc</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/etc</outputDirectory>
         </file>
         <file>
             <source>../../../LICENSE.txt</source>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../../README.txt</source>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../../INSTALL.txt</source>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>src/main/conf/XMLInputFactory.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../../docs/xdoc/release-notes.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}</outputDirectory>
             <destName>release-notes.html</destName>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>target/wso2carbon-core-${carbon.platform.version}/bin/README.txt</source>
-            <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/bin/</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>target/wso2carbon-core-${carbon.platform.version}/bin/version.txt</source>
-            <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/bin/</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../../config/api-manager.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <filtered>true</filtered>
             <fileMode>755</fileMode>
         </file>
         <file>
             <source>../../../config/bam.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/etc</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/etc</outputDirectory>
             <filtered>true</filtered>
             <fileMode>755</fileMode>
         </file>
         <file>
             <source>target/wso2carbon-core-${carbon.platform.version}/repository/conf/carbon.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/</outputDirectory>
             <filtered>true</filtered>
 	    <fileMode>644</fileMode>
         </file>
         <file>
             <source>src/main/conf/cloud-services-desc.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/multitenancy</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/multitenancy</outputDirectory>
             <filtered>true</filtered>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/tomcat/webapp-classloading.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/tomcat</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/tomcat</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/tomcat/webapp-classloading-environments.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/tomcat</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/tomcat</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/identity/application-authentication.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/identity</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/identity</outputDirectory>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>
                 ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/resources/lifecycles/APILifeCycle.xml
             </source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/lifecycles</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/resources/lifecycles</outputDirectory>
             <filtered>true</filtered>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/multitenancy/tenant-mgt.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/data-bridge/thrift-agent-config.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/data-bridge/</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/data-bridge/</outputDirectory>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/tomcat/context.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/tomcat</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/tomcat</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/governance.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
@@ -818,24 +818,24 @@
         <!-- Cipher Tool Files -->
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/bin/ciphertool.sh</source>
-            <outputDirectory>wso2telcohub-${pom.version}/bin</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/bin</outputDirectory>
             <fileMode>755</fileMode>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/bin/ciphertool.bat</source>
-            <outputDirectory>wso2telcohub-${pom.version}/bin</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/bin</outputDirectory>
         </file>
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/lib/org.wso2.ciphertool-${cipher.tool.version}.jar</source>
-            <outputDirectory>wso2telcohub-${pom.version}/lib</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/lib</outputDirectory>
         </file>
         <file>
             <source>src/main/conf/cipher-text.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/security</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/security</outputDirectory>
         </file>
         <file>
             <source>src/main/conf/cipher-tool.properties</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/security</outputDirectory>
+            <outputDirectory>wso2am-${pom.version}/repository/conf/security</outputDirectory>
         </file>
         <!--file>
             <source>
