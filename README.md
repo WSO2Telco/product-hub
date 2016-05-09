@@ -1,2 +1,2 @@
 # product-hub
-hub developemtn goes hear
+Hub related packaging goes hear.
