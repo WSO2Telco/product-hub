@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>org.wso2.carbon.am.integration.test</artifactId>
-        <groupId>org.wso2.am</groupId>
+        <groupId>com.wso2telco.product.dep</groupId>
         <version>1.10.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -53,7 +53,7 @@
                         <sec.verifier.dir>${basedir}/target/security-verifier/</sec.verifier.dir>
                         <maven.test.haltafterfailure>false</maven.test.haltafterfailure>
                         <carbon.zip>
-                            ${basedir}/../../../distribution/product/target/wso2am-${project.version}.zip
+                            ${basedir}/../../../distribution/product/target/wso2telcohub-${project.version}.zip
                         </carbon.zip>
                         <instr.file>${basedir}/src/test/resources/instrumentation.txt</instr.file>
                         <filters.file>${basedir}/src/test/resources/filters.txt</filters.file>
@@ -141,7 +141,7 @@
                             <resources>
                                 <resource>
                                     <directory>
-                                        ${basedir}/target/tobeCopied/wso2am-${project.version}/repository/resources/security/
+                                        ${basedir}/target/tobeCopied/wso2telcohub-${project.version}/repository/resources/security/
                                     </directory>
                                     <includes>
                                         <include>**/*.jks</include>
@@ -162,7 +162,7 @@
                             <resources>
                                 <resource>
                                     <directory>
-                                        ${basedir}/target/tobeCopied/wso2am-${project.version}/repository/resources/security/
+                                        ${basedir}/target/tobeCopied/wso2telcohub-${project.version}/repository/resources/security/
                                     </directory>
                                     <includes>
                                         <include>**/*.jks</include>
@@ -183,7 +183,7 @@
                             <resources>
                                 <resource>
                                     <directory>
-                                        ${basedir}/target/tobeCopied/wso2am-${project.version}/repository/samples/resources/security/
+                                        ${basedir}/target/tobeCopied/wso2telcohub-${project.version}/repository/samples/resources/security/
                                     </directory>
                                     <includes>
                                         <include>**/*.jks</include>
@@ -204,7 +204,7 @@
                             <resources>
                                 <resource>
                                     <directory>
-                                        ${basedir}/target/tobeCopied/wso2am-${project.version}/repository/deployment/client/modules
+                                        ${basedir}/target/tobeCopied/wso2telcohub-${project.version}/repository/deployment/client/modules
                                     </directory>
                                     <includes>
                                         <include>**/*.mar</include>
