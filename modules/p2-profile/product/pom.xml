@@ -18,9 +18,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
-        <groupId>org.wso2.am</groupId>
+        <groupId>com.wso2telco.product.dep</groupId>
         <artifactId>am-p2-profile-gen-parent</artifactId>
-        <version>1.10.0</version>
+        <version>1.8.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -75,6 +75,15 @@
                             <publishArtifacts>true</publishArtifacts>
                             <publishArtifactRepository>true</publishArtifactRepository>
                             <featureArtifacts>
+                                
+
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.workflowmanager.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.operatorservice.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+
                                 <featureArtifactDef>
                                     org.wso2.carbon.mediation:org.wso2.carbon.mediation.ui.feature:${carbon.mediation.version}
                                 </featureArtifactDef>
@@ -622,6 +631,16 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflowmanager.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>org.jaggeryjs.modules.ws.feature.group</id>
                                     <version>${ws.feature.version}</version>
@@ -1060,6 +1079,16 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflowmanager.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>org.apache.axis2.transport.mail.feature.group</id>
                                     <version>${axis2-transports.wso2.version}</version>
@@ -1370,6 +1399,16 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflowmanager.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
                                     <version>${carbon.commons.version}</version>
@@ -1699,6 +1738,16 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflowmanager.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
                                     <version>${carbon.commons.version}</version>
@@ -2116,6 +2165,16 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflowmanager.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
                                     <version>${carbon.commons.version}</version>
@@ -2534,6 +2593,16 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+                                
+                                <feature>
+                                    <id>com.wso2telco.dep.workflowmanager.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
                                     <version>${carbon.commons.version}</version>
