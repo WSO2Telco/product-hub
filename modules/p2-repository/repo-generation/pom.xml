@@ -268,6 +268,7 @@
                                 <featureArtifactDef>org.wso2.carbon.commons:org.wso2.carbon.ndatasource.feature:${carbon.commons.version}</featureArtifactDef>
                                 <featureArtifactDef>org.wso2.carbon.apimgt:org.wso2.carbon.apimgt.authenticator.oidc.feature:${carbon.apimgt.version}</featureArtifactDef>
                                 <featureArtifactDef>org.wso2.carbon.apimgt:org.wso2.carbon.apimgt.hostobjects.oidc.feature:${carbon.apimgt.version}</featureArtifactDef>
+				<featureArtifactDef>com.wso2telco.core:com.wso2telco.core.dbutils.feature:${com.wso2telco.core.version}</featureArtifactDef>
                             </featureArtifacts>
                             <categories>
                                 <!--Start of API Manager feature categories-->
@@ -297,6 +298,10 @@
                                             <id>org.wso2.apimgt.store.nested.category</id>
                                             <version>${apimserver.version}</version>
                                         </catFeature>
+					<catFeature>
+						<id>com.wso2telco.core.core-util.nested.category</id>
+						<version>${com.wso2telco.core.core.version}</version>
+					</catFeature>
                                     </features>
                                 </category>
                             </categories>

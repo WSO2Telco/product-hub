@@ -30,9 +30,9 @@
     <artifactId>dep-product-parent</artifactId>
     <packaging>pom</packaging>
     <version>1.8.0-SNAPSHOT</version>
-    <name>WSO2 API Manager - Aggregator Module</name>
+    <name>WSO2 Telco HUB - Aggregator Module</name>
     <url>http://wso2.com/products/api-manager</url>
-    <description>WSO2 API Manager</description>
+    <description>WSO2Telco Digital Enablement Hub</description>
 
     <licenses>
         <license>
@@ -42,11 +42,6 @@
     </licenses>
 
     <modules>
-        <module>modules/styles</module>
-        <module>modules/org.wso2.am.multitenancy.dashboard.ui</module>
-        <module>modules/org.wso2.stratos.apimgt.dashboard.ui</module>
-        <module>modules/org.wso2.stratos.apimgt.login.ui</module>
-        <module>modules/features</module>
         <module>modules/p2-profile</module>
         <module>/modules/distribution/product/src/main/statistics</module>
         <module>modules/distribution</module>
@@ -55,17 +50,17 @@
     </modules>
 
     <scm>
-        <url>https://github.com/wso2/product-apim.git</url>
-        <developerConnection>scm:git:https://github.com/wso2/product-apim.git</developerConnection>
-        <connection>scm:git:https://github.com/wso2/product-apim.git</connection>
-        <tag>v1.10.0-rc4</tag>
+        <url>https://github.com/WSO2Telco/product-hub.git</url>
+        <developerConnection>scm:git:https://github.com/WSO2Telco/product-hub.git</developerConnection>
+        <connection>scm:git:https://github.com/WSO2Telco/product-hub.git</connection>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
         <repository>
             <id>wso2-nexus</id>
             <name>WSO2 internal Repository</name>
-            <url>http://maven.wso2.org/nexus/content/groups/wso2-public/</url>
+            <url>http://maven.wso2telco.com/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>daily</updatePolicy>
@@ -865,6 +860,11 @@
                 <artifactId>waffle-jna</artifactId>
                 <version>${waffle-jna.version}</version>
             </dependency>
+	    <dependency>
+                  <groupId>com.wso2telco.core</groupId>
+                <artifactId>com.wso2telco.core.dbutils.feature</artifactId>
+                <version>${com.wso2telco.core.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -888,7 +888,7 @@
         <carbon.kernel.version>4.4.3</carbon.kernel.version>
         <apimserver.version>1.10.0</apimserver.version>
         <ws.feature.version>1.4.2</ws.feature.version>
-	
+	<org.wso2.am.version>1.10.0</org.wso2.am.version>	
 
 	    <cipher.tool.version>1.0.0-wso2v3</cipher.tool.version>
 
@@ -996,6 +996,7 @@
         <carbon.metrics.version>1.1.0</carbon.metrics.version>
 
         <com.wso2telco.dep.version>1.8.0-SNAPSHOT</com.wso2telco.dep.version>
+	<com.wso2telco.core.version>2.0.03-SNAPSHOT</com.wso2telco.core.version>
 
     </properties>
 
