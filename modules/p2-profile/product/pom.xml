@@ -106,6 +106,9 @@
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.mediator.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.manage.ui.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
 
                                 <featureArtifactDef>
                                     org.wso2.carbon.mediation:org.wso2.carbon.mediation.ui.feature:${carbon.mediation.version}
@@ -695,6 +698,10 @@
                                     <id>com.wso2telco.dep.mediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>org.jaggeryjs.modules.ws.feature.group</id>
@@ -1175,6 +1182,10 @@
                                     <id>com.wso2telco.dep.mediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>org.apache.axis2.transport.mail.feature.group</id>
@@ -1525,6 +1536,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
@@ -1896,6 +1911,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
@@ -2357,6 +2376,10 @@
                                     <id>com.wso2telco.dep.mediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
@@ -2815,6 +2838,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
