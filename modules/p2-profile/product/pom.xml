@@ -654,7 +654,7 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 				                <feature>
@@ -1126,7 +1126,7 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 				                <feature>
@@ -1470,7 +1470,7 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 				                <feature>
@@ -1833,7 +1833,7 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 				                <feature>
@@ -2284,7 +2284,7 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 				                <feature>
@@ -2736,7 +2736,7 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 				                <feature>
