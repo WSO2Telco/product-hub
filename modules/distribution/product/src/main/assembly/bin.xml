@@ -880,5 +880,12 @@
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+        <file>
+            <source>
+              ../../hubconfig/publish-events-data-conf.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
     </files>
 </assembly>
