@@ -19,59 +19,64 @@
         #####################  Define the macros ######################
 
         #macro ( print_if_exist $field $default)
-        #if($field && "$field" !="")
-        $field
-        #else
-        $default
-        #end
+            #if($field && "$field" !="")
+                $field
+            #else
+                $default
+            #end
         #end
 
         #macro ( print_string_if_exist $field $default)
-        #if($field && "$field" !="")
-        "$field"
-        #else
-        "$default"
-        #end
+            #if($field && "$field" !="")
+                "$field"
+            #else
+                "$default"
+            #end
         #end
 
         #macro ( print_if_exist_only $tagname $field)
-        #if($field && "$field" !="")
-<$tagname>$field</$tagname>
-        #else
-        ## print nothing.
-        #end
+            #if($field && "$field" !="")
+                <$tagname>$field</$tagname>
+            #else
+                ## print nothing.
+            #end
         #end
 
         #macro ( print_list $tagname $list)
-        #if($list && "$list" !="" && $list.size() > 0)
-<$tagname>
-        #foreach($item in $list)
-        $item #if( $foreach.hasNext ), #end
-        #end
-        </$tagname>
-        #else
-        ## print nothing.
-        #end
+            #if($list && "$list" !="" && $list.size() > 0)
+                <$tagname>
+                #foreach($item in $list)
+                    $item #if( $foreach.hasNext ), #end
+            #end
+                </$tagname>
+            #else
+                ## print nothing.
+            #end
         #end
 
         #macro (print_executor $description)
+            ## executorBase class is hardcoded here.
+            #set($executorBase = "com.wso2telco.dep.mediator.HandlerMediator")          
+
             #if ($description.contains("*"))
                 #set ($executor_index = $description.indexOf("*")+1) 
                 #set ($executors = $description.substring($executor_index))
+                <class name="$!executorBase" expression="get-property('SYSTEM_TIME')">
+                    <property name="executorClass" value="$!executors"/>
             #else
     
             #end
         #end
 
         #macro ( timeout $config)
-        #if( $config.get("actionSelect") == "neverTimeout" )
-        ## print nothing.
-        #elseif($config.get("actionDuration")|| $config.get("actionSelect"))
-        <timeout>
-        #print_if_exist_only("duration" $config.get("actionDuration"))
-        #print_if_exist_only("responseAction" $config.get("actionSelect"))
-        </timeout>
-        #end
+            #if( $config.get("actionSelect") == "neverTimeout" )
+                ## print nothing.
+            #elseif($config.get("actionDuration")|| $config.get("actionSelect"))
+                <timeout>
+                #print_if_exist_only("duration" $config.get("actionDuration"))
+                #print_if_exist_only("responseAction" $config.get("actionSelect"))
+                </timeout>
+            #end
 <suspendOnFailure>
 #print_list( "errorCodes" $config.get("suspendErrorCode"))
 #print_if_exist_only("initialDuration" $config.get("suspendDuration"))
@@ -239,21 +244,6 @@
 
         ######################## End of Macros ######################################
 
-## getting relevant executors for WSO2.TELCO APIs. Remove these hard coded values, when executors loads from osgi service
-#set($executor = "com.wso2telco.dep.mediator.impl.payment.PaymentExecutor")
-#set($executorBase = "com.wso2telco.dep.mediator.HandlerMediator")
-##set($description = "$!apiObj.getDescription()")
-
-#set($description = "this is test*com.wso2telco.dep.mediator.impl.payment.PaymentExecutor")
-    
-#if ($description.contains("*"))
-    #set ($executor_index = $description.indexOf("*")+1) 
-    #set ($executors = $description.substring($executor_index))
-
-#else
-    
-#end
-
 <api xmlns="http://ws.apache.org/ns/synapse"  name="$!apiName" context="$!apiContext" version="$!apiVersion" transports="$!transport" version-type="context">
 #if($apiIsBlocked)
 ## if API is blocked send the API Block message
@@ -313,8 +303,8 @@
         #end
 
 
-        <class name="$!executorBase" expression="get-property('SYSTEM_TIME')">
-            <property name="executorClass" value="$!executors"/>
+        
+            #print_executor("$!apiObj.getDescription()")
         </class>
         <loopback/>
             
