@@ -54,6 +54,15 @@
         #end
         #end
 
+        #macro (print_executor $description)
+            #if ($description.contains("*"))
+                #set ($executor_index = $description.indexOf("*")+1) 
+                #set ($executors = $description.substring($executor_index))
+            #else
+    
+            #end
+        #end
+
         #macro ( timeout $config)
         #if( $config.get("actionSelect") == "neverTimeout" )
         ## print nothing.
@@ -235,6 +244,16 @@
 #set($executorBase = "com.wso2telco.dep.mediator.HandlerMediator")
 ##set($description = "$!apiObj.getDescription()")
 
+#set($description = "this is test*com.wso2telco.dep.mediator.impl.payment.PaymentExecutor")
+    
+#if ($description.contains("*"))
+    #set ($executor_index = $description.indexOf("*")+1) 
+    #set ($executors = $description.substring($executor_index))
+
+#else
+    
+#end
+
 <api xmlns="http://ws.apache.org/ns/synapse"  name="$!apiName" context="$!apiContext" version="$!apiVersion" transports="$!transport" version-type="context">
 #if($apiIsBlocked)
 ## if API is blocked send the API Block message
@@ -295,7 +314,7 @@
 
 
         <class name="$!executorBase" expression="get-property('SYSTEM_TIME')">
-            <property name="executorClass" value="$!executor"/>
+            <property name="executorClass" value="$!executors"/>
         </class>
         <loopback/>
             
