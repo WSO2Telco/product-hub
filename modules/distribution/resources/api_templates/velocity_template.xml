@@ -53,20 +53,48 @@
                 ## print nothing.
             #end
         #end
+########################################################################
+                        WSO2.TELCO macros
+        ####################################################
 
         #macro (print_executor $description)
             ## executorBase class is hardcoded here.
-            #set($executorBase = "com.wso2telco.dep.mediator.HandlerMediator")          
+            #set($executorBase = "com.wso2telco.dep.mediator.HandlerMediator")             
+            #if ($description.contains("|"))       
+                #set ($handlers_index = $description.lastIndexOf("|"))
+                #set ($executor_index = $description.indexOf("|")+1) 
+                #set ($exec = $description.substring($executor_index, $handlers_index))
 
-            #if ($description.contains("*"))
-                #set ($executor_index = $description.indexOf("*")+1) 
-                #set ($executors = $description.substring($executor_index))
-                <class name="$!executorBase" expression="get-property('SYSTEM_TIME')">
-                    <property name="executorClass" value="$!executors"/>
-            #else
-    
+                #if ($exec.contains("executor") )
+                    #if ($exec.contains("#"))
+                        #set ($exec_devider = $exec.indexOf("#")+1)
+                        #set($executor = $exec.substring($exec_devider))
+                        <class name="$!executorBase" expression="get-property('SYSTEM_TIME')">
+                            <property name="executorClass" value="$!executor"/>
+                    #end
+                #end
+            #end           
+        #end
+
+        #macro (print_handler $description)
+            #if ($description.contains("|"))
+                #set ($handler_index = $description.lastIndexOf("|")+1)
+                #set ($handler_string = $description.substring($handler_index))
+                #if ($handler_string.contains("handlers"))
+                    #if ($handler_string.contains("#"))
+                        #set($handler_devider = $handler_string.indexOf("#")+1)
+                        #set($handler_list = $handler_string.substring($handler_devider))
+                        #set($handlers = $handler_list.split(","))
+
+                        #foreach($hanlder in $handlers)
+                            <handler xmlns="http://ws.apache.org/ns/synapse" class="com.wso2telco.verificationhandler.verifier.DialogBlacklistHandler"/>
+                        #end
+                    #end
+                #end
             #end
         #end
+
+        ######################################################
 
         #macro ( timeout $config)
             #if( $config.get("actionSelect") == "neverTimeout" )
@@ -371,6 +399,8 @@
     #end
 </handler>
 #end
+##print telco handlers
+#print_handler("$!apiObj.getDescription()")
 </handlers>
         #end
         #end
