@@ -82,9 +82,9 @@
                                 <featureArtifactDef>
                                     com.wso2telco.core:com.wso2telco.core.mncresolver.feature:${com.wso2telco.core.version}
                                 </featureArtifactDef>
-                                <!-- <featureArtifactDef>
+                                <featureArtifactDef>
                                     com.wso2telco.core:com.wso2telco.core.msisdnvalidator.feature:${com.wso2telco.core.version}
-                                </featureArtifactDef> -->
+                                </featureArtifactDef> 
 
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.workflowmanager.feature:${com.wso2telco.dep.version}
@@ -690,10 +690,10 @@
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
-                                <!-- <feature>
+                                <feature>
                                     <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
-                                </feature> -->
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
@@ -1194,10 +1194,10 @@
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
-                                <!-- <feature>
+                                <feature>
                                     <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
-                                </feature> -->
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
@@ -1570,10 +1570,10 @@
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
-                                <!-- <feature>
+                                <feature>
                                     <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
-                                </feature> -->
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
@@ -1965,10 +1965,10 @@
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
-                                <!-- <feature>
+                                <feature>
                                     <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
-                                </feature> -->
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
@@ -2448,10 +2448,10 @@
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
-                                <!-- <feature>
+                                <feature>
                                     <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
-                                </feature> -->
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
@@ -2932,10 +2932,10 @@
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
-                                <!-- <feature>
+                                <feature>
                                     <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
-                                </feature> -->
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
