@@ -636,9 +636,10 @@
             <destName>tenant-axis2.xml</destName>
         </file>
         <file>
-            <source>src/main/conf/master-datasources.xml</source>
+            <source>../../hubconfig/master-datasources.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/datasources</outputDirectory>
             <destName>master-datasources.xml</destName>
+            <fileMode>644</fileMode>
         </file>
         <file>
             <source>src/main/conf/registry.xml</source>
