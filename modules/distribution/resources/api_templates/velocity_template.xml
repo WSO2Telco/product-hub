@@ -54,7 +54,7 @@
             #end
         #end
 ########################################################################
-                        WSO2.TELCO macros
+                        ##WSO2.TELCO macros
         ####################################################
 
         #macro (print_executor $description)
@@ -85,10 +85,10 @@
                         #set($handler_devider = $handler_string.indexOf("#")+1)
                         #set($handler_list = $handler_string.substring($handler_devider))
                         #set($handlers = $handler_list.split(","))
-
+                        
                         #foreach($hanlder in $handlers)
                             <handler xmlns="http://ws.apache.org/ns/synapse" class="com.wso2telco.verificationhandler.verifier.DialogBlacklistHandler"/>
-                        #end
+                        #end                        
                     #end
                 #end
             #end
@@ -328,10 +328,7 @@
 #if($apiStatus != 'PROTOTYPED')
 <filter source="$ctx:AM_KEY_TYPE" regex="$filterRegex">
     <then>
-        #end
-
-
-        
+        #end      
             #print_executor("$!apiObj.getDescription()")
         </class>
         <loopback/>
