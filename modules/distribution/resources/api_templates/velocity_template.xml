@@ -86,8 +86,8 @@
                         #set($handler_list = $handler_string.substring($handler_devider))
                         #set($handlers = $handler_list.split(","))
                         
-                        #foreach($hanlder in $handlers)
-                            <handler xmlns="http://ws.apache.org/ns/synapse" class="com.wso2telco.verificationhandler.verifier.DialogBlacklistHandler"/>
+                        #foreach($handler in $handlers)                     
+                            <handler xmlns="http://ws.apache.org/ns/synapse" class="$!handler"/>
                         #end                        
                     #end
                 #end
