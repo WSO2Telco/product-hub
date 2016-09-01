@@ -611,9 +611,10 @@
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
         </file>
         <file>
-            <source>src/main/conf/axis2.xml</source>
+            <source>../../hubconfig/axis2.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>axis2.xml</destName>
+            <fileMode>644</fileMode>
         </file>
 	    <file>
             <source>src/main/conf/axis2_blocking_client.xml</source>
