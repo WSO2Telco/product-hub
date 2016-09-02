@@ -48,6 +48,7 @@
                 <exclude>**/lib/org.wso2.ciphertool-1.0.0-wso2v2.jar</exclude>
                 <exclude>**/secret-conf.properties</exclude>
                 <exclude>**/repository/components/plugins/saxon*.jar</exclude>
+                <exclude>**/user-mgt.xml</exclude>
 
                 <!-- Remove multiple versions of same jar for 1.10.x-->
                 <exclude>**/repository/components/plugins/js_1.6.0.R7-wso2v1.jar</exclude>
@@ -873,6 +874,13 @@
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/database/WSO2METRICS_DB.h2.db</source>
             <outputDirectory>${project.artifactId}-${project.version}/repository/database/</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>
+              ../../hubconfig/user-mgt.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
         <file>
