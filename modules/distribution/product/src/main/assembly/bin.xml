@@ -643,7 +643,7 @@
             <fileMode>644</fileMode>
         </file>
         <file>
-            <source>src/main/conf/registry.xml</source>
+            <source>../../hubconfig/registry.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <destName>registry.xml</destName>
             <filtered>true</filtered>
@@ -748,7 +748,7 @@
             <fileMode>644</fileMode>
         </file>
         <file>
-            <source>../../../config/api-manager.xml</source>
+            <source>../../hubconfig/api-manager.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <filtered>true</filtered>
             <fileMode>755</fileMode>
