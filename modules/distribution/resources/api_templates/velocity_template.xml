@@ -19,50 +19,92 @@
         #####################  Define the macros ######################
 
         #macro ( print_if_exist $field $default)
-        #if($field && "$field" !="")
-        $field
-        #else
-        $default
-        #end
+            #if($field && "$field" !="")
+                $field
+            #else
+                $default
+            #end
         #end
 
         #macro ( print_string_if_exist $field $default)
-        #if($field && "$field" !="")
-        "$field"
-        #else
-        "$default"
-        #end
+            #if($field && "$field" !="")
+                "$field"
+            #else
+                "$default"
+            #end
         #end
 
         #macro ( print_if_exist_only $tagname $field)
-        #if($field && "$field" !="")
-<$tagname>$field</$tagname>
-        #else
-        ## print nothing.
-        #end
+            #if($field && "$field" !="")
+                <$tagname>$field</$tagname>
+            #else
+                ## print nothing.
+            #end
         #end
 
         #macro ( print_list $tagname $list)
-        #if($list && "$list" !="" && $list.size() > 0)
-<$tagname>
-        #foreach($item in $list)
-        $item #if( $foreach.hasNext ), #end
+            #if($list && "$list" !="" && $list.size() > 0)
+                <$tagname>
+                #foreach($item in $list)
+                    $item #if( $foreach.hasNext ), #end
+            #end
+                </$tagname>
+            #else
+                ## print nothing.
+            #end
         #end
-        </$tagname>
-        #else
-        ## print nothing.
-        #end
+########################################################################
+                        ##WSO2.TELCO macros
+        ####################################################
+
+        #macro (print_executor $description)
+            ## executorBase class is hardcoded here.
+            #set($executorBase = "com.wso2telco.dep.mediator.HandlerMediator")             
+            #if ($description.contains("|"))       
+                #set ($handlers_index = $description.lastIndexOf("|"))
+                #set ($executor_index = $description.indexOf("|")+1) 
+                #set ($exec = $description.substring($executor_index, $handlers_index))
+
+                #if ($exec.contains("executor") )
+                    #if ($exec.contains("#"))
+                        #set ($exec_devider = $exec.indexOf("#")+1)
+                        #set($executor = $exec.substring($exec_devider))
+                        <class name="$!executorBase" expression="get-property('SYSTEM_TIME')">
+                            <property name="executorClass" value="$!executor"/>
+                    #end
+                #end
+            #end           
         #end
 
-        #macro ( timeout $config)
-        #if( $config.get("actionSelect") == "neverTimeout" )
-        ## print nothing.
-        #elseif($config.get("actionDuration")|| $config.get("actionSelect"))
-<timeout>
-#print_if_exist_only("duration" $config.get("actionDuration"))
-#print_if_exist_only("responseAction" $config.get("actionSelect"))
-</timeout>
+        #macro (print_handler $description)
+            #if ($description.contains("|"))
+                #set ($handler_index = $description.lastIndexOf("|")+1)
+                #set ($handler_string = $description.substring($handler_index))
+                #if ($handler_string.contains("handlers"))
+                    #if ($handler_string.contains("#"))
+                        #set($handler_devider = $handler_string.indexOf("#")+1)
+                        #set($handler_list = $handler_string.substring($handler_devider))
+                        #set($handlers = $handler_list.split(","))
+                        
+                        #foreach($handler in $handlers)                     
+                            <handler xmlns="http://ws.apache.org/ns/synapse" class="$!handler"/>
+                        #end                        
+                    #end
+                #end
+            #end
         #end
+
+        ######################################################
+
+        #macro ( timeout $config)
+            #if( $config.get("actionSelect") == "neverTimeout" )
+                ## print nothing.
+            #elseif($config.get("actionDuration")|| $config.get("actionSelect"))
+                <timeout>
+                #print_if_exist_only("duration" $config.get("actionDuration"))
+                #print_if_exist_only("responseAction" $config.get("actionSelect"))
+                </timeout>
+            #end
 <suspendOnFailure>
 #print_list( "errorCodes" $config.get("suspendErrorCode"))
 #print_if_exist_only("initialDuration" $config.get("suspendDuration"))
@@ -230,7 +272,6 @@
 
         ######################## End of Macros ######################################
 
-
 <api xmlns="http://ws.apache.org/ns/synapse"  name="$!apiName" context="$!apiContext" version="$!apiVersion" transports="$!transport" version-type="context">
 #if($apiIsBlocked)
 ## if API is blocked send the API Block message
@@ -287,12 +328,15 @@
 #if($apiStatus != 'PROTOTYPED')
 <filter source="$ctx:AM_KEY_TYPE" regex="$filterRegex">
     <then>
-        #end
-        <property name="api.ut.backendRequestTime" expression="get-property('SYSTEM_TIME')"/>
+        #end      
+            #print_executor("$!apiObj.getDescription()")
+        </class>
+        <loopback/>
+            
         #if(($environmentType == 'sandbox') || ($environmentType =='hybrid' && ! $endpoint_config.get("production_endpoints") ))
-        #draw_endpoint( "sandbox" $endpoint_config )
+        ##draw_endpoint( "sandbox" $endpoint_config )
         #else
-        #draw_endpoint( "production" $endpoint_config )
+        ##draw_endpoint( "production" $endpoint_config )
         #end
         #if($apiStatus != 'PROTOTYPED')
     </then>
@@ -317,11 +361,11 @@
         <send/>
         #else
         #if($endpoint_config.get("production_endpoints") && $endpoint_config.get("sandbox_endpoints"))
-        #draw_endpoint( "sandbox" $endpoint_config )
+            #draw_endpoint( "sandbox" $endpoint_config )
         #elseif($endpoint_config.get("production_endpoints"))
-        <sequence key="_sandbox_key_error_"/>
+            <sequence key="_sandbox_key_error_"/>
         #elseif($endpoint_config.get("sandbox_endpoints"))
-        <sequence key="_production_key_error_"/>
+            <sequence key="_production_key_error_"/>
         #end
         #end
     </else>
@@ -352,6 +396,8 @@
     #end
 </handler>
 #end
+##print telco handlers
+#print_handler("$!apiObj.getDescription()")
 </handlers>
         #end
         #end
