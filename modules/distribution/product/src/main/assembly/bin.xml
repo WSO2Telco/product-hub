@@ -264,34 +264,23 @@
         </includes>
     </fileSet>
 
-	<fileSet>
-             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-publisher/</directory>
-             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/publisher</outputDirectory>
-	     <excludes>
-		<exclude>publisherLogo/**</exclude>
-		<exclude>publisherTheme/**</exclude>
-		<exclude>publisherSite/**</exclude>
-		<exclude>footer/**</exclude>
-		<exclude>localstyles.css</exclude>
-	     </excludes>
-         </fileSet>
-         <fileSet>
+        <fileSet>
              <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-store/</directory>
              <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store</outputDirectory>
-	     <excludes>
-		<exclude>storeLogo/**</exclude>
-		<exclude>storeSite/**</exclude>
-		<exclude>base-page/**</exclude>
-		<exclude>login/**</exclude>
-		<exclude>styles-layout.css</exclude>
-	     </excludes>
-         </fileSet>
+    	    <excludes>
+        		<exclude>storeLogo/**</exclude>
+        		<exclude>storeSite/**</exclude>
+        		<exclude>base-page/**</exclude>
+        		<exclude>login/**</exclude>
+        		<exclude>styles-layout.css</exclude>
+    	    </excludes>
+        </fileSet>
 
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/workflow-admin/</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/workflow-admin</outputDirectory>
         </fileSet>
-	<fileSet>
+	    <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/admin-dashboard/</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/admin-dashboard</outputDirectory>
         </fileSet>
@@ -319,7 +308,7 @@
             <directory>../../../modules/styles/service/src/main/resources/web/styles/css</directory>
             <outputDirectory>wso2telcohub-${pom.version}/resources/allthemes/Default/admin</outputDirectory>
         </fileSet>
-	<fileSet>
+	    <fileSet>
        	    <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/rxts</directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/resources/rxts</outputDirectory>
             <includes>
@@ -327,7 +316,7 @@
             </includes>
         </fileSet>
 	<!-- Jmeter Intergration Tests -->
- 	<fileSet>
+ 	    <fileSet>
             <directory>../../integration/tests/src/test/resources/artifacts/AM/scripts</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/scripts</outputDirectory>
             <includes>
@@ -335,7 +324,7 @@
             </includes>
         </fileSet>
 	<!-- Sample Jmeter scripts for Tenant Creation -->
-	<fileSet>
+	    <fileSet>
             <directory>../resources/scripts/tenant_Creation</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/scripts/tenantCreation</outputDirectory>
             <includes>
@@ -747,6 +736,18 @@
             <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/manage.zip</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>755</fileMode>
+        </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/publisher.zip</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>755</fileMode>
         </file>
         <file>
             <source>../../hubconfig/api-manager.xml</source>
