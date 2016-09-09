@@ -145,18 +145,11 @@
                   <exclude>cipher-tool.properties</exclude>
           </excludes>
         </fileSet-->
-	    <!-- <fileSet>
-            <directory>src/main/assembly</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store/site/tenant_themes</outputDirectory>
-            <excludes>
-                <exclude>*</exclude>
-            </excludes>
-        </fileSet> -->
         <fileSet>
             <directory>src/main/conf/synapse-configs</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs</outputDirectory>
         </fileSet>
-  	<fileSet>
+  	    <fileSet>
             <directory>src/main/conf/synapse-configs/default/sequences</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/apim-synapse-config/</outputDirectory>
         </fileSet>
@@ -262,6 +255,17 @@
         <includes>
             <include>**/**.sql</include>
         </includes>
+    </fileSet>
+
+    <fileSet>
+        <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/</directory>
+        <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/</outputDirectory>
+        <excludes>
+            <exclude>admin-dashboard/**</exclude>
+            <exclude>api-publisher/**</exclude>
+            <exclude>api-store/**</exclude>
+            <exclude>workflow-admin/**</exclude>
+        </excludes>
     </fileSet>
 
 <!--         <fileSet>
@@ -734,30 +738,6 @@
         <file>
             <source>target/wso2carbon-core-${carbon.platform.version}/bin/version.txt</source>
             <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/manage.zip</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/publisher.zip</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/sandbox.zip</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/store.zip</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
