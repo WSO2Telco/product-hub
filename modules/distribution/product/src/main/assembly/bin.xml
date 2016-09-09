@@ -750,6 +750,12 @@
             <fileMode>755</fileMode>
         </file>
         <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/sandbox.zip</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>755</fileMode>
+        </file>
+        <file>
             <source>../../hubconfig/api-manager.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <filtered>true</filtered>
