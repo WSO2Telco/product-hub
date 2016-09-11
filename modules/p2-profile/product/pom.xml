@@ -76,13 +76,54 @@
                             <publishArtifactRepository>true</publishArtifactRepository>
                             <featureArtifacts>
                                 
-				<featureArtifactDef>com.wso2telco.core:com.wso2telco.core.dbutils.feature:${com.wso2telco.core.version}</featureArtifactDef>
+				                <featureArtifactDef>
+                                    com.wso2telco.core:com.wso2telco.core.dbutils.feature:${com.wso2telco.core.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.core:com.wso2telco.core.mncresolver.feature:${com.wso2telco.core.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.core:com.wso2telco.core.msisdnvalidator.feature:${com.wso2telco.core.version}
+                                </featureArtifactDef> 
 
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.workflowmanager.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.operatorservice.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.oneapivalidation.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.datapublisher.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.subscriptionvalidator.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.verificationhandler.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.publisheventsdata.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.reportingservice.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.mediator.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.manage.ui.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.store.ui.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.publisher.ui.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.sandbox.ui.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
 
                                 <featureArtifactDef>
@@ -638,12 +679,64 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.mncresolver.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.verificationhandler.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.reportingservice.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.store.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisher.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
                                 <feature>
@@ -1060,7 +1153,7 @@
                                     <id>org.wso2.carbon.metrics.feature.group</id>
                                     <version>${carbon.metrics.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
@@ -1090,12 +1183,64 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.mncresolver.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.verificationhandler.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.reportingservice.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.store.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisher.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
                                 <feature>
@@ -1383,7 +1528,7 @@
                                     <id>org.wso2.carbon.metrics.feature.group</id>
                                     <version>${carbon.metrics.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
@@ -1414,12 +1559,64 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.mncresolver.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.verificationhandler.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.reportingservice.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.store.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisher.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
                                 <feature>
@@ -1726,7 +1923,7 @@
                                     <id>org.wso2.carbon.metrics.feature.group</id>
                                     <version>${carbon.metrics.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
@@ -1757,12 +1954,64 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.mncresolver.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.verificationhandler.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.reportingservice.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.store.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisher.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
                                 <feature>
@@ -2188,12 +2437,64 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.mncresolver.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.verificationhandler.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.reportingservice.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.store.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisher.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
                                 <feature>
@@ -2588,7 +2889,7 @@
                                     <id>org.wso2.carbon.metrics.feature.group</id>
                                     <version>${carbon.metrics.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
@@ -2620,15 +2921,67 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.operator-service.feature.group</id>
+                                    <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.mncresolver.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.verificationhandler.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.reportingservice.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.mediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.store.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.publisher.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
 
-		                  <feature>
+		                        <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
                                     <version>${carbon.commons.version}</version>
                                 </feature>
@@ -2980,7 +3333,7 @@
                                     <id>org.wso2.carbon.metrics.feature.group</id>
                                     <version>${carbon.metrics.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>

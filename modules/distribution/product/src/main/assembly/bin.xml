@@ -48,6 +48,7 @@
                 <exclude>**/lib/org.wso2.ciphertool-1.0.0-wso2v2.jar</exclude>
                 <exclude>**/secret-conf.properties</exclude>
                 <exclude>**/repository/components/plugins/saxon*.jar</exclude>
+                <exclude>**/user-mgt.xml</exclude>
 
                 <!-- Remove multiple versions of same jar for 1.10.x-->
                 <exclude>**/repository/components/plugins/js_1.6.0.R7-wso2v1.jar</exclude>
@@ -65,7 +66,7 @@
                 <!--<exclude>**/repository/components/plugins/org.wso2.carbon.captcha.mgt_4.2.0.jar</exclude>-->
                 <exclude>**/repository/components/plugins/guava_12.0.0.wso2v1.jar</exclude>
                 <exclude>**/repository/components/plugins/wadl-core_1.1.3.wso2v2.jar</exclude>
-		<exclude>**/repository/components/plugins/org.wso2.carbon.hostobjects.sso_4.3.2.jar</exclude>
+		        <exclude>**/repository/components/plugins/org.wso2.carbon.hostobjects.sso_4.3.2.jar</exclude>
                 <!--<exclude>**/repository/components/plugins/waffle_1.4.0.wso2v1.jar</exclude>-->
                 <!--<exclude>**/repository/components/plugins/compass_2.0.1.wso2v2.jar</exclude>-->
                 <!--<exclude>**/repository/components/plugins/poi_3.9.0.wso2v1.jar</exclude>-->
@@ -611,11 +612,12 @@
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
         </file>
         <file>
-            <source>src/main/conf/axis2.xml</source>
+            <source>../../hubconfig/axis2.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>axis2.xml</destName>
+            <fileMode>644</fileMode>
         </file>
-	<file>
+	    <file>
             <source>src/main/conf/axis2_blocking_client.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>axis2_blocking_client.xml</destName>
@@ -636,12 +638,13 @@
             <destName>tenant-axis2.xml</destName>
         </file>
         <file>
-            <source>src/main/conf/master-datasources.xml</source>
+            <source>../../hubconfig/master-datasources.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/datasources</outputDirectory>
             <destName>master-datasources.xml</destName>
+            <fileMode>644</fileMode>
         </file>
         <file>
-            <source>src/main/conf/registry.xml</source>
+            <source>../../hubconfig/registry.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <destName>registry.xml</destName>
             <filtered>true</filtered>
@@ -746,7 +749,7 @@
             <fileMode>644</fileMode>
         </file>
         <file>
-            <source>../../../config/api-manager.xml</source>
+            <source>../../hubconfig/api-manager.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <filtered>true</filtered>
             <fileMode>755</fileMode>
@@ -871,6 +874,41 @@
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/database/WSO2METRICS_DB.h2.db</source>
             <outputDirectory>${project.artifactId}-${project.version}/repository/database/</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>
+              ../../hubconfig/user-mgt.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>
+              ../../hubconfig/mediator-conf.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>
+              ../../hubconfig/publish-events-data-conf.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>
+              ../../hubconfig/oneapi-validation-conf.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>
+              ../../hubconfig/MobileCountryConfig.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
     </files>
