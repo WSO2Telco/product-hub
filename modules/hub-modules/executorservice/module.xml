@@ -1,0 +1,7 @@
+<module name="executorservice" namespace="ns" expose="true" xmlns="http://wso2.org/projects/jaggery/module.xml">
+    <hostObject>
+        <className>com.wso2telco.dep.mediator.executor.ExecutorInfoHostObject</className>
+        <name>ExecutorInfoHostObject</name>
+    </hostObject>
+</module>
+

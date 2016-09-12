@@ -268,6 +268,11 @@
         </excludes>
     </fileSet>
 
+    <fileSet>
+        <directory>../../hub-modules/</directory>
+        <outputDirectory>wso2telcohub-${pom.version}/modules/</outputDirectory>
+    </fileSet>
+
 <!--         <fileSet>
              <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-store/</directory>
              <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store</outputDirectory>
