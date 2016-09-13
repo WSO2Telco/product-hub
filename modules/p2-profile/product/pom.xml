@@ -1,20 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
- ~ Copyright (c) WSO2 Inc. (http://wso2.com) All Rights Reserved.
- ~
- ~ Licensed under the Apache License, Version 2.0 (the "License");
- ~ you may not use this file except in compliance with the License.
- ~ You may obtain a copy of the License at
- ~
- ~      http://www.apache.org/licenses/LICENSE-2.0
- ~
- ~ Unless required by applicable law or agreed to in writing, software
- ~ distributed under the License is distributed on an "AS IS" BASIS,
- ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- ~ See the License for the specific language governing permissions and
- ~ limitations under the License.
--->
-
+<!DOCTYPE project [
+        <!ELEMENT project (parent|modelVersion|artifactId|packaging|name|url|build)*>
+        <!ATTLIST project
+                xmlns CDATA #REQUIRED
+                xmlns:xsi CDATA #REQUIRED
+                xsi:schemaLocation CDATA #REQUIRED>
+        <!ELEMENT parent (groupId|artifactId|version|relativePath)*>
+        <!ELEMENT groupId (#PCDATA)>
+        <!ELEMENT artifactId (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT relativePath (#PCDATA)>
+        <!ELEMENT modelVersion (#PCDATA)>
+        <!ELEMENT packaging (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT url (#PCDATA)>
+        <!ELEMENT build (plugins)*>
+        <!ELEMENT plugins (plugin)*>
+        <!ELEMENT plugin (groupId|artifactId|inherited|executions)*>
+        <!ELEMENT inherited (#PCDATA)>
+        <!ELEMENT executions (execution)*>
+        <!ELEMENT execution (id|phase|goals|configuration)*>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT phase (#PCDATA)>
+        <!ELEMENT goals (goal)*>
+        <!ELEMENT goal (#PCDATA)>
+        <!ELEMENT configuration (artifactItems|p2AgentLocation|metadataRepository|artifactRepository|publishArtifacts|publishArtifactRepository|featureArtifacts|productConfigurationFile|executable|targetPath|profile|destination|deleteOldProfileFiles|features|tasks)*>
+        <!ELEMENT artifactItems (artifactItem)*>
+        <!ELEMENT artifactItem (groupId|artifactId|version|type|overWrite|outputDirectory)*>
+        <!ELEMENT type (#PCDATA)>
+        <!ELEMENT overWrite (#PCDATA)>
+        <!ELEMENT outputDirectory (#PCDATA)>
+        <!ELEMENT p2AgentLocation (#PCDATA)>
+        <!ELEMENT metadataRepository (#PCDATA)>
+        <!ELEMENT artifactRepository (#PCDATA)>
+        <!ELEMENT publishArtifacts (#PCDATA)>
+        <!ELEMENT publishArtifactRepository (#PCDATA)>
+        <!ELEMENT featureArtifacts (featureArtifactDef)*>
+        <!ELEMENT featureArtifactDef (#PCDATA)>
+        <!ELEMENT productConfigurationFile (#PCDATA)>
+        <!ELEMENT executable (#PCDATA)>
+        <!ELEMENT targetPath (#PCDATA)>
+        <!ELEMENT profile (#PCDATA)>
+        <!ELEMENT destination (#PCDATA)>
+        <!ELEMENT deleteOldProfileFiles (#PCDATA)>
+        <!ELEMENT features (feature)*>
+        <!ELEMENT feature (id|version)*>
+        <!ELEMENT tasks (replace)*>
+        <!ELEMENT replace (include)*>
+        <!ATTLIST replace
+                dir CDATA #IMPLIED
+                file CDATA #IMPLIED
+                token CDATA #REQUIRED
+                value CDATA #REQUIRED>
+        <!ELEMENT include (#PCDATA)>
+        <!ATTLIST include
+                name CDATA #REQUIRED>
+        ]>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
@@ -125,6 +166,14 @@
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.sandbox.ui.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
+
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.aggregatorblacklist.webapp.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.blacklistwhitelistservice.webapp.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+
 
                                 <featureArtifactDef>
                                     org.wso2.carbon.mediation:org.wso2.carbon.mediation.ui.feature:${carbon.mediation.version}
@@ -740,6 +789,16 @@
                                 </feature>
 
                                 <feature>
+                                    <id>com.wso2telco.dep.aggregatorblacklist.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
+
+                                <feature>
                                     <id>org.jaggeryjs.modules.ws.feature.group</id>
                                     <version>${ws.feature.version}</version>
                                 </feature>
@@ -1242,6 +1301,14 @@
                                     <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.aggregatorblacklist.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>org.apache.axis2.transport.mail.feature.group</id>
@@ -1618,6 +1685,15 @@
                                     <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.aggregatorblacklist.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
 
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
@@ -2013,6 +2089,15 @@
                                     <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.aggregatorblacklist.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
 
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
@@ -2496,6 +2581,15 @@
                                     <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.aggregatorblacklist.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
 
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
@@ -2980,8 +3074,17 @@
                                     <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.aggregatorblacklist.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
 
-		                        <feature>
+
+                                <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
                                     <version>${carbon.commons.version}</version>
                                 </feature>
