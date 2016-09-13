@@ -404,8 +404,8 @@
             <includes>
                 <include>oauth2.war</include>
             </includes>
-        </fileSet>
 
+        </fileSet>
 	<fileSet>
        	    <directory>
 ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/resources/rxts/forum
@@ -470,6 +470,27 @@
                 <include>am#sample#calculator#v1.war</include>
             </includes>
         </fileSet>
+        <!-- Copy aggregator-blacklist webapp-->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>aggregator-blacklist.war</include>
+            </includes>
+        </fileSet>
+        <!-- Copy blacklist-whitelist-service webapp-->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>blacklist-whitelist-service.war</include>
+            </includes>
+        </fileSet>
+
 
 
         <!--Multitenancy related file -->
