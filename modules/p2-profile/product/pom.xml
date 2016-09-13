@@ -87,6 +87,9 @@
                                 </featureArtifactDef> 
 
                                 <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.hub.core.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.workflowmanager.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
@@ -675,6 +678,10 @@
                             <features>
 
                                 <feature>
+                                    <id>com.wso2telco.dep.hub.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.dep.workflowmanager.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
@@ -1179,6 +1186,10 @@
                             <features>
 
                                 <feature>
+                                    <id>com.wso2telco.dep.hub.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.dep.workflowmanager.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
@@ -1554,6 +1565,10 @@
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
 
+                                <feature>
+                                    <id>com.wso2telco.dep.hub.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.workflowmanager.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
@@ -1949,6 +1964,10 @@
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
 
+                                <feature>
+                                    <id>com.wso2telco.dep.hub.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.workflowmanager.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
@@ -2433,6 +2452,10 @@
                             <features>
 
                                 <feature>
+                                    <id>com.wso2telco.dep.hub.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.dep.workflowmanager.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
@@ -2916,6 +2939,10 @@
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
                                 
+                                <feature>
+                                    <id>com.wso2telco.dep.hub.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.workflowmanager.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
