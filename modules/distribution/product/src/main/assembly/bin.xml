@@ -517,6 +517,18 @@
         </fileSet>
         <!--End of  API Manager related -->
 
+        <!-- Start DEP Hub related dbscripts -->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/dbscripts/
+            </directory>
+            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/dep-hub</outputDirectory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <!--End of DEP Hub related dbscripts -->
+
         <!-- Start DEP Hub related modules -->
         <fileSet>
             <directory>
