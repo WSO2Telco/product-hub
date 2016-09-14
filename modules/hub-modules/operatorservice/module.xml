@@ -1,7 +1,0 @@
-<module name="operatorservice" namespace="ns" expose="true" xmlns="http://wso2.org/projects/jaggery/module.xml">    
-        <hostObject>
-            <className>com.wso2telco.dep.operatorservice.StoreHostObject</className>
-            <name>StoreHostObject</name>
-        </hostObject>
-</module>
-

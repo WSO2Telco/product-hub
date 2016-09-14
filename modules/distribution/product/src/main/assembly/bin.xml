@@ -257,21 +257,10 @@
         </includes>
     </fileSet>
 
-    <fileSet>
-        <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/</directory>
-        <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/</outputDirectory>
-        <excludes>
-            <exclude>admin-dashboard/**</exclude>
-            <exclude>api-publisher/**</exclude>
-            <exclude>api-store/**</exclude>
-            <exclude>workflow-admin/**</exclude>
-        </excludes>
-    </fileSet>
-
-    <fileSet>
+    <!-- <fileSet>
         <directory>../../hub-modules/</directory>
         <outputDirectory>wso2telcohub-${pom.version}/modules/</outputDirectory>
-    </fileSet>
+    </fileSet> -->
 
 <!--         <fileSet>
              <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-store/</directory>
@@ -285,21 +274,22 @@
     	    </excludes>
         </fileSet> -->
 
-        <fileSet>
+        <!-- <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/workflow-admin/</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/workflow-admin</outputDirectory>
-        </fileSet>
-	    <fileSet>
+        </fileSet> -->
+	    <!-- <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/admin-dashboard/</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/admin-dashboard</outputDirectory>
-        </fileSet>
-	<!--  copying modules xml -->
+        </fileSet> -->
+
+	    <!--  copying modules xml -->
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/modules</directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/modules/</outputDirectory>
 	    	<includes>
                 <include>*/**</include>
-            </includes>
+            </includes>            
         </fileSet>
         <fileSet>
             <directory>../../jaggery</directory>
@@ -308,7 +298,8 @@
                 <include>**/**.xml</include>
             </includes>
         </fileSet>
-	<!-- Copying styles for tenants -->
+
+	    <!-- Copying styles for tenants -->
         <fileSet>
             <directory>../../../modules/styles/service/src/main/resources/web/styles/images</directory>
             <outputDirectory>wso2telcohub-${pom.version}/resources/allthemes/Default/images</outputDirectory>
@@ -341,7 +332,7 @@
             </includes>
         </fileSet>
 	<!-- API Templates -->
-	<fileSet>
+	    <fileSet>
             <directory>../resources/api_templates</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/api_templates</outputDirectory>
             <includes>
@@ -364,7 +355,7 @@
             <excludes>
                 <exclude>**/TwitterSearch/**</exclude>
                 <exclude>**/YahooPlaceFinder/**</exclude>
-		<exclude>**/YoutubeFeeds/**</exclude>
+		        <exclude>**/YoutubeFeeds/**</exclude>
             </excludes>
         </fileSet>
 
@@ -526,7 +517,33 @@
         </fileSet>
         <!--End of  API Manager related -->
 
-	<!--Multitenancy related file -->
+        <!-- Start DEP Hub related modules -->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/modules/
+            </directory>
+            <outputDirectory>wso2telcohub-${pom.version}/modules</outputDirectory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <!--End of DEP Hub related modules -->
+
+        <!-- Start DEP Hub related jaggery apps -->
+        <fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/</outputDirectory>
+            <excludes>
+                <exclude>admin-dashboard/**</exclude>
+                <exclude>api-publisher/**</exclude>
+                <exclude>api-store/**</exclude>
+                <exclude>workflow-admin/**</exclude>
+            </excludes>
+        </fileSet>
+
+        <!--End of DEP Hub related jaggery apps -->
+
+	    <!--Multitenancy related file -->
         <fileSet>
             <directory>../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/multitenancy/</directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/multitenancy</outputDirectory>
@@ -604,17 +621,11 @@
         </file>
         <!--End of claim management feature-->
 
-
 	    <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/event-broker.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
         </file>
-        <file>
-            <source>../../hubconfig/axis2.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
-            <destName>axis2.xml</destName>
-            <fileMode>644</fileMode>
-        </file>
+        
 	    <file>
             <source>src/main/conf/axis2_blocking_client.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
@@ -635,19 +646,7 @@
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>tenant-axis2.xml</destName>
         </file>
-        <file>
-            <source>../../hubconfig/master-datasources.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/datasources</outputDirectory>
-            <destName>master-datasources.xml</destName>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>../../hubconfig/registry.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
-            <destName>registry.xml</destName>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
+        
         <file>
             <source>src/main/conf/thrift-authentication.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
@@ -745,12 +744,6 @@
             <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>../../hubconfig/api-manager.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>755</fileMode>
         </file>
         <file>
             <source>../../../config/bam.xml</source>
@@ -874,40 +867,75 @@
             <outputDirectory>${project.artifactId}-${project.version}/repository/database/</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+
+        <!-- Start DEP Hub related configs -->
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/axis2/axis2.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
+            <destName>axis2.xml</destName>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/datasources/master-datasources.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/datasources</outputDirectory>
+            <destName>master-datasources.xml</destName>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/registry.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <destName>registry.xml</destName>
+            <filtered>true</filtered>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/api-manager.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>755</fileMode>
+        </file>
+
         <file>
             <source>
-              ../../hubconfig/user-mgt.xml
+              ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/user-mgt.xml
             </source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+
         <file>
             <source>
-              ../../hubconfig/mediator-conf.properties
+              ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/mediator-conf.properties
             </source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+
         <file>
             <source>
-              ../../hubconfig/publish-events-data-conf.properties
+              ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/publish-events-data-conf.properties
             </source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+
         <file>
             <source>
-              ../../hubconfig/oneapi-validation-conf.properties
+              ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/oneapi-validation-conf.properties
             </source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+
         <file>
             <source>
-              ../../hubconfig/MobileCountryConfig.xml
+              ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/MobileCountryConfig.xml
             </source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+        <!--End of DEP Hub related configs -->
     </files>
 </assembly>
