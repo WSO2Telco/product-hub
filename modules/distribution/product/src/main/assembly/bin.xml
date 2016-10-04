@@ -49,7 +49,16 @@
                 <exclude>**/secret-conf.properties</exclude>
                 <exclude>**/repository/components/plugins/saxon*.jar</exclude>
                 <exclude>**/user-mgt.xml</exclude>
-
+                
+                <!-- Remove dbscripts -->
+                <exclude>**/dbscripts/db2.sql</exclude>
+                <exclude>**/dbscripts/derby.sql</exclude>
+                <exclude>**/dbscripts/he.sql</exclude>
+                <exclude>**/dbscripts/informix.sql</exclude>
+                <exclude>**/dbscripts/oracle.sql</exclude>
+                <exclude>**/dbscripts/oracle_rac.sql</exclude>
+                <exclude>**/dbscripts/h2.sql</exclude>
+       
                 <!-- Remove multiple versions of same jar for 1.10.x-->
                 <exclude>**/repository/components/plugins/js_1.6.0.R7-wso2v1.jar</exclude>
                 <exclude>**/repository/components/plugins/json_1.0.0.wso2v1.jar</exclude>
@@ -168,7 +177,7 @@
 	</fileSet>
 
         <!-- Start API Manager related -->
-        <fileSet>
+    <!--      <fileSet>
             <directory>
                 ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dbscripts/identity/application-mgt/
             </directory>
@@ -245,7 +254,7 @@
             ../statistics/target/
         </directory>
         <outputDirectory>wso2telcohub-${pom.version}/dbscripts/stat/migration-1.9.0_to_1.10.0</outputDirectory>
-    </fileSet>
+    </fileSet>-->
 
     <fileSet>
         <directory>
