@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="USSDRequestHandlerSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    
+    <class name="com.wso2telco.dep.verificationhandler.verifier.APIRequestHandler"/>
+
+    <class name="com.wso2telco.dep.mediator.HandlerMediator">
+        <property name="executorClass" value="com.wso2telco.dep.mediator.impl.ussd.USSDExecutor"/>
+    </class>
+</sequence>
