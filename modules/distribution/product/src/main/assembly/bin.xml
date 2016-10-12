@@ -53,6 +53,16 @@
                 <exclude>**/lib/org.wso2.ciphertool-1.0.0-wso2v2.jar</exclude>
                 <exclude>**/secret-conf.properties</exclude>
                 <exclude>**/repository/components/plugins/saxon*.jar</exclude>
+                <exclude>**/user-mgt.xml</exclude>
+
+                <!-- Remove dbscripts -->
+                <exclude>**/dbscripts/db2.sql</exclude>
+                <exclude>**/dbscripts/derby.sql</exclude>
+                <exclude>**/dbscripts/he.sql</exclude>
+                <exclude>**/dbscripts/informix.sql</exclude>
+                <exclude>**/dbscripts/oracle.sql</exclude>
+                <exclude>**/dbscripts/oracle_rac.sql</exclude>
+                <exclude>**/dbscripts/h2.sql</exclude>
 
                 <!-- Remove multiple versions of same jar for 1.10.x-->
                 <exclude>**/repository/components/plugins/js_1.6.0.R7-wso2v1.jar</exclude>
@@ -76,6 +86,7 @@
                 <exclude>**/repository/components/plugins/org.wso2.carbon.identity.oauth.stub_5.0.8.jar</exclude>
                 <!--This has excluded because commons-scxml_0.9.0.wso2v1 exports the same version-->
 		        <exclude>**/repository/components/plugins/commons-digester_1.8.1.wso2v1.jar</exclude>
+=
                 <!--<exclude>**/repository/components/plugins/waffle_1.4.0.wso2v1.jar</exclude>-->
                 <!--<exclude>**/repository/components/plugins/compass_2.0.1.wso2v2.jar</exclude>-->
                 <!--<exclude>**/repository/components/plugins/poi_3.9.0.wso2v1.jar</exclude>-->
@@ -171,7 +182,7 @@
             <directory>src/main/conf/synapse-configs</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs</outputDirectory>
         </fileSet>
-  	<fileSet>
+  	    <fileSet>
             <directory>src/main/conf/synapse-configs/default/sequences</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/apim-synapse-config/</outputDirectory>
         </fileSet>
@@ -324,7 +335,8 @@
                 <include>**/**.xml</include>
             </includes>
         </fileSet>
-	<!-- Copying styles for tenants -->
+
+	    <!-- Copying styles for tenants -->
         <fileSet>
             <directory>../../../modules/styles/service/src/main/resources/web/styles/images</directory>
             <outputDirectory>wso2telcohub-${pom.version}/resources/allthemes/Default/images</outputDirectory>
@@ -333,7 +345,7 @@
             <directory>../../../modules/styles/service/src/main/resources/web/styles/css</directory>
             <outputDirectory>wso2telcohub-${pom.version}/resources/allthemes/Default/admin</outputDirectory>
         </fileSet>
-	<fileSet>
+	    <fileSet>
        	    <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/rxts</directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/resources/rxts</outputDirectory>
             <includes>
@@ -341,7 +353,7 @@
             </includes>
         </fileSet>
 	<!-- Jmeter Intergration Tests -->
- 	<fileSet>
+ 	    <fileSet>
             <directory>../../integration/tests/src/test/resources/artifacts/AM/scripts</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/scripts</outputDirectory>
             <includes>
@@ -349,7 +361,7 @@
             </includes>
         </fileSet>
 	<!-- Sample Jmeter scripts for Tenant Creation -->
-	<fileSet>
+	    <fileSet>
             <directory>../resources/scripts/tenant_Creation</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/scripts/tenantCreation</outputDirectory>
             <includes>
@@ -357,7 +369,7 @@
             </includes>
         </fileSet>
 	<!-- API Templates -->
-	<fileSet>
+	    <fileSet>
             <directory>../resources/api_templates</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/api_templates</outputDirectory>
             <includes>
@@ -388,7 +400,7 @@
             <excludes>
                 <exclude>**/TwitterSearch/**</exclude>
                 <exclude>**/YahooPlaceFinder/**</exclude>
-		<exclude>**/YoutubeFeeds/**</exclude>
+		        <exclude>**/YoutubeFeeds/**</exclude>
             </excludes>
         </fileSet>
 
@@ -407,7 +419,7 @@
                 <include>**/*.*</include>
             </includes>
         </fileSet>
- 
+
         <!-- API Custom Sequences -->
 	<fileSet>
             <directory>../resources/customsequences</directory>
@@ -426,8 +438,8 @@
             <includes>
                 <include>oauth2.war</include>
             </includes>
-        </fileSet>
 
+        </fileSet>
 	<fileSet>
        	    <directory>
 ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/resources/rxts/forum
@@ -512,6 +524,27 @@
                 <include>am#sample#calculator#v1.war</include>
             </includes>
         </fileSet>
+        <!-- Copy aggregator-blacklist webapp-->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>aggregator-blacklist.war</include>
+            </includes>
+        </fileSet>
+        <!-- Copy blacklist-whitelist-service webapp-->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>blacklist-whitelist-service.war</include>
+            </includes>
+        </fileSet>
+
 
         <!-- Copy sample pizzashack api webapp-->
         <fileSet>
@@ -706,7 +739,7 @@
                 <include>**/*.*</include>
             </includes>
         </fileSet>
-	
+
 	<!-- Tomcat carbon web.xml -->
 	<fileSet>
 	    <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/tomcat/carbon/WEB-INF/</directory>
@@ -822,18 +855,7 @@
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>tenant-axis2.xml</destName>
         </file>
-        <file>
-            <source>src/main/conf/master-datasources.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/datasources</outputDirectory>
-            <destName>master-datasources.xml</destName>
-        </file>
-        <file>
-            <source>src/main/conf/registry.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
-            <destName>registry.xml</destName>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
+
         <file>
             <source>src/main/conf/registry_TM.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
@@ -1130,6 +1152,7 @@
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
+
         <!-- Start DEP Hub related configs -->
         <file>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/axis2/axis2.xml</source>
