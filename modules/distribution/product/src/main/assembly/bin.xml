@@ -27,12 +27,17 @@
             <directory>target/wso2carbon-core-${carbon.platform.version}</directory>
             <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
             <excludes>
+                <exclude>**/bin/wso2server.sh</exclude>
+                <exclude>**/bin/wso2server.bat</exclude>
                 <exclude>**/conf/axis2/axis2.xml</exclude>
                 <exclude>**/conf/axis2/axis2.xml_NHTTP</exclude>
                 <exclude>**/conf/axis2/axis2.xml_PT</exclude>
                 <exclude>**/conf/axis2/tenant-axis2.xml</exclude>
                 <exclude>**/conf/synapse.xml</exclude>
-                <exclude>**/log4j.properties</exclude>
+                <exclude>**/conf/security/Owasp.CsrfGuard.Carbon.properties</exclude>
+                <exclude>**/conf/security/authenticators.xml</exclude>
+		        <exclude>**/conf/tomcat/carbon/WEB-INF/web.xml</exclude>
+		        <exclude>**/log4j.properties</exclude>
                 <exclude>**/services/sample01.aar</exclude>
                 <exclude>**/repository/services/version/**</exclude>
                 <exclude>**/version.txt</exclude>
@@ -65,7 +70,12 @@
                 <!--<exclude>**/repository/components/plugins/org.wso2.carbon.captcha.mgt_4.2.0.jar</exclude>-->
                 <exclude>**/repository/components/plugins/guava_12.0.0.wso2v1.jar</exclude>
                 <exclude>**/repository/components/plugins/wadl-core_1.1.3.wso2v2.jar</exclude>
-		<exclude>**/repository/components/plugins/org.wso2.carbon.hostobjects.sso_4.3.2.jar</exclude>
+		        <exclude>**/repository/components/plugins/org.wso2.carbon.hostobjects.sso_4.3.2.jar</exclude>
+		        <exclude>**/repository/components/plugins/com.google.guava_15.0.0.jar</exclude>
+		        <exclude>**/repository/components/plugins/httpclient_4.3.2.wso2v1.jar</exclude>
+                <exclude>**/repository/components/plugins/org.wso2.carbon.identity.oauth.stub_5.0.8.jar</exclude>
+                <!--This has excluded because commons-scxml_0.9.0.wso2v1 exports the same version-->
+		        <exclude>**/repository/components/plugins/commons-digester_1.8.1.wso2v1.jar</exclude>
                 <!--<exclude>**/repository/components/plugins/waffle_1.4.0.wso2v1.jar</exclude>-->
                 <!--<exclude>**/repository/components/plugins/compass_2.0.1.wso2v2.jar</exclude>-->
                 <!--<exclude>**/repository/components/plugins/poi_3.9.0.wso2v1.jar</exclude>-->
@@ -73,8 +83,7 @@
                 <exclude>**/lib/endorsed/xalan*.jar</exclude>
                 <exclude>**/conf/thrift-authentication.xml</exclude>
                 <exclude>**/repository/components/features/org.wso2.carbon.apimgt.store_${apim.feature.version}/store/**</exclude>
-                <exclude>**/repository/components/features/org.wso2.carbon.apimgt.store_${apim.feature.version}/admin-dashboard/**</exclude>
-                <exclude>**/repository/components/features/org.wso2.carbon.apimgt.store_${apim.feature.version}/workflow-admin/**</exclude>
+                <exclude>**/repository/components/features/org.wso2.carbon.apimgt.store_${apim.feature.version}/admin/**</exclude>
                 <exclude>**/repository/components/features/org.wso2.carbon.apimgt.publisher_${apim.feature.version}/publisher/**</exclude>
                 <exclude>**/repository/components/features/org.wso2.carbon.apimgt.core_${apim.feature.version}/libs/**</exclude>
             </excludes>
@@ -103,6 +112,20 @@
           <outputDirectory>wso2telcohub-${pom.version}/lib/endorsed</outputDirectory>
 	    <includes>
                 <include>**/Saxon-HE-9.4.jar</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <includes>
+                <include>**/api-manager.xml</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/database</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/database</outputDirectory>
+            <includes>
+                <include>**/*.h2.db</include>
             </includes>
         </fileSet>
         <!--fileSet>
@@ -144,13 +167,6 @@
                   <exclude>cipher-tool.properties</exclude>
           </excludes>
         </fileSet-->
-	<fileSet>
-            <directory>src/main/assembly</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store/site/tenant_themes</outputDirectory>
-           <excludes>
-                  <exclude>*</exclude>
-          </excludes>
-        </fileSet>
         <fileSet>
             <directory>src/main/conf/synapse-configs</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs</outputDirectory>
@@ -174,18 +190,18 @@
 	</fileSet>
 
         <!-- Start API Manager related -->
-        <fileSet>
+        <!--fileSet>
             <directory>
                 ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dbscripts/identity/application-mgt/
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/identity/application-mgt</outputDirectory>
+            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/identity</outputDirectory>
             <includes>
                 <include>**/**.sql</include>
             </includes>
-        </fileSet>
+        </fileSet-->
         <fileSet>
             <directory>
-                ../resources/sql/
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/dbscripts/apimgt/
             </directory>
             <outputDirectory>wso2telcohub-${pom.version}/dbscripts/apimgt</outputDirectory>
             <includes>
@@ -253,15 +269,6 @@
         <outputDirectory>wso2telcohub-${pom.version}/dbscripts/stat/migration-1.9.0_to_1.10.0</outputDirectory>
     </fileSet>
 
-    <fileSet>
-        <directory>
-            ../resources/stat/sql/
-        </directory>
-        <outputDirectory>wso2telcohub-${pom.version}/dbscripts/stat/sql</outputDirectory>
-        <includes>
-            <include>**/**.sql</include>
-        </includes>
-    </fileSet>
 
 	<fileSet>
              <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-publisher/</directory>
@@ -286,15 +293,23 @@
 	     </excludes>
          </fileSet>
 
-        <fileSet>
-            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/workflow-admin/</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/workflow-admin</outputDirectory>
+        <!--fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/admin/</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/admin</outputDirectory>
         </fileSet>
 	<fileSet>
-            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/admin-dashboard/</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/admin-dashboard</outputDirectory>
-        </fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/portal/</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/portal</outputDirectory>
+        </fileSet-->
 	<!--  copying modules xml -->
+        <fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps</directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>shindig.war</include>
+            </includes>
+        </fileSet>
+	    <!--  copying modules xml -->
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/modules</directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/modules/</outputDirectory>
@@ -345,6 +360,14 @@
 	<fileSet>
             <directory>../resources/api_templates</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/api_templates</outputDirectory>
+            <includes>
+                <include>**/**.xml</include>
+            </includes>
+        </fileSet>
+         <!-- Throttling policy related templates -->
+ 	<fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/resources/policy_templates</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/policy_templates</outputDirectory>
             <includes>
                 <include>**/**.xml</include>
             </includes>
@@ -434,7 +457,7 @@
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps
             </outputDirectory>
             <includes>
-                <include>api#am#store#v0.9.war</include>
+                <include>api#am#store#v0.10.war</include>
             </includes>
         </fileSet>
         <fileSet>
@@ -444,7 +467,7 @@
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps
             </outputDirectory>
             <includes>
-                <include>api#am#publisher#v0.9.war</include>
+                <include>api#am#publisher#v0.10.war</include>
             </includes>
         </fileSet>
         <fileSet>
@@ -454,7 +477,27 @@
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps
             </outputDirectory>
             <includes>
-                <include>client-registration#v0.9.war</include>
+                <include>api#am#admin#v0.10.war</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps
+            </outputDirectory>
+            <includes>
+                <include>throttle#data#v1.war</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps
+            </outputDirectory>
+            <includes>
+                <include>client-registration#v0.10.war</include>
             </includes>
         </fileSet>
 
@@ -467,6 +510,17 @@
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
                 <include>am#sample#calculator#v1.war</include>
+            </includes>
+        </fileSet>
+
+        <!-- Copy sample pizzashack api webapp-->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>am#sample#pizzashack#v1.war</include>
             </includes>
         </fileSet>
 
@@ -526,7 +580,44 @@
             </includes>
         </fileSet>
         <!--End of  API Manager related -->
+        <!-- Start DEP Hub related dbscripts -->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/dbscripts/
+            </directory>
+            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/dep-hub</outputDirectory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <!--End of DEP Hub related dbscripts -->
 
+        <!-- Start DEP Hub related modules -->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/modules/
+            </directory>
+            <outputDirectory>wso2telcohub-${pom.version}/modules</outputDirectory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+        <!--End of DEP Hub related modules -->
+        <!-- Start DEP Hub related jaggery apps -->
+        <fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/</outputDirectory>
+            <excludes>
+                <exclude>admin/**</exclude>
+                <exclude>api-publisher/**</exclude>
+                <exclude>api-store/**</exclude>
+                <exclude>portal/**</exclude>
+                <exclude>publisher.zip</exclude>
+                <exclude>store.zip</exclude>
+            </excludes>
+        </fileSet>
+
+        <!--End of DEP Hub related jaggery apps -->
 	<!--Multitenancy related file -->
         <fileSet>
             <directory>../p2-profile-gen/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/multitenancy/</directory>
@@ -549,6 +640,83 @@
                 <include>**/*.sql</include>
             </includes>
         </fileSet>
+
+        <fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dbscripts/mb-store
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/dbscripts/mb-store</outputDirectory>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+            <fileMode>644</fileMode>
+        </fileSet>
+
+        <!--QPID related configurations-->
+        <fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/advanced/
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/advanced</outputDirectory>
+            <includes>
+                <include>**/qpid-config.xml</include>
+                <include>**/qpid-virtualhosts.xml</include>
+                <include>**/qpid-jmxremote.access</include>
+            </includes>
+            <fileMode>644</fileMode>
+        </fileSet>
+        <!-- messaging related configs -->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf
+            </outputDirectory>
+            <includes>
+                <include>**/broker.xml</include>
+            </includes>
+            <fileMode>644</fileMode>
+        </fileSet>
+	<fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/eventreceivers/</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/eventreceivers</outputDirectory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </fileSet>
+
+	<fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/eventstreams/</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/eventstreams</outputDirectory>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+        </fileSet>
+
+	<fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/eventpublishers/</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/eventpublishers</outputDirectory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/executionplans/</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/executionplans</outputDirectory>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+        </fileSet>
+	
+	<!-- Tomcat carbon web.xml -->
+	<fileSet>
+	    <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/tomcat/carbon/WEB-INF/</directory>
+	    <outputDirectory>wso2telcohub-${pom.version}/repository/conf/tomcat/carbon/WEB-INF/</outputDirectory>
+            <includes>
+                <include>**/web.xml</include>
+            </includes>
+        </fileSet>
+
+
     </fileSets>
     <dependencySets>
         <!-- use the new tool to create a bundles -->
@@ -595,6 +763,15 @@
 				<include>org.apache.rampart:rampart:mar</include>
 			</includes>
 	</dependencySet>
+        <dependencySet>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/components/lib</outputDirectory>
+            <includes>
+                <!--<include>commons-digester.wso2:commons-digester:jar</include>-->
+                <include>org.apache.geronimo.specs.wso2:geronimo-jms_1.1_spec:jar</include>
+                <include>org.wso2.securevault:org.wso2.securevault:jar</include>
+                <include>org.wso2.andes.wso2:andes-client:jar</include>
+            </includes>
+        </dependencySet>
     </dependencySets>
 
     <files>
@@ -606,9 +783,19 @@
         <!--End of claim management feature-->
 
 
-	    <file>
+	    <!-- using the event-broker config file from carbon mediation>
             <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/event-broker.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+        </file-->
+        <file>
+            <source>src/main/conf/axis2.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
+            <destName>axis2.xml</destName>
+        </file>
+        <file>
+            <source>src/main/conf/axis2_TM.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
+            <destName>axis2_TM.xml</destName>
         </file>
         <file>
             <source>src/main/conf/axis2.xml</source>
@@ -644,6 +831,13 @@
             <source>src/main/conf/registry.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <destName>registry.xml</destName>
+            <filtered>true</filtered>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>src/main/conf/registry_TM.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <destName>registry_TM.xml</destName>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
@@ -746,11 +940,19 @@
             <fileMode>644</fileMode>
         </file>
         <file>
-            <source>../../../config/api-manager.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <source>src/main/startup-scripts/wso2server.sh</source>
+            <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
             <filtered>true</filtered>
             <fileMode>755</fileMode>
         </file>
+
+        <file>
+            <source>src/main/startup-scripts/wso2server.bat</source>
+            <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>755</fileMode>
+        </file>
+
         <file>
             <source>../../../config/bam.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/etc</outputDirectory>
@@ -798,7 +1000,12 @@
             <fileMode>644</fileMode>
         </file>
         <file>
-            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/data-bridge/thrift-agent-config.xml</source>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/data-bridge/data-agent-config.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/data-bridge/</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/data-bridge/data-bridge-config.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/data-bridge/</outputDirectory>
             <fileMode>644</fileMode>
         </file>
@@ -837,6 +1044,10 @@
             <source>src/main/conf/cipher-tool.properties</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/security</outputDirectory>
         </file>
+        <file>
+            <source>src/main/conf/security/Owasp.CsrfGuard.Carbon.properties</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/security</outputDirectory>
+        </file>
         <!--file>
             <source>
                 ../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/msg-mgt.properties
@@ -873,5 +1084,120 @@
             <outputDirectory>${project.artifactId}-${project.version}/repository/database/</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/event-broker.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/</outputDirectory>
+            <destName>event-broker.xml</destName>
+        </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/registry-event-broker.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/</outputDirectory>
+            <destName>registry-event-broker.xml</destName>
+        </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/output-event-adapters.xml</source>
+            <outputDirectory>${project.artifactId}-${project.version}/repository/conf/</outputDirectory>
+            <filtered>false</filtered>
+        </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/messaging-event-broker.xml</source>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/event-processor.xml</source>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf</outputDirectory>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/input-event-adapters.xml</source>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>644</fileMode>
+        </file>
+
+        <!--Message Tracer config file-->
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/etc/message-tracer-config.xml</source>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/conf/etc</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>644</fileMode>
+        </file>
+        <file>
+            <source>../resources/authenticators/authenticators.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/security</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>644</fileMode>
+        </file>
+        <!-- Start DEP Hub related configs -->
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/axis2/axis2.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
+            <destName>axis2.xml</destName>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/datasources/master-datasources.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/datasources</outputDirectory>
+            <destName>master-datasources.xml</destName>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/registry.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <destName>registry.xml</destName>
+            <filtered>true</filtered>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/api-manager.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <filtered>true</filtered>
+            <fileMode>755</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/user-mgt.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/mediator-conf.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/publish-events-data-conf.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/oneapi-validation-conf.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/MobileCountryConfig.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        <!--End of DEP Hub related configs -->
     </files>
 </assembly>

@@ -104,6 +104,13 @@
     </handler>    
 
 
+    <!-- This handler use to index APIs when there change in Api artifact-->
+    <handler class="org.wso2.carbon.registry.indexing.IndexingHandler">
+            <filter class="org.wso2.carbon.registry.core.jdbc.handlers.filters.MediaTypeMatcher">
+                 <property name="mediaType">application/vnd.wso2-api+xml</property>
+            </filter>
+        </handler>
+
    <!--This handler delete the subscription hierarcy generated in the notifications path when a subscription is deleted directly -->
 
     <handler class="org.wso2.carbon.registry.extensions.handlers.DeleteHierarchyHandler">
@@ -233,12 +240,13 @@
 
     <!-- This defines index configuration which is used in meta data search feature of the registry -->
     <indexingConfiguration>
-        <startingDelayInSeconds>60</startingDelayInSeconds>
+        <startIndexing>true</startIndexing>
+        <startingDelayInSeconds>35</startingDelayInSeconds>
         <indexingFrequencyInSeconds>3</indexingFrequencyInSeconds>
         <!--number of resources submit for given indexing thread -->
-        <batchSize>50</batchSize>
+        <batchSize>40</batchSize>
         <!--number of worker threads for indexing -->
-        <indexerPoolSize>10</indexerPoolSize>
+        <indexerPoolSize>40</indexerPoolSize>
         <!-- location storing the time the indexing took place-->
         <lastAccessTimeLocation>/_system/local/repository/components/org.wso2.carbon.registry/indexing/lastaccesstime</lastAccessTimeLocation>
         <!-- the indexers that implement the indexer interface for a relevant media type/(s) -->
@@ -272,6 +280,10 @@
 
     <!-- This static configuration is suppose to be modified before any data being loaded to the registry (i.e.: before the first startup) -->
     
+    <versionResourcesOnChange>false</versionResourcesOnChange>
+
+    <!-- NOTE: You can edit the options under "StaticConfiguration" only before the
+     startup. -->
     <staticConfiguration>
         <versioningProperties>true</versioningProperties>
         <versioningComments>true</versioningComments>

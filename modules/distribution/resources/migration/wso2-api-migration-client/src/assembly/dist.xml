@@ -26,6 +26,27 @@
             </includes>
         </fileSet>
         <fileSet>
+            <directory>${project.basedir}/src/main/resources/19to110Migration/rxts</directory>
+            <outputDirectory>migration-scripts/19-110-migration/rxts</outputDirectory>
+            <includes>
+                <include>*.rxt</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/110to200Migration/sql-scripts</directory>
+            <outputDirectory>migration-scripts/110-200-migration</outputDirectory>
+            <includes>
+                <include>*.sql</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>${project.basedir}/src/main/resources/110to200Migration/sql-scripts/rxts</directory>
+            <outputDirectory>migration-scripts/110-200-migration/rxts</outputDirectory>
+            <includes>
+                <include>*.rxt</include>
+            </includes>
+        </fileSet>
+        <fileSet>
             <directory>${project.build.directory}</directory>
             <outputDirectory></outputDirectory>
             <includes>

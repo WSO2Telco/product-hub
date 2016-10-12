@@ -25,21 +25,30 @@ import org.wso2.carbon.apimgt.api.APIProvider;
 import org.wso2.carbon.apimgt.api.model.API;
 import org.wso2.carbon.apimgt.impl.APIConstants;
 import org.wso2.carbon.apimgt.impl.APIManagerFactory;
+import org.wso2.carbon.apimgt.impl.internal.ServiceReferenceHolder;
 import org.wso2.carbon.apimgt.impl.utils.APIUtil;
 import org.wso2.carbon.apimgt.migration.client.internal.ServiceHolder;
 import org.wso2.carbon.context.PrivilegedCarbonContext;
+import org.wso2.carbon.governance.api.exception.GovernanceException;
 import org.wso2.carbon.governance.api.generic.GenericArtifactManager;
 import org.wso2.carbon.governance.api.generic.dataobjects.GenericArtifact;
 import org.wso2.carbon.governance.api.util.GovernanceUtils;
 import org.wso2.carbon.governance.lcm.util.CommonUtil;
+import org.wso2.carbon.registry.core.ActionConstants;
 import org.wso2.carbon.registry.core.Registry;
+import org.wso2.carbon.registry.core.RegistryConstants;
 import org.wso2.carbon.registry.core.Resource;
+import org.wso2.carbon.registry.core.config.RegistryContext;
 import org.wso2.carbon.registry.core.exceptions.RegistryException;
+import org.wso2.carbon.registry.core.jdbc.realm.RegistryAuthorizationManager;
+import org.wso2.carbon.registry.core.utils.RegistryUtils;
 import org.wso2.carbon.user.api.Tenant;
 import org.wso2.carbon.user.api.UserStoreException;
 
 import javax.xml.stream.XMLStreamException;
+
 import java.io.FileNotFoundException;
+import java.nio.charset.Charset;
 
 
 public class RegistryServiceImpl implements RegistryService {
@@ -50,19 +59,30 @@ public class RegistryServiceImpl implements RegistryService {
     @Override
     public void startTenantFlow(Tenant tenant) {
         if (this.tenant != null) {
+            log.error("Start tenant flow called without ending previous tenant flow");
             throw new IllegalStateException("Previous tenant flow has not been ended, " +
                                                 "'RegistryService.endTenantFlow()' needs to be called");
         }
-        PrivilegedCarbonContext.startTenantFlow();
-        PrivilegedCarbonContext.getThreadLocalCarbonContext().setTenantDomain(tenant.getDomain(), true);
-        this.tenant = tenant;
+        else {
+            PrivilegedCarbonContext.startTenantFlow();
+            PrivilegedCarbonContext.getThreadLocalCarbonContext().setTenantDomain(tenant.getDomain(), true);
+            PrivilegedCarbonContext.getThreadLocalCarbonContext().setTenantId(tenant.getId(), true);
+            this.tenant = tenant;
+        }
     }
 
     @Override
     public void endTenantFlow() {
-        PrivilegedCarbonContext.endTenantFlow();
-        this.tenant = null;
-        this.apiProvider = null;
+        if (this.tenant == null) {
+            log.error("End tenant flow called even though tenant flow has already been ended or was not started");
+            throw new IllegalStateException("Previous tenant flow has already been ended, " +
+                    "unnecessary additional RegistryService.endTenantFlow()' call has been detected");
+        }
+        else {
+            PrivilegedCarbonContext.endTenantFlow();
+            this.tenant = null;
+            this.apiProvider = null;
+        }
     }
 
     @Override
@@ -117,9 +137,13 @@ public class RegistryServiceImpl implements RegistryService {
             GenericArtifactManager artifactManager = APIUtil.getArtifactManager(registry, APIConstants.API_KEY);
 
             for (GenericArtifact artifact : artifacts) {
-                artifactManager.updateGenericArtifact(artifact);
+                try {
+                    artifactManager.updateGenericArtifact(artifact);
+                } catch (GovernanceException e) {
+                    // This is to avoid the loop from exiting if one artifact fails.
+                    log.error("Unable to update governance artifact", e);
+                }
             }
-
         } catch (UserStoreException e) {
             log.error("Error occurred while reading tenant information of tenant " + tenant.getId() + '(' + tenant.getDomain() + ')', e);
         } catch (RegistryException e) {
@@ -139,7 +163,6 @@ public class RegistryServiceImpl implements RegistryService {
         } catch (APIManagementException e) {
             log.error("Error when getting api artifact " + artifact.getId() + " from registry", e);
         }
-
         return api;
     }
 
@@ -230,10 +253,10 @@ public class RegistryServiceImpl implements RegistryService {
     }
 
     @Override
-    public void setGovernanceRegistryResourcePermissions(String visibility, String[] roles,
+    public void setGovernanceRegistryResourcePermissions(String userName, String visibility, String[] roles,
                                                                 String resourcePath) throws APIManagementException {
         initAPIProvider();
-        APIUtil.setResourcePermissions(tenant.getAdminName(), visibility, roles, resourcePath);
+        APIUtil.setResourcePermissions(userName, visibility, roles, resourcePath);
     }
 
     private void initAPIProvider() throws APIManagementException {
@@ -269,4 +292,56 @@ public class RegistryServiceImpl implements RegistryService {
         ServiceHolder.getTenantRegLoader().loadTenantRegistry(tenant.getId());
         return ServiceHolder.getRegistryService().getGovernanceUserRegistry(adminName, tenant.getId());
     }
+
+    /* 
+     * Update the RXT file in the registry 
+     * 
+     */
+    @Override
+    public void updateRXTResource(String rxtName, final String rxtPayload) throws UserStoreException, RegistryException {
+        if (tenant == null) {
+            throw new IllegalStateException("The tenant flow has not been started, "
+                                            + "'RegistryService.startTenantFlow(Tenant tenant)' needs to be called");
+        }
+        ServiceHolder.getTenantRegLoader().loadTenantRegistry(tenant.getId());
+
+        Registry registry = ServiceHolder.getRegistryService().getGovernanceSystemRegistry(tenant.getId());
+
+        //Update RXT resource
+        String resourcePath = Constants.RXT_REG_PATH + RegistryConstants.PATH_SEPARATOR + rxtName;       
+        
+        // This is "registry" is a governance registry instance, therefore
+        // calculate the relative path to governance.
+        String govRelativePath = RegistryUtils.getRelativePathToOriginal(resourcePath,
+                                          APIUtil.getMountedPath(RegistryContext.getBaseInstance(),
+                                                                     RegistryConstants.GOVERNANCE_REGISTRY_BASE_PATH));
+        // calculate resource path
+        RegistryAuthorizationManager authorizationManager = new RegistryAuthorizationManager(
+                                                                                ServiceReferenceHolder.getUserRealm());
+        resourcePath = authorizationManager.computePathOnMount(resourcePath);
+        org.wso2.carbon.user.api.AuthorizationManager authManager = ServiceReferenceHolder.getInstance()
+                                                                                          .getRealmService()
+                                                                                          .getTenantUserRealm(tenant.getId())
+                                                                                          .getAuthorizationManager();
+
+        if (registry.resourceExists(govRelativePath)) {     
+            Resource resource = registry.get(govRelativePath);
+            resource.setContent(rxtPayload.getBytes(Charset.defaultCharset()));
+            resource.setMediaType(APIConstants.RXT_MEDIA_TYPE);
+            registry.put(govRelativePath, resource); 
+            authManager.authorizeRole(APIConstants.ANONYMOUS_ROLE, resourcePath, ActionConstants.GET);
+        }                
+        
+        //Update RXT UI Configuration
+        Registry configRegistry = ServiceHolder.getRegistryService().getConfigSystemRegistry(tenant.getId());
+        String rxtUIConfigPath = Constants.GOVERNANCE_ARTIFACT_CONFIGURATION_PATH + APIConstants.API_KEY;
+        if(configRegistry.resourceExists(rxtUIConfigPath)) {
+            Resource rxtUIResource = configRegistry.get(rxtUIConfigPath);
+            rxtUIResource.setContent(ResourceUtil.getArtifactUIContentFromConfig(rxtPayload));
+            configRegistry.put(rxtUIConfigPath, rxtUIResource);
+            }
+
+    }
+    
+    
 }
