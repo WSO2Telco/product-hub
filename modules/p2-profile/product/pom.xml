@@ -620,12 +620,10 @@
                                 <featureArtifactDef>
                                     org.wso2.carbon.metrics:org.wso2.carbon.metrics.feature:${carbon.metrics.version}
                                 </featureArtifactDef>
-<<<<<<< HEAD
 
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.activiti.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
-=======
                                 <featureArtifactDef>
                                     org.wso2.carbon.apimgt:org.wso2.carbon.apimgt.throttling.siddhi.extension.feature:${carbon.apimgt.version}
                                 </featureArtifactDef>
@@ -704,7 +702,6 @@
                                     org.wso2.carbon.analytics.shared:org.wso2.carbon.analytics.shared.data.agents.log4j.feature:${analytics.shared.version}
                                 </featureArtifactDef>
 
->>>>>>> 90bd5a49269bf99ebe55e8ce1dce85849518a134
                             </featureArtifacts>
                         </configuration>
                     </execution>
@@ -1361,11 +1358,9 @@
                                     <version>${carbon.identity.version}</version>
                                 </feature>
 
-<<<<<<< HEAD
                                 <feature>
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
-=======
                                 <!-- MB features -->
                                 <feature>
                                     <id>org.wso2.carbon.messaging.andes.feature.group</id>
@@ -1448,7 +1443,6 @@
                                 <feature>
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
->>>>>>> 90bd5a49269bf99ebe55e8ce1dce85849518a134
                                 </feature>
                             </features>
                         </configuration>
@@ -1841,12 +1835,10 @@
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
-<<<<<<< HEAD
 
                                 <feature>
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
-=======
                                 <feature>
                                     <id>org.wso2.carbon.analytics.shared.la.common.feature.group</id>
                                     <version>${analytics.shared.version}</version>
@@ -1858,7 +1850,6 @@
                                 <feature>
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
->>>>>>> 90bd5a49269bf99ebe55e8ce1dce85849518a134
                                 </feature>
                             </features>
                         </configuration>
@@ -2269,14 +2260,12 @@
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
-<<<<<<< HEAD
 
                                 <feature>
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
-=======
                                 <feature>
                                     <id>org.wso2.carbon.analytics.shared.la.common.feature.group</id>
                                     <version>${analytics.shared.version}</version>
@@ -2289,7 +2278,6 @@
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
                                 </feature>
->>>>>>> 90bd5a49269bf99ebe55e8ce1dce85849518a134
                             </features>
                         </configuration>
                     </execution>
@@ -2853,13 +2841,11 @@
                                     <version>${carbon.metrics.version}</version>
                                 </feature>
 
-<<<<<<< HEAD
                                 <feature>
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
-=======
                                 <!-- START - UES Features -->
                                 <feature>
                                     <id>org.wso2.carbon.dashboards.shindig.feature.group</id>
@@ -2882,7 +2868,6 @@
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
                                 </feature>
->>>>>>> 90bd5a49269bf99ebe55e8ce1dce85849518a134
                             </features>
                         </configuration>
                     </execution>
@@ -3372,12 +3357,10 @@
                                     <version>${carbon.identity.version}</version>
                                 </feature>
 
-<<<<<<< HEAD
                                 <feature>
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-=======
                                 <!-- START - UES Features -->
                                 <feature>
                                     <id>org.wso2.carbon.dashboards.shindig.feature.group</id>
@@ -3415,7 +3398,6 @@
                                     <version>${carbon.analytics.common.version}</version>
                                 </feature>
 
->>>>>>> 90bd5a49269bf99ebe55e8ce1dce85849518a134
                             </features>
                         </configuration>
                     </execution>
@@ -3872,13 +3854,11 @@
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
-<<<<<<< HEAD
 
                                 <feature>
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-=======
                                 <feature>
                                     <id>org.wso2.carbon.analytics.shared.la.common.feature.group</id>
                                     <version>${analytics.shared.version}</version>
@@ -3892,7 +3872,6 @@
                                     <version>${analytics.shared.version}</version>
                                 </feature>
 
->>>>>>> 90bd5a49269bf99ebe55e8ce1dce85849518a134
                             </features>
                         </configuration>
                     </execution>
