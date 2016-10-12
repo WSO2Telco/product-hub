@@ -604,6 +604,10 @@
                                 <featureArtifactDef>
                                     org.wso2.carbon.metrics:org.wso2.carbon.metrics.feature:${carbon.metrics.version}
                                 </featureArtifactDef>
+
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.activiti.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
                             </featureArtifacts>
                         </configuration>
                     </execution>
@@ -1223,6 +1227,11 @@
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.activiti.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                             </features>
                         </configuration>
                     </execution>
@@ -1609,6 +1618,11 @@
 				                <feature>
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
+                                </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.activiti.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
                         </configuration>
@@ -2018,6 +2032,12 @@
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.activiti.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                             </features>
                         </configuration>
                     </execution>
@@ -2514,6 +2534,12 @@
                                     <id>org.wso2.carbon.metrics.feature.group</id>
                                     <version>${carbon.metrics.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.activiti.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                             </features>
                         </configuration>
                     </execution>
@@ -3010,6 +3036,11 @@
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.activiti.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                             </features>
                         </configuration>
                     </execution>
@@ -3466,6 +3497,11 @@
 				                <feature>
                                     <id>org.wso2.carbon.identity.user.profile.feature.group</id>
                                     <version>${carbon.identity.version}</version>
+                                </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.activiti.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
                         </configuration>

@@ -488,10 +488,28 @@
                 <include>blacklist-whitelist-service.war</include>
             </includes>
         </fileSet>
+	<!-- copy activiti webapps  -->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>activiti-explorer.war</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>activiti-rest.war</include>
+            </includes>
+        </fileSet>
 
 
-
-        <!--Multitenancy related file -->
+<!--Multitenancy related file -->
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/multitenancy</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/multitenancy</outputDirectory>
