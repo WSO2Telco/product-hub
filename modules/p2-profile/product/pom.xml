@@ -1361,7 +1361,8 @@
                                 <feature>
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
-                                <!-- MB features -->
+                                </feature>
+				<!-- MB features -->
                                 <feature>
                                     <id>org.wso2.carbon.messaging.andes.feature.group</id>
                                     <version>${carbon.messaging.version}</version>
@@ -1839,7 +1840,8 @@
                                 <feature>
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
-                                <feature>
+                                </feature>
+				<feature>
                                     <id>org.wso2.carbon.analytics.shared.la.common.feature.group</id>
                                     <version>${analytics.shared.version}</version>
                                 </feature>
