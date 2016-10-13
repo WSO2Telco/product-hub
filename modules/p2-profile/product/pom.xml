@@ -61,7 +61,7 @@
     <parent>
         <groupId>com.wso2telco.product.dep</groupId>
         <artifactId>am-p2-profile-gen-parent</artifactId>
-        <version>1.8.0-SNAPSHOT</version>
+        <version>2.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -2378,70 +2378,6 @@
                                     <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-
-
->>>>>>> upstream/2.0.0-upgrade
-                                <feature>
-                                    <id>com.wso2telco.core.mncresolver.feature.group</id>
-                                    <version>${com.wso2telco.core.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.core.msisdnvalidator.feature.group</id>
-                                    <version>${com.wso2telco.core.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.oneapivalidation.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.verificationhandler.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.reportingservice.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.mediator.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.manage.ui.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.store.ui.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisher.ui.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.sandbox.ui.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.aggregatorblacklist.webapp.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-
 
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
