@@ -23,9 +23,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Comment;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.wso2.carbon.apimgt.api.model.APIStatus;
 import org.wso2.carbon.apimgt.impl.APIConstants;
 import org.wso2.carbon.apimgt.migration.APIMigrationException;
-import org.wso2.carbon.apimgt.migration.client._110Specific.dto.AppKeyMappingDTO;
+import org.wso2.carbon.apimgt.migration.client._110Specific.dto.AppKeyMappingTableDTO;
+import org.wso2.carbon.apimgt.migration.client._110Specific.dto.ConsumerKeyDTO;
 import org.wso2.carbon.apimgt.migration.client._110Specific.dto.HandlerPropertyDTO;
 import org.wso2.carbon.apimgt.migration.util.Constants;
 import org.wso2.carbon.apimgt.migration.util.ResourceUtil;
@@ -37,11 +39,12 @@ import org.wso2.carbon.core.util.CryptoUtil;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class ResourceModifier {
     public static String modifyWorkFlowExtensions(String xmlContent) throws APIMigrationException {
@@ -51,31 +54,39 @@ public class ResourceModifier {
 
         if (doc != null) {
             Element rootElement = doc.getDocumentElement();
+            
+            NodeList subscriptionDeletionTag = rootElement.getElementsByTagName(Constants.WF_SUBSCRIPTION_DELETION_TAG);
+            
+            if (subscriptionDeletionTag != null && subscriptionDeletionTag.getLength() == 0) {
+                Element subscriptionElement = doc.createElement(Constants.WF_SUBSCRIPTION_DELETION_TAG);
+                subscriptionElement.setAttribute(Constants.WF_EXECUTOR_ATTRIBUTE, Constants.WF_SUBSCRIPTION_DELETION_CLASS);
+                Comment subscriptionTagComment = doc.createComment(Constants.WF_SUBSCRIPTION_DELETION_TAG_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_SUBSCRIPTION_SERVICE_ENDPOINT_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_USERNAME_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_PASSWORD_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_CALLBACK_URL_COMMENT +
+                        System.lineSeparator() + Constants.WF_SUBSCRIPTION_DELETION_CLOSING_TAG_COMMENT);
+    
+    
+                rootElement.appendChild(subscriptionElement);
+                rootElement.appendChild(subscriptionTagComment);
+            }
 
-            Element subscriptionElement = doc.createElement(Constants.WF_SUBSCRIPTION_DELETION_TAG);
-            subscriptionElement.setAttribute(Constants.WF_EXECUTOR_ATTRIBUTE, Constants.WF_SUBSCRIPTION_DELETION_CLASS);
-            Comment subscriptionTagComment = doc.createComment(Constants.WF_SUBSCRIPTION_DELETION_TAG_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_SUBSCRIPTION_SERVICE_ENDPOINT_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_USERNAME_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_PASSWORD_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_CALLBACK_URL_COMMENT +
-                    System.lineSeparator() + Constants.WF_SUBSCRIPTION_DELETION_CLOSING_TAG_COMMENT);
-
-
-            rootElement.appendChild(subscriptionElement);
-            rootElement.appendChild(subscriptionTagComment);
-
-            Element applicationElement = doc.createElement(Constants.WF_APPLICATION_DELETION_TAG);
-            applicationElement.setAttribute(Constants.WF_EXECUTOR_ATTRIBUTE, Constants.WF_APPLICATION_DELETION_CLASS);
-            Comment applicationTagComment = doc.createComment(Constants.WF_APPLICATION_DELETION_TAG_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_APPLICATION_SERVICE_ENDPOINT_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_USERNAME_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_PASSWORD_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_CALLBACK_URL_COMMENT +
-                    System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_APPLICATION_DELETION_CLOSING_TAG_COMMENT);
-
-            rootElement.appendChild(applicationElement);
-            rootElement.appendChild(applicationTagComment);
+            NodeList applicationDeletionTag = rootElement.getElementsByTagName(Constants.WF_APPLICATION_DELETION_TAG);
+            
+            if (applicationDeletionTag != null && applicationDeletionTag.getLength() == 0) {
+                Element applicationElement = doc.createElement(Constants.WF_APPLICATION_DELETION_TAG);
+                applicationElement.setAttribute(Constants.WF_EXECUTOR_ATTRIBUTE, Constants.WF_APPLICATION_DELETION_CLASS);
+                Comment applicationTagComment = doc.createComment(Constants.WF_APPLICATION_DELETION_TAG_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_APPLICATION_SERVICE_ENDPOINT_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_USERNAME_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_PASSWORD_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_CALLBACK_URL_COMMENT +
+                        System.lineSeparator() + Constants.WF_COMMENT_INDENT + Constants.WF_APPLICATION_DELETION_CLOSING_TAG_COMMENT);
+    
+                rootElement.appendChild(applicationElement);
+                rootElement.appendChild(applicationTagComment);
+            }
             try {
                 doc.getDocumentElement().normalize();
                 Transformer transformer = TransformerFactory.newInstance().newTransformer();
@@ -164,15 +175,25 @@ public class ResourceModifier {
             Element rootElement = doc.getDocumentElement();
 
             NodeList stateTags = rootElement.getElementsByTagName(Constants.API_LIFE_CYCLE_STATE_TAG);
-
+            
             for (int i = 0; i < stateTags.getLength(); ++i) {
                 Element stateTag = (Element) stateTags.item(i);
 
                 NodeList dataModelTags = stateTag.getElementsByTagName(Constants.API_LIFE_CYCLE_DATA_MODEL_TAG);
-
+                
                 if (dataModelTags.getLength() > 0) {
                     Element dataModelTag = (Element) dataModelTags.item(0);
-                    dataModelTag.getParentNode().removeChild(dataModelTag);
+                    if (APIStatus.CREATED.toString().equalsIgnoreCase(stateTag.getAttribute("id"))) {
+                        NodeList dataTags = dataModelTag.getElementsByTagName(Constants.API_LIFE_CYCLE_DATA_TAG);
+                        for (int j=0; j < dataTags.getLength(); j++) {
+                            Element dataTag = (Element) dataTags.item(j);
+                            if (Constants.API_LIFE_CYCLE_EXECUTORS_TAG.equals(dataTag.getAttribute("name"))) {
+                                dataTag.getParentNode().removeChild(dataTag);
+                            }
+                        }
+                    } else {
+                        dataModelTag.getParentNode().removeChild(dataModelTag);
+                    }
                 }
             }
 
@@ -275,7 +296,7 @@ public class ResourceModifier {
             Element existingThrottleHandler = SynapseUtil.getHandler(synapseDTO.getDocument(),
                     Constants.SYNAPSE_API_VALUE_THROTTLE_HANDLER);
 
-            if (!isThrottleHandlerUpdated(existingThrottleHandler)) {
+            if (existingThrottleHandler != null && !isThrottleHandlerUpdated(existingThrottleHandler)) {
                 Element updatedThrottleHandler = SynapseUtil.createHandler(synapseDTO.getDocument(),
                         Constants.SYNAPSE_API_VALUE_THROTTLE_HANDLER, propertyDTOs);
                 SynapseUtil.updateHandler(synapseDTO.getDocument(),
@@ -302,25 +323,23 @@ public class ResourceModifier {
         return false;
     }
 
-    public static void decryptConsumerKeyIfEncrypted(List<AppKeyMappingDTO> appKeyMappingDTOs) {
-        Iterator<AppKeyMappingDTO> iterator = appKeyMappingDTOs.iterator();
-        while (iterator.hasNext()) {
-            try {
-                AppKeyMappingDTO appKeyMappingDTO = iterator.next();
-                byte[] decryptedKey =  CryptoUtil.getDefaultCryptoUtil().
-                                            base64DecodeAndDecrypt(appKeyMappingDTO.getConsumerKey());
+    public static boolean decryptConsumerKeyIfEncrypted(ConsumerKeyDTO consumerKeyDTO) {
+        try {
+            byte[] decryptedKey =  CryptoUtil.getDefaultCryptoUtil().
+                                        base64DecodeAndDecrypt(consumerKeyDTO.getEncryptedConsumerKey());
 
-                String decryptedValue = new String(decryptedKey, Charset.defaultCharset());
+            String decryptedValue = new String(decryptedKey, Charset.defaultCharset());
 
-                if (ResourceUtil.isConsumerKeyValid(decryptedValue)) {
-                    appKeyMappingDTO.setConsumerKey(decryptedValue);
-                }
-                else {
-                    iterator.remove(); // Remove objects with consumer keys that do not require decryption
-                }
-            } catch (CryptoException e) {  // CryptoException indicates value being decrypted was not encrypted
-                iterator.remove(); // Remove objects with consumer keys that do not require decryption
+            if (ResourceUtil.isConsumerKeyValid(decryptedValue)) {
+                consumerKeyDTO.setDecryptedConsumerKey(decryptedValue);
             }
+            else {
+                return false; // Decrypted consumer key is not a valid base64 encoded value
+            }
+        } catch (CryptoException e) {  // CryptoException indicates value being decrypted was not encrypted
+            return false;
         }
+
+        return true;
     }
 }
