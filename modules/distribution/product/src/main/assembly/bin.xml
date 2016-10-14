@@ -280,7 +280,7 @@
     </fileSet>
 
 
-	<fileSet>
+	<!--fileSet>
              <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-publisher/</directory>
              <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/publisher</outputDirectory>
 	     <excludes>
@@ -301,7 +301,7 @@
 		<exclude>login/**</exclude>
 		<exclude>styles-layout.css</exclude>
 	     </excludes>
-         </fileSet>
+         </fileSet-->
 
         <!--fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/admin/</directory>
@@ -662,8 +662,6 @@
                 <exclude>api-publisher/**</exclude>
                 <exclude>api-store/**</exclude>
                 <exclude>portal/**</exclude>
-                <exclude>publisher.zip</exclude>
-                <exclude>store.zip</exclude>
             </excludes>
         </fileSet>
 
