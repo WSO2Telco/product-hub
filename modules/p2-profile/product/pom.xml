@@ -701,6 +701,11 @@
                                 <featureArtifactDef>
                                     org.wso2.carbon.analytics.shared:org.wso2.carbon.analytics.shared.data.agents.log4j.feature:${analytics.shared.version}
                                 </featureArtifactDef>
+				
+				<!-- workflow extensions -->
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.workflow.extensions.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
 
                             </featureArtifacts>
                         </configuration>
@@ -1445,6 +1450,11 @@
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
                                 </feature>
+				<!-- workflow extensions feature -->
+				<feature>
+                                    <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                             </features>
                         </configuration>
                     </execution>
@@ -1852,6 +1862,11 @@
                                 <feature>
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
+                                </feature>
+                                <!-- workflow extensions feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
                         </configuration>
@@ -2279,6 +2294,11 @@
                                 <feature>
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
+                                </feature>
+                                <!-- workflow extensions feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
                         </configuration>
@@ -2805,6 +2825,11 @@
                                 <feature>
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
+                                </feature>
+                                <!-- workflow extensions feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
                         </configuration>
@@ -3335,7 +3360,11 @@
                                     <id>org.wso2.carbon.event.output.adapter.jms.server.feature.group</id>
                                     <version>${carbon.analytics.common.version}</version>
                                 </feature>
-
+                                <!-- workflow extensions feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                             </features>
                         </configuration>
                     </execution>
@@ -3809,7 +3838,11 @@
                                     <id>org.wso2.carbon.analytics.shared.data.agents.log4j.feature.group</id>
                                     <version>${analytics.shared.version}</version>
                                 </feature>
-
+                                <!-- workflow extensions feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                             </features>
                         </configuration>
                     </execution>
