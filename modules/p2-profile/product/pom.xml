@@ -177,6 +177,9 @@
                                     com.wso2telco.dep:com.wso2telco.dep.blacklistwhitelistservice.webapp.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
 
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.workflow.service.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
 
                                 <featureArtifactDef>
                                     org.wso2.carbon.mediation:org.wso2.carbon.mediation.ui.feature:${carbon.mediation.version}
@@ -926,7 +929,10 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
-
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                                 <feature>
                                     <id>org.jaggeryjs.modules.ws.feature.group</id>
                                     <version>${ws.feature.version}</version>
@@ -1841,7 +1847,7 @@
                                     <id>com.wso2telco.dep.activiti.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>org.wso2.carbon.analytics.shared.la.common.feature.group</id>
                                     <version>${analytics.shared.version}</version>
                                 </feature>
@@ -2378,7 +2384,10 @@
                                     <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
-
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
                                     <version>${carbon.commons.version}</version>
@@ -3480,7 +3489,7 @@
                                     </id>
                                     <version>${carbon.identity.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.server.feature.group</id>
                                     <version>${carbon.commons.version}</version>
                                 </feature>
@@ -3536,7 +3545,6 @@
                                     <id>org.wso2.carbon.event.output.adapter.jms.server.feature.group</id>
                                     <version>${carbon.analytics.common.version}</version>
                                 </feature>
-
                                 <feature>
                                     <id>org.apache.synapse.wso2.feature.group</id>
                                     <version>${carbon.mediation.version}</version>
@@ -3567,7 +3575,7 @@
                                     <id>org.wso2.carbon.mediation.configadmin.feature.group</id>
                                     <version>${carbon.mediation.version}</version>
                                 </feature>
-				<feature>
+				                <feature>
                                     <id>org.wso2.carbon.application.mgt.server.feature.group</id>
                                     <version>${carbon.commons.version}</version>
                                 </feature>
