@@ -2377,10 +2377,6 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.mediator.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
                                     <id>com.wso2telco.dep.manage.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
@@ -3443,10 +3439,6 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.reportingservice.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.mediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
