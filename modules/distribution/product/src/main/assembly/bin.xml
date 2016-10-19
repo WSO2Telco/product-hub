@@ -543,6 +543,16 @@
                 <include>blacklist-whitelist-service.war</include>
             </includes>
         </fileSet>
+        <!-- Copy workflow-service webapp-->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>workflow-service.war</include>
+            </includes>
+        </fileSet>
 	<!-- copy activiti webapps  -->
         <fileSet>
             <directory>
@@ -1242,6 +1252,14 @@
                 ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/workflow-extensions.xml
             </source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+		../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/workflow.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
         <!--End of DEP Hub related configs -->
