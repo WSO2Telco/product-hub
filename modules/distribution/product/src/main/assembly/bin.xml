@@ -1236,6 +1236,14 @@
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
         </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/workflow-extensions.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/resources</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
         <!--End of DEP Hub related configs -->
     </files>
 </assembly>
