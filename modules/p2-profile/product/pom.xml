@@ -709,7 +709,10 @@
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.workflow.extensions.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
-
+                                <!-- server startup observer -->
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.server.startup.observer.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
                             </featureArtifacts>
                         </configuration>
                     </execution>
@@ -1461,6 +1464,11 @@
                                     <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <!-- server startup observer feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                             </features>
                         </configuration>
                     </execution>
@@ -1872,6 +1880,11 @@
                                 <!-- workflow extensions feature -->
                                 <feature>
                                     <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <!-- server startup observer feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
@@ -2304,6 +2317,11 @@
                                 <!-- workflow extensions feature -->
                                 <feature>
                                     <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <!-- server startup observer feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
@@ -2834,6 +2852,11 @@
                                 <!-- workflow extensions feature -->
                                 <feature>
                                     <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <!-- server startup observer feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
@@ -3370,6 +3393,11 @@
                                     <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <!-- server startup observer feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                             </features>
                         </configuration>
                     </execution>
@@ -3841,6 +3869,11 @@
                                 <!-- workflow extensions feature -->
                                 <feature>
                                     <id>com.wso2telco.dep.workflow.extensions.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <!-- server startup observer feature -->
+                                <feature>
+                                    <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                             </features>
