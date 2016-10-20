@@ -563,6 +563,17 @@
             </includes>
         </fileSet>
 
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/resources
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/resources/workflow</outputDirectory>
+            <includes>
+                <include>ApplicationCreationApprovalWorkflow-${pom.version}.bar</include>
+                <include>SubscriptionCreationApprovalWorkflow-${pom.version}.bar</include>
+            </includes>
+        </fileSet>
+
         <!-- Copy sample pizzashack api webapp-->
         <fileSet>
             <directory>
