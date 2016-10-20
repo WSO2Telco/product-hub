@@ -137,16 +137,10 @@
                                     com.wso2telco.dep:com.wso2telco.dep.oneapivalidation.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
-                                    com.wso2telco.dep:com.wso2telco.dep.datapublisher.feature:${com.wso2telco.dep.version}
-                                </featureArtifactDef>
-                                <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.subscriptionvalidator.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.verificationhandler.feature:${com.wso2telco.dep.version}
-                                </featureArtifactDef>
-                                <featureArtifactDef>
-                                    com.wso2telco.dep:com.wso2telco.dep.publisheventsdata.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.reportingservice.feature:${com.wso2telco.dep.version}
@@ -881,19 +875,11 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
                                     <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.verificationhandler.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -1508,19 +1494,11 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
                                     <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.verificationhandler.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -1923,19 +1901,11 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
                                     <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.verificationhandler.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -2356,19 +2326,11 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
                                     <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.verificationhandler.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -2887,19 +2849,11 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
                                     <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.verificationhandler.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -3423,19 +3377,11 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
                                     <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.verificationhandler.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -3895,19 +3841,11 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.dep.datapublisher.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
                                     <id>com.wso2telco.dep.subscriptionvalidator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.verificationhandler.feature.group</id>
-                                    <version>${com.wso2telco.dep.version}</version>
-                                </feature>
-                                <feature>
-                                    <id>com.wso2telco.dep.publisheventsdata.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
