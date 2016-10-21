@@ -131,6 +131,76 @@
                 </plugins>
             </build>
         </profile>
+
+        <profile>
+            <!-- pedantic profile to run RAT plugin -->
+            <id>pedantic</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.rat</groupId>
+                        <artifactId>apache-rat-plugin</artifactId>
+						<version>0.12</version>
+                        <configuration>
+                            <licenses>
+                                <license implementation="org.apache.rat.analysis.license.SimplePatternBasedLicense">
+                                    <licenseFamilyCategory>WSO2Telco</licenseFamilyCategory>
+                                    <licenseFamilyName>WSO2Telco License 1.0</licenseFamilyName>
+                                    <notes />
+                                    <patterns>
+										<pattern>WSO2.Telco Inc. (http://www.wso2telco.com) All Rights Reserved</pattern>
+                                    </patterns>
+                                </license>
+                                <!-- <license implementation="org.apache.rat.analysis.license.ApacheSoftwareLicense20" /> -->
+                            </licenses>
+                            <licenseFamilies>
+                                <licenseFamily implementation="org.apache.rat.license.SimpleLicenseFamily">
+                                    <familyName>WSO2Telco License 1.0</familyName>
+                                </licenseFamily>
+                                <!-- <licenseFamily implementation="org.apache.rat.license.Apache20LicenseFamily" /> -->
+                            </licenseFamilies>
+                            <excludes>
+                                <exclude>**/target/**/*</exclude>
+                                <exclude>**/.settings/**/*</exclude>
+                                <exclude>**/.project</exclude>
+                                <exclude>**/.classpath</exclude>
+                                <exclude>**/.git/**/*</exclude>
+                                <exclude>**/README.md</exclude>
+                                <exclude>**/*.iml</exclude>
+                                <exclude>**/*.iws</exclude>
+                                <exclude>**/*.ipr</exclude>
+                                <exclude>**/.gitignore</exclude>
+                                <exclude>**/.gitkeep</exclude>
+                                <exclude>**/*.key</exclude>
+                                <exclude>**/*.json</exclude>
+                                <exclude>**/.idea/**/*</exclude>
+                                <exclude>**/.idea</exclude>
+                                <exclude>**/tlds/**/*</exclude>
+                                <exclude>**/*.log</exclude>
+                                <exclude>**/.gitmodules</exclude>
+                                <exclude>**/LICENSE-2.0.html</exclude>
+                                <exclude>**/*.bpmn2d</exclude>
+                                <exclude>**/MANIFEST.MF</exclude>
+                                <!-- TODO: add license headers for Jaggery files -->
+				<exclude>**/*.jag</exclude>
+                                <exclude>**/.buildpath</exclude>
+				<exclude>**/*.screen</exclude>
+				<exclude>**/xdoc/**/*</exclude>
+                            </excludes>
+                            <excludeSubProjects>false</excludeSubProjects>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
     </profiles>
 
     <build>
