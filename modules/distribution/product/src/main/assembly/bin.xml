@@ -124,13 +124,14 @@
                 <include>**/Saxon-HE-9.4.jar</include>
             </includes>
         </fileSet>
-        <fileSet>
+	<!-- no need to copy the api-manager.xml since it will be copided by dep.hub.core.feature -->
+        <!--fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <includes>
                 <include>**/api-manager.xml</include>
             </includes>
-        </fileSet>
+        </fileSet-->
         <fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/database</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/database</outputDirectory>
@@ -1102,10 +1103,11 @@
             <source>src/main/conf/cipher-tool.properties</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/security</outputDirectory>
         </file>
-        <file>
+	<!-- The Owasp.CsrfGuard.Carbon.properties file will be coped by dep.hub.core.feature -->
+        <!--file>
             <source>src/main/conf/security/Owasp.CsrfGuard.Carbon.properties</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/security</outputDirectory>
-        </file>
+        </file-->
         <!--file>
             <source>
                 ../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf/msg-mgt.properties
@@ -1272,6 +1274,12 @@
             </source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/Owasp.CsrfGuard.Carbon.properties</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/security</outputDirectory>
+	    <fileMode>644</fileMode>
         </file>
         <!--End of DEP Hub related configs -->
     </files>
