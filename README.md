@@ -6,7 +6,7 @@
 
 | Branch | Build Status |
 | :------------ |:-------------
-| master | [![Build Status](https://wso2.org/jenkins/job/product-apim/badge/icon)](https://wso2.org/jenkins/job/product-apim) |
+| master | [![Build Status](http://ci.wso2telco.com/job/product-dep/badge/icon)](http://ci.wso2telco.com/job/product-dep) |
 | 1.10.x | [![Build Status](https://wso2.org/jenkins/job/product-apim_release-1.10.x/badge/icon)](https://wso2.org/jenkins/job/product-apim_release-1.10.x) |
 
 ---
