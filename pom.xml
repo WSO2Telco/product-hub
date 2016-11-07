@@ -55,6 +55,20 @@
         <connection>scm:git:https://github.com/WSO2Telco/product-hub.git</connection>
         <tag>HEAD</tag>
     </scm>
+ <distributionManagement>
+        <snapshotRepository>
+            <id>wso2Telco.snapshots</id>
+            <name>Snapshot repo</name>
+            <url>http://maven.wso2telco.com/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <!-- Publish the versioned releases here -->
+        <repository>
+            <id>wso2telco.releases</id>
+            <name>release repo</name>
+            <url>http://maven.wso2telco.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
 
     <repositories>
         <repository>
