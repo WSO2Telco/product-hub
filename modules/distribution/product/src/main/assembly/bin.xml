@@ -332,7 +332,7 @@
             <directory>../../jaggery</directory>
             <outputDirectory>wso2telcohub-${pom.version}/modules</outputDirectory>
             <includes>
-                <include>**/**.xml</include>
+                <include>**/**</include>
             </includes>
         </fileSet>
 
