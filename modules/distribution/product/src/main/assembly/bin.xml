@@ -47,7 +47,6 @@
                 <exclude>**/release-notes.html</exclude>
                 <exclude>**/carbon.xml</exclude>
                 <exclude>**/registry.xml</exclude>
-                <exclude>**/identity.xml</exclude>
                 <exclude>**/master-datasources.xml</exclude>
         	    <exclude>**/repository/components/plugins/woden_${woden.version}.jar</exclude>
                 <exclude>**/lib/org.wso2.ciphertool-1.0.0-wso2v2.jar</exclude>
@@ -1277,5 +1276,13 @@
 	    <fileMode>644</fileMode>
         </file>
         <!--End of DEP Hub related configs -->
+
+        <!--copying identity.xml-->
+        <file>
+            <source>src/main/conf/identity/identity.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/identity
+            </outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
     </files>
 </assembly>
