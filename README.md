@@ -140,7 +140,28 @@ Key Features
         
 * Monitor API Usage and Performance        
             - Improved dashboard for monitoring usage statistics (Filtering data for a date range, More visually appealing widgets)       
-    
+	   
+
+External Gateway Features
+-------------------------
+* 100% open source
+* Full featured API management
+* Smart orchestration and workflow
+* Secure exposure of MNO services over REST APIs
+* Built-in MNO-specific adapters (SMPP, Webservices and Diameter)
+* Insulates the MNO core network elements from external developers
+* Built-in Mobile Connect compliant Identity Gateway and Authenticator libraries
+* Built in ACR module for anonymising MSISDNs locally
+* Pre-built integration to the Hub and other GSMA API Exchanges
+
+Internal Gateway Features
+-------------------------
+* Freely download and deploy Mobile Connect features
+* Complete API management capabilities provided by the renowned WSO2 API Manager
+* Discovery and governance layer for internal APIs and microservices framework
+* Application and subscription approval workflow enabling governance, ownership, and accountability to be maintained for all approved applications supporting multiple teams that publish APIs
+* Manage access and discoverability of APIs based on user roles
+* Library of connectors to integrate to most standard-based components and common vendor interfaces
 
 System Requirements
 ==================================
@@ -160,7 +181,7 @@ System Requirements
 Installation & Running
 ==================================
 
-1. Extract the wso2am-1.10.0.zip and go to the 'bin' directory
+1. Extract the wso2am-2.0.0.zip and go to the 'bin' directory
 2. Run the wso2server.sh or wso2server.bat as appropriate
 3. API Publisher web application is running at http://localhost:9763/publisher. You may login
    to the Publisher using the default administrator credentials (user: admin, pass: admin).
@@ -180,9 +201,7 @@ WSO2 Inc. offers a variety of development and production support
 programs, ranging from Web-based support up through normal business
 hours, to premium 24x7 phone support.
 
-For additional support information please refer to http://wso2.com/support
-
-For more information on WSO2 API Manager please visit http://wso2.com/products/api-manager
+For additional support information please refer to https://wso2telco.com/services
 
 Known issues of WSO2 API Manager
 ==================================
