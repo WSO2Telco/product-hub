@@ -171,7 +171,7 @@ Documentation
 ==============
 
 On-line product documentation is available at:
-        http://docs.wso2.org/wiki/display/AM1100/WSO2+API+Manager+Documentation
+       http://docs.wso2telco.com:8090/pages/viewpage.action?pageId=1507678
 
 Support
 ==================================
