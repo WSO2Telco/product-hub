@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="RequestStatPublisherSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <property expression="json-eval($.)" name="JSON-Payload" scope="default" type="STRING"/>
+    <property expression="get-property('transport','X-JWT-Assertion')" name="authheader" scope="default" type="STRING"/>
+    <property expression="get-property('SYSTEM_TIME')" name="REQUEST_TIME" scope="default" type="LONG"/>
+    <script language="js"><![CDATA[var uid = mc.getProperty('api.ut.userId').trim(); var arrayUserTenant = new Array();arrayUserTenant= uid.split("@"); mc.setProperty("tenant",arrayUserTenant[1]); var temp_auth = mc.getProperty('authheader').trim();var val = new Array();val= temp_auth.split("\\."); var auth=val[1];var jsonStr = Packages.java.lang.String(Packages.org.apache.axiom.om.util.Base64.decode(auth), "UTF-8"); var tempStr = new Array();tempStr= jsonStr.split('role":');var decoded = new Array();decoded = tempStr[1].split(',"http:');mc.setProperty("roles",decoded[0]);]]></script>
+    <publishEvent>
+        <eventSink>Test</eventSink>
+        <streamName>org.wso2telco.analytics.hub.stream.requestStatistics</streamName>
+        <streamVersion>1.0.0</streamVersion>
+        <attributes>
+            <meta>
+                <attribute defaultValue="" expression="get-property('clientType')" name="clientType" type="STRING"/>
+            </meta>
+            <correlation/>
+            <payload>
+                <attribute defaultValue="" expression="get-property('api.ut.consumerKey')" name="consumerKey" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.context')" name="context" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('SYNAPSE_REST_API_VERSION')" name="api_version" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.api')" name="api" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.resource')" name="resourcePath" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.HTTP_METHOD')" name="method" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.version')" name="version" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('REQUEST_TIME')" name="requestTime" type="LONG"/>
+                <attribute defaultValue="" expression="get-property('api.ut.userId')" name="serviceProvider" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('tenant')" name="tenantDomain" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.hostName')" name="hostName" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.apiPublisher')" name="apiPublisher" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.application.name')" name="applicationName" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('api.ut.application.id')" name="applicationId" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('requestId')" name="requestId" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('roles')" name="operatorId" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('transport','msisdn')" name="msisdn" type="STRING"/>
+                <attribute defaultValue="" name="direction" type="STRING" value="north-bound"/>
+                <attribute defaultValue="" expression="get-property('JSON-Payload')" name="jsonBody" type="STRING"/>
+            </payload>
+            <arbitrary/>
+        </attributes>
+    </publishEvent>
+</sequence>
