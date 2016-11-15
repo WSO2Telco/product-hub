@@ -27,12 +27,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>am-p2-profile-gen-parent</artifactId>
+    <artifactId>dep-p2-profile-gen-parent</artifactId>
     <packaging>pom</packaging>
-    <name>WSO2 API Manager - P2 Profile Generation Parent</name>
-    <url>http://wso2.com/products/api-manager</url>
-    <description>WSO2 API  Manager P2 Profile Generation Parent</description>
-
+    <name>WSO2Telco DEP - P2 Profile Generation Parent</name>
+<url>http://wso2.com/products/api-manager</url>
+    <description>WSO2Telco Digital Enablement Hub</description>
     <licenses>
         <license>
             <name>Apache License Version 2.0</name>

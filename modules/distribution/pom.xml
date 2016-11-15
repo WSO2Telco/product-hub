@@ -27,11 +27,11 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>am-distribution-parent</artifactId>
+    <artifactId>dep-distribution-parent</artifactId>
     <packaging>pom</packaging>
-    <name>WSO2 API Manager - Distribution Parent</name>
+    <name>WSO2Telco DEP - Distribution Parent</name>
     <url>http://wso2.com/products/api-manager</url>
-    <description>WSO2 API Manager Distribution Parent</description>
+    <description>WSO2Telco Digital Enablement Hub</description>
 
     <licenses>
         <license>
