@@ -33,7 +33,7 @@
     <packaging>pom</packaging>
     <name>WSO2Telco DEP - P2 Profile Repository Generation Parent</name>
     <url>http://wso2telco.com/gateways</url>
-    <description>WSO2Telco DEP  Manager P2 Profile Repository Generation Parent</description>
+    <description>WSO2Telco DEP  P2 Profile Repository Generation Parent</description>
 
     <licenses>
         <license>
@@ -43,7 +43,7 @@
     </licenses>
 
     <modules>
-        <module>nested-categories</module>
+        <!--module>nested-categories</module-->
         <module>repo-generation</module>
     </modules>
 </project>
