@@ -30,7 +30,7 @@
     <artifactId>dep-p2-profile-gen-parent</artifactId>
     <packaging>pom</packaging>
     <name>WSO2Telco DEP - P2 Profile Generation Parent</name> 
-    <url>http://wso2.com/products/api-manager</url>
+    <url>http://wso2telco.com/gateways</url>
     <description>WSO2Telco Digital Enablement Hub</description>
     <licenses>
         <license>

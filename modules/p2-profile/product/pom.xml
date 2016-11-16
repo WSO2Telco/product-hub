@@ -60,16 +60,16 @@
 
     <parent>
         <groupId>com.wso2telco.product.dep</groupId>
-        <artifactId>am-p2-profile-gen-parent</artifactId>
+        <artifactId>dep-p2-profile-gen-parent</artifactId>
         <version>2.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>am-p2-profile</artifactId>
+    <artifactId>dep-p2-profile</artifactId>
     <packaging>pom</packaging>
     <name>WSO2 API Manager - P2 Profile Generation</name>
-    <url>http://www.wso2.org</url>
+    <url>http://wso2telco.com/gateways</url>
 
     <build>
         <plugins>

@@ -33,7 +33,11 @@
     <packaging>pom</packaging>
     <name>WSO2Telco DEP - P2 Profile Repository Generation Parent</name>
     <url>http://wso2telco.com/gateways</url>
+<<<<<<< 0352d1b3a749bdd0573ac4f3fad5eb6917af592c
+    <description>WSO2Telco DEP  Manager P2 Profile Repository Generation Parent</description>
+=======
     <description>WSO2Telco DEP  P2 Profile Repository Generation Parent</description>
+>>>>>>> HUBDEV-1146
 
     <licenses>
         <license>
