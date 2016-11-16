@@ -17,7 +17,9 @@
   ~  under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
         <groupId>com.wso2telco.product.dep</groupId>
@@ -27,11 +29,16 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>dep-p2-profile-gen-parent</artifactId>
+    <artifactId>dep-p2-profile-repository-generation-parent</artifactId>
     <packaging>pom</packaging>
-    <name>WSO2Telco DEP - P2 Profile Generation Parent</name> 
+    <name>WSO2Telco DEP - P2 Profile Repository Generation Parent</name>
     <url>http://wso2telco.com/gateways</url>
-    <description>WSO2Telco Digital Enablement Hub</description>
+<<<<<<< 0352d1b3a749bdd0573ac4f3fad5eb6917af592c
+    <description>WSO2Telco DEP  Manager P2 Profile Repository Generation Parent</description>
+=======
+    <description>WSO2Telco DEP  P2 Profile Repository Generation Parent</description>
+>>>>>>> HUBDEV-1146
+
     <licenses>
         <license>
             <name>Apache License Version 2.0</name>
@@ -40,23 +47,7 @@
     </licenses>
 
     <modules>
-        <module>product</module>
+        <!--module>nested-categories</module-->
+        <module>repo-generation</module>
     </modules>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>auto-clean</id>
-                        <phase>initialize</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
