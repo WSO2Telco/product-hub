@@ -43,7 +43,6 @@
                 <exclude>**/version.txt</exclude>
                 <exclude>**/README.txt</exclude>
                 <exclude>**/LICENSE.txt</exclude>
-                <exclude>**/INSTALL.txt</exclude>
                 <exclude>**/release-notes.html</exclude>
                 <exclude>**/carbon.xml</exclude>
                 <exclude>**/registry.xml</exclude>
@@ -963,27 +962,15 @@
             <fileMode>644</fileMode>
         </file>
         <file>
-            <source>../../../INSTALL.txt</source>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
             <source>src/main/conf/XMLInputFactory.properties</source>
             <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
             <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
-            <source>../../../docs/xdoc/release-notes.xml</source>
+            <source>../../../release-notes.html</source>
             <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
             <destName>release-notes.html</destName>
-            <fileMode>644</fileMode>
-        </file>
-        <file>
-            <source>target/wso2carbon-core-${carbon.platform.version}/bin/README.txt</source>
-            <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
-            <filtered>true</filtered>
             <fileMode>644</fileMode>
         </file>
         <file>
