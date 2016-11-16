@@ -1113,7 +1113,7 @@
         <google.guava.version>18.0</google.guava.version>
 
         <carbon.metrics.version>1.2.0</carbon.metrics.version>
-	<com.wso2telco.dep.version>2.0.0-SNAPSHOT</com.wso2telco.dep.version>
+	<com.wso2telco.dep.version>2.0.0</com.wso2telco.dep.version>
 	<com.wso2telco.core.version>2.0.3</com.wso2telco.core.version>
         <!-- MB Features -->
         <carbon.messaging.version>3.1.6</carbon.messaging.version>
