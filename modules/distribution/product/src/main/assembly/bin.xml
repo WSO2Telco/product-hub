@@ -196,6 +196,9 @@
 	<fileSet>
 	   <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/identity/</directory>
 	   <outputDirectory>wso2telcohub-${pom.version}/repository/conf/identity</outputDirectory>
+        <excludes>
+            <exclude>**/identity.xml</exclude>
+        </excludes>
 	</fileSet>
 
         <!-- Start API Manager related -->
