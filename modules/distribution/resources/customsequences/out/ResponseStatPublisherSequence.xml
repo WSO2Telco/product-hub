@@ -18,7 +18,7 @@
             <payload>
                 <attribute defaultValue="" expression="get-property('api.ut.consumerKey')" name="consumerKey" type="STRING"/>
                 <attribute defaultValue="" expression="get-property('api.ut.context')" name="context" type="STRING"/>
-                <attribute defaultValue="" expression="get-property('SYNAPSE_REST_API_VERSION')" name="api_version" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('SYNAPSE_REST_API_VERSION')" name="apiVersion" type="STRING"/>
                 <attribute defaultValue="" expression="get-property('api.ut.api')" name="api" type="STRING"/>
                 <attribute defaultValue="" expression="get-property('api.ut.resource')" name="resourcePath" type="STRING"/>
                 <attribute defaultValue="" expression="get-property('api.ut.HTTP_METHOD')" name="method" type="STRING"/>
@@ -37,6 +37,9 @@
                 <attribute defaultValue="" expression="get-property('transport','msisdn')" name="misisdn" type="STRING"/>
                 <attribute defaultValue="" name="direction" type="STRING" value="north-bound"/>
                 <attribute defaultValue="" expression="get-property('JSON-Payload')" name="jsonBody" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('spOperatorId')" name="spOperatorId" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('spUserId')" name="spUserId" type="STRING"/>
+                <attribute defaultValue="" expression="get-property('spConsumerKey')" name="spConsumerKey" type="STRING"/>
             </payload>
             <arbitrary/>
         </attributes>
