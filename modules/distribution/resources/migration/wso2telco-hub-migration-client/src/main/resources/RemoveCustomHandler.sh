@@ -1,7 +1,7 @@
-echo "Please enter the path"
+echo "Enter the path to PRODUCT_HOME"
 read path
 lastChar=${path: -1}
-subPath='wso2telcohub-2.0.0/repository/deployment/server/synapse-configs/default/api/'
+subPath='repository/deployment/server/synapse-configs/default/api/'
 if [ $lastChar == "/" ]
 then
 	realPath=$path$subPath
@@ -20,7 +20,7 @@ then
 		fi
 	done
 else
-    echo "$realPath does not exist."
+    echo "$realPath does not exist"
 fi
 
 
