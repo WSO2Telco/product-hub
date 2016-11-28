@@ -18,6 +18,7 @@
 			<outputDirectory>/</outputDirectory>
 			<includes>
 				<include>SynapseMigration/*</include>
+				<include>migration-scripts/*</include>
 			</includes>
 		</fileSet>
 		<fileSet>
