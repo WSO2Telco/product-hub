@@ -1274,5 +1274,14 @@
             </outputDirectory>
             <fileMode>644</fileMode>
         </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/conf/spendLimit.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
     </files>
 </assembly>
