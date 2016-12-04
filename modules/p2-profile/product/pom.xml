@@ -704,6 +704,12 @@
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.server.startup.observer.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
+                                <featureArtifactDef>
+                                    org.wso2.carbon.mediation:org.wso2.carbon.mediator.publishevent.feature:${carbon.mediation.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    org.wso2.carbon.mediation:org.wso2.carbon.event.sink.feature:${carbon.mediation.version}
+                                </featureArtifactDef>
                             </featureArtifacts>
                         </configuration>
                     </execution>
@@ -1448,6 +1454,14 @@
                                     <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>org.wso2.carbon.mediator.publishevent.feature.group</id>
+                                    <version>${carbon.mediation.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>org.wso2.carbon.event.sink.feature.group</id>
+                                    <version>${carbon.mediation.version}</version>
+                                </feature>
                             </features>
                         </configuration>
                     </execution>
@@ -1853,6 +1867,14 @@
                                 <feature>
                                     <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>org.wso2.carbon.mediator.publishevent.feature.group</id>
+                                    <version>${carbon.mediation.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>org.wso2.carbon.event.sink.feature.group</id>
+                                    <version>${carbon.mediation.version}</version>
                                 </feature>
                             </features>
                         </configuration>
@@ -2278,6 +2300,14 @@
                                 <feature>
                                     <id>com.wso2telco.dep.server.startup.observer.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>org.wso2.carbon.mediator.publishevent.feature.group</id>
+                                    <version>${carbon.mediation.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>org.wso2.carbon.event.sink.feature.group</id>
+                                    <version>${carbon.mediation.version}</version>
                                 </feature>
                             </features>
                         </configuration>
