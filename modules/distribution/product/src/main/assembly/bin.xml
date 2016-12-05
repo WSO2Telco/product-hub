@@ -122,6 +122,13 @@
                 <include>**/Saxon-HE-9.4.jar</include>
             </includes>
         </fileSet>
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/components/lib</outputDirectory>
+            <includes>
+                <include>validator-handler-${com.wso2telco.dep.version}.jar</include>
+            </includes>
+        </fileSet>
 	<!-- no need to copy the api-manager.xml since it will be copided by dep.hub.core.feature -->
         <!--fileSet>
             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/repository/conf</directory>
