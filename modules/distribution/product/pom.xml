@@ -211,7 +211,7 @@
                                         <exclude name="**/diffview/**" />
                                         <include name="**/*.html" />
                                     </fileset>
-                                    <mapper type="glob" from="*.html" to="*.xml" />
+                                    <!--mapper type="glob" from="*.html" to="*.xml" /-->
                                 </move>
                                 <delete dir="src/site/xdoc" />
                                 <mkdir dir="src/site/xdoc" />
