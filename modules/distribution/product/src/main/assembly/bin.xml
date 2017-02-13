@@ -1290,5 +1290,38 @@
             <fileMode>644</fileMode>
         </file>
 
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/synapse-configs/sequences/custom_message.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs/default/sequences</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+        
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/synapse-configs/sequences/httpHeaderSeq.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs/default/sequences</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/synapse-configs/sequences/WSO2AM--Ext--In.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs/default/sequences</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/synapse-configs/sequences/WSO2AM--Ext--Out.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs/default/sequences</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
     </files>
 </assembly>
