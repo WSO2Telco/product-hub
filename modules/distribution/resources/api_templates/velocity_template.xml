@@ -364,6 +364,8 @@
     #end
     #end
 </handler>
+<handler class="com.wso2telco.dep.validator.handler.APIInfoHandler">
+</handler>
 #end
 </handlers>
         #end
@@ -374,6 +376,8 @@
          <handlers>
       <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.CORSRequestHandler">
          <property name="inline" value="INLINE"/>
+      </handler>
+      <handler class="com.wso2telco.dep.validator.handler.APIInfoHandler">
       </handler>
        </handlers>
         </api>
