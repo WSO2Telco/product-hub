@@ -374,11 +374,10 @@
         #if($apiStatus == 'PROTOTYPED')
         #end
         ## end of apiIsBlocked check
-         <handlers>
+<handlers>
       <handler class="org.wso2.carbon.apimgt.gateway.handlers.security.CORSRequestHandler">
          <property name="inline" value="INLINE"/>
       </handler>
+</handlers>
 
-      </handler>
-       </handlers>
-        </api>
+</api>
