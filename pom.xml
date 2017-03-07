@@ -1014,8 +1014,8 @@
     <properties>
 	    
 	<!-- WSO2 Telco versions -->    
-	<com.wso2telco.dep.version>2.1.0-SNAPSHOT</com.wso2telco.dep.version>
-	<com.wso2telco.core.version>2.0.17-SNAPSHOT</com.wso2telco.core.version>
+	<com.wso2telco.dep.version>2.1.1-SNAPSHOT</com.wso2telco.dep.version>
+	<com.wso2telco.core.version>2.0.19-SNAPSHOT</com.wso2telco.core.version>
 
         <!-- APIM Component Version -->
         <carbon.apimgt.version>6.0.4</carbon.apimgt.version>
