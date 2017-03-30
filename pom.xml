@@ -1014,7 +1014,7 @@
     <properties>
 	    
 	<!-- WSO2 Telco versions -->    
-	<com.wso2telco.dep.version>2.1.1</com.wso2telco.dep.version>
+	<com.wso2telco.dep.version>2.1.4</com.wso2telco.dep.version>
 	<com.wso2telco.core.version>2.0.18</com.wso2telco.core.version>
 
         <!-- APIM Component Version -->
