@@ -1,13 +1,12 @@
-        ================================================================================
-                                        WSO2Telco DEP Gateway
-        ================================================================================
+
+# WSO2Telco Digital Enablement Platform
+
         
 ---
 
 | Branch | Build Status |
 | :------------ |:-------------
 | master | [![Build Status](http://ci.wso2telco.com/job/product-dep/badge/icon)](http://ci.wso2telco.com/job/product-dep)|
-|2.0.0-release|[![Build Status](http://ci.wso2telco.com/view/HUB-GW-2.0.0/job/product-dep-2.0.0/badge/icon)](http://ci.wso2telco.com/view/HUB-GW-2.0.0/job/product-dep-2.0.0/)|
 
 ---
 
