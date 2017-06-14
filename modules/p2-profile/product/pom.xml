@@ -152,6 +152,9 @@
                                     com.wso2telco.dep:com.wso2telco.dep.billingextension.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.nashornmediator.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.mediator.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
@@ -907,6 +910,10 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
+                                    <id>com.wso2telco.dep.nashornmediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.dep.mediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
@@ -1542,6 +1549,10 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
+                                    <id>com.wso2telco.dep.nashornmediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.dep.mediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
@@ -1962,6 +1973,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.billingextension.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.nashornmediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -2403,6 +2418,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.billingextension.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.nashornmediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -2934,6 +2953,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.billingextension.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.nashornmediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
@@ -3473,6 +3496,10 @@
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
+                                    <id>com.wso2telco.dep.nashornmediator.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.dep.manage.ui.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
@@ -3942,6 +3969,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.billingextension.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.nashornmediator.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
