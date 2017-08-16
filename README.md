@@ -25,6 +25,11 @@ WSO2Telco DEP can function as an:
 
 For more information on WSO2Telco DEP Gateway please visit https://wso2telco.com/gateways.
 
+* Hub
+	- Expose and govern all your gateways using a common platform.
+
+For more information on WSO2Telco DEP Hub please visit https://wso2telco.com/hub.
+
 Key Features
 =============
 
@@ -59,7 +64,7 @@ System Requirements
    with MS IE 7. In addition to JavaScript, ActiveX should also be enabled
    with IE. This can be achieved by setting your security level to
    medium or lower.
-5. To build WSO2Telco DEP Gateway from the Source distribution, it is necessary that you have
+5. To build WSO2Telco DEP API Manager from the Source distribution, it is necessary that you have
    JDK 1.8 version and Maven 3.3.9
 
 Installation & Running
@@ -88,12 +93,12 @@ who build the technology.
 
 For additional support information please refer to https://wso2telco.com/services
 
-Known issues of WSO2Telco DEP Gateway
+Known issues of WSO2Telco DEP API Manager
 =====================================
 
-All the open issues pertaining to WSO2Telco DEP Gateway are reported at the following location:
+All the open issues pertaining to WSO2Telco DEP API Manager are reported at the following location:
 
-    https://jira.wso2telco.com/jira/issues/?filter=12805
+    https://jira.wso2telco.com/jira/projects/DEPAM/issues?filter=allopenissues
 
 Issue Tracker
 ==================================
@@ -101,7 +106,7 @@ Issue Tracker
 Help us make our software better. Please submit any bug reports or feature
 requests through the WSO2Telco JIRA system:
 
-    https://jira.wso2telco.com/jira/secure/Dashboard.jspa?selectPageId=10500
+    https://jira.wso2telco.com/jira/projects/DEPAM/issues
 
 --------------------------------------------------------------------------------
 (c) Copyright 2016 WSO2Telco.
