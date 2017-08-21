@@ -574,7 +574,6 @@
             </includes>
         </fileSet>
 
-
 	<!-- copy activiti webapps  -->
         <fileSet>
             <directory>
@@ -583,6 +582,16 @@
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
                 <include>activiti-explorer.war</include>
+            </includes>
+        </fileSet>
+        <!-- Copy ratecard-service webapp-->
+        <fileSet>
+            <directory>
+                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+            </directory>
+            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
+            <includes>
+                <include>ratecard-service.war</include>
             </includes>
         </fileSet>
         <fileSet>
