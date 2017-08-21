@@ -185,6 +185,10 @@
                                 </featureArtifactDef>
 
                                 <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.ratecard.service.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+
+                                <featureArtifactDef>
                                     org.wso2.carbon.mediation:org.wso2.carbon.mediation.ui.feature:${carbon.mediation.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
@@ -954,6 +958,12 @@
                                     <id>com.wso2telco.dep.workflow.service.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.ratecard.service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>org.jaggeryjs.modules.ws.feature.group</id>
                                     <version>${ws.feature.version}</version>
@@ -2469,6 +2479,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.workflow.service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+                                 <feature>
+                                    <id>com.wso2telco.dep.ratecard.service.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
                                 <feature>
