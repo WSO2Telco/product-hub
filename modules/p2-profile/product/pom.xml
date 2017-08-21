@@ -185,7 +185,7 @@
                                 </featureArtifactDef>
 
                                 <featureArtifactDef>
-                                    com.wso2telco.dep:com.wso2telco.dep.quota.limit.service.feature:${com.wso2telco.dep.version}
+                                    com.wso2telco.dep:com.wso2telco.dep.quota.service.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
 
                                 <featureArtifactDef>
@@ -955,7 +955,7 @@
                                 </feature>
 
                                 <feature>
-                                    <id>com.wso2telco.dep.quota.limit.service.feature.group</id>
+                                    <id>com.wso2telco.dep.quota.service.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
@@ -2482,7 +2482,7 @@
                                 </feature>
 
                                 <feature>
-                                    <id>com.wso2telco.dep.quota.limit.service.feature.group</id>
+                                    <id>com.wso2telco.dep.quota.service.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
