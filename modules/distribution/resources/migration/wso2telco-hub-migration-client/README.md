@@ -13,4 +13,6 @@ How to use,
 	- Copy the com.wso2telco.hub.custom.tier.migration-1.0.X.jar file to the <wso2telcohub_HOME>/repository/components/dropins directory.
 	- Start the server with -DmigrateTier=true to migrate custom application tiers
 	- Run the RemoveCustomHandler.sh script in SynapseMigration folder and give the path to wso2telcohub_HOME while execution.
-   	- Update the "<<STATS_DB>>" with relavant "WSO2AM_STATS_DB" in migration-scripts/mysql.sql file & manually execute it against that DB.
+    - Run below DB scripts located in migration-scripts/mysql directory
+          -- stats_db.sql in 'WSO2AM_STATS_DB' schema
+          -- dep_db.sql in "WSO2TELCO_DEP_DB" schema
