@@ -185,6 +185,9 @@
                                 </featureArtifactDef>
 
                                 <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.quota.service.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.ratecard.service.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
 
@@ -951,6 +954,11 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.blacklistwhitelistservice.webapp.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.quota.service.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
 
@@ -2481,10 +2489,15 @@
                                     <id>com.wso2telco.dep.workflow.service.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+                                <feature>
+                                    <id>com.wso2telco.dep.quota.service.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
                                  <feature>
                                     <id>com.wso2telco.dep.ratecard.service.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
                                 <feature>
                                     <id>org.wso2.carbon.tenant.mgt.common.feature.group</id>
                                     <version>${carbon.commons.version}</version>
