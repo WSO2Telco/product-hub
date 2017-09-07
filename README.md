@@ -99,7 +99,7 @@ Known issues of WSO2Telco DEP API Manager
 All the open issues pertaining to WSO2Telco DEP API Manager are reported at the following location:
 
     https://jira.wso2telco.com/jira/projects/DEPAM/issues?filter=allopenissues
-
+    
 Issue Tracker
 ==================================
 
@@ -107,6 +107,6 @@ Help us make our software better. Please submit any bug reports or feature
 requests through the WSO2Telco JIRA system:
 
     https://jira.wso2telco.com/jira/projects/DEPAM/issues
-
+    
 --------------------------------------------------------------------------------
 (c) Copyright 2016 WSO2Telco.
