@@ -133,6 +133,11 @@
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.operatorservice.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
+
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.workflow.core.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.oneapivalidation.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
@@ -883,6 +888,12 @@
                                     <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
@@ -1537,6 +1548,12 @@
                                     <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
@@ -1968,6 +1985,12 @@
                                     <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
@@ -2417,6 +2440,12 @@
                                     <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
@@ -2965,6 +2994,12 @@
                                     <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
@@ -3509,6 +3544,12 @@
                                     <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
@@ -3989,6 +4030,12 @@
                                     <id>com.wso2telco.dep.operatorservice.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
                                 </feature>
+
+                                <feature>
+                                    <id>com.wso2telco.dep.workflow.core.feature.group</id>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                </feature>
+
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
