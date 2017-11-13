@@ -205,6 +205,7 @@
 	   <outputDirectory>wso2telcohub-${pom.version}/repository/conf/identity</outputDirectory>
         <excludes>
             <exclude>**/identity.xml</exclude>
+            <exclude>**/identity-mgt.properties</exclude>
         </excludes>
 	</fileSet>
 
@@ -1319,6 +1320,14 @@
         <!--copying identity.xml-->
         <file>
             <source>src/main/conf/identity/identity.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/identity
+            </outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <!--copying identity-mgt.properties-->
+        <file>
+            <source>src/main/conf/identity/identity-mgt.properties</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/identity
             </outputDirectory>
             <fileMode>644</fileMode>
