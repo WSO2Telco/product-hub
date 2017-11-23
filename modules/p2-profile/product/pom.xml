@@ -126,6 +126,9 @@
                                 <featureArtifactDef>
                                     com.wso2telco.core:com.wso2telco.core.msisdnvalidator.feature:${com.wso2telco.core.version}
                                 </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.core:com.wso2telco.core.userrolepermission.feature:${com.wso2telco.core.version}
+                                </featureArtifactDef>
 
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.hub.core.feature:${com.wso2telco.dep.version}
@@ -888,6 +891,10 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
+                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
@@ -1542,6 +1549,10 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
+                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
@@ -1970,6 +1981,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
@@ -2419,6 +2434,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
@@ -2970,6 +2989,10 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
+                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
@@ -3514,6 +3537,10 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
+                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
                                     <id>com.wso2telco.core.mncresolver.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
@@ -3991,6 +4018,10 @@
                                 </feature>
                                 <feature>
                                     <id>com.wso2telco.core.dbutils.feature.group</id>
+                                    <version>${com.wso2telco.core.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
