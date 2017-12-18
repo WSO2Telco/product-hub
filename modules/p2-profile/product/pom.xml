@@ -127,7 +127,7 @@
                                     com.wso2telco.core:com.wso2telco.core.msisdnvalidator.feature:${com.wso2telco.core.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
-                                    com.wso2telco.core:com.wso2telco.core.userrolepermission.feature:${com.wso2telco.core.version}
+                                    com.wso2telco.core:com.wso2telco.core.userprofile.feature:${com.wso2telco.core.version}
                                 </featureArtifactDef>
 
                                 <featureArtifactDef>
@@ -891,7 +891,7 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <id>com.wso2telco.core.userprofile.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
@@ -1549,7 +1549,7 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <id>com.wso2telco.core.userprofile.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
@@ -1984,7 +1984,7 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <id>com.wso2telco.core.userprofile.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
@@ -2437,7 +2437,7 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <id>com.wso2telco.core.userprofile.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
@@ -2989,7 +2989,7 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <id>com.wso2telco.core.userprofile.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
@@ -3537,7 +3537,7 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <id>com.wso2telco.core.userprofile.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
@@ -4021,7 +4021,7 @@
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
-                                    <id>com.wso2telco.core.userrolepermission.feature.group</id>
+                                    <id>com.wso2telco.core.userprofile.feature.group</id>
                                     <version>${com.wso2telco.core.version}</version>
                                 </feature>
                                 <feature>
