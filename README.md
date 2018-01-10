@@ -108,5 +108,12 @@ requests through the WSO2Telco JIRA system:
 
     https://jira.wso2telco.com/jira/projects/DEPAM/issues
     
+### Big Thanks
+
+Cross-browser Testing Platform and Open Source &#10084; Provided by 
+![Alt text](https://github.com/sahantelco/product-hub/blob/master/image/LOGO_Sauce-Labs_Horiz_Red-Grey_RGB.png)
+ https://saucelabs.com	
+	
+	
 --------------------------------------------------------------------------------
 (c) Copyright 2016 WSO2Telco.
