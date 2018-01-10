@@ -111,7 +111,7 @@ requests through the WSO2Telco JIRA system:
 ### Big Thanks
 
 Cross-browser Testing Platform and Open Source &#10084; Provided by 
-![Alt text](https://github.com/sahantelco/product-hub/blob/master/images/LOGO_Sauce-Labs_Horiz_Red-Grey_RGB.png)
+![Alt text](https://github.com/WSO2Telco/product-hub/blob/master/images/LOGO_Sauce-Labs_Horiz_Red-Grey_RGB.png)
  https://saucelabs.com	
 	
 	
