@@ -51,7 +51,7 @@
         <!-- WSO2 Telco versions -->
         <com.wso2telco.dep.version>2.3.2-SNAPSHOT</com.wso2telco.dep.version>
         <com.wso2telco.core.version>2.3.2-SNAPSHOT</com.wso2telco.core.version>
-
+	<com.wso2telco.manageapp.version>2.0.0</com.wso2telco.manageapp.version>
         <!-- APIM Component Version -->
         <carbon.apimgt.version>6.0.4</carbon.apimgt.version>
         <carbon.apimgt.imp.pkg.version>[6.0.0, 7.0.0)</carbon.apimgt.imp.pkg.version>
@@ -196,23 +196,42 @@
         <product.cep.version>4.1.0</product.cep.version>
     </properties>
 
-    <scm>
+    <!--scm>
         <url>https://github.com/WSO2Telco/product-hub.git</url>
         <developerConnection>scm:git:https://github.com/WSO2Telco/product-hub.git</developerConnection>
         <connection>scm:git:https://github.com/WSO2Telco/product-hub.git</connection>
+        <tag>HEAD</tag>
+    </scm-->
+    <!--distributionManagement>
+        <snapshotRepository>
+            <id>wso2Telco.snapshots</id>
+            <name>Snapshot repo</name>
+            <url>http://maven.wso2telco.com/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>wso2telco.releases</id>
+            <name>release repo</name>
+            <url>http://maven.wso2telco.com/nexus/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement-->
+
+    <scm>
+        <url>https://github.com/Nuwan-Walisundara/product-hub-1.git</url>
+        <developerConnection>scm:git:https://github.com/Nuwan-Walisundara/product-hub-1.git</developerConnection>
+        <connection>scm:git:https://github.com/Nuwan-Walisundara/product-hub-1.git</connection>
         <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <snapshotRepository>
             <id>wso2Telco.snapshots</id>
             <name>Snapshot repo</name>
-            <url>http://maven.wso2telco.com/nexus/content/repositories/snapshots</url>
+            <url>file:///home/nuwan/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
         <!-- Publish the versioned releases here -->
         <repository>
             <id>wso2telco.releases</id>
             <name>release repo</name>
-            <url>http://maven.wso2telco.com/nexus/content/repositories/releases/</url>
+            <url>file:///home/nuwan/nexus/content/repositories/releases/</url>
         </repository>
     </distributionManagement>
 
@@ -1189,6 +1208,14 @@
                 <artifactId>org.wso2.carbon.analytics.spark.stub</artifactId>
                 <version>${carbon.analytics.version}</version>
             </dependency>
+
+
+	    <dependency>
+                <groupId>com.wso2telco.dep</groupId>
+                <artifactId>com.wso2telco.dep.manage-service.feature</artifactId>
+                <version>${com.wso2telco.manageapp.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>
