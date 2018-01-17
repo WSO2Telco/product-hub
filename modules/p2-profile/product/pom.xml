@@ -129,7 +129,7 @@
                                 <featureArtifactDef>
                                     com.wso2telco.core:com.wso2telco.core.userprofile.feature:${com.wso2telco.core.version}
                                 </featureArtifactDef>
-
+				 <featureArtifactDef>com.wso2telco.dep:com.wso2telco.dep.manage-service.feature:${com.wso2telco.manageapp.version}</featureArtifactDef>
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.hub.core.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
@@ -870,6 +870,10 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+<feature>
+                                    <id>com.wso2telco.dep.manage-service.feature.group</id>
+                                    <version>${com.wso2telco.manageapp.version}</version>
+                                </feature>
                                 <feature>
                                     <id>com.wso2telco.dep.hub.core.feature.group</id>
                                     <version>${com.wso2telco.dep.version}</version>
