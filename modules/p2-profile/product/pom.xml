@@ -1539,6 +1539,10 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+				<feature>
+                                    <id>com.wso2telco.dep.manage-service.feature.group</id>
+                                    <version>${com.wso2telco.manageapp.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>com.wso2telco.dep.hub.core.feature.group</id>
@@ -1974,6 +1978,10 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+					<feature>
+                                    <id>com.wso2telco.dep.manage-service.feature.group</id>
+                                    <version>${com.wso2telco.manageapp.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>com.wso2telco.dep.hub.core.feature.group</id>
@@ -2427,6 +2435,10 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+<feature>
+                                    <id>com.wso2telco.dep.manage-service.feature.group</id>
+                                    <version>${com.wso2telco.manageapp.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>com.wso2telco.dep.hub.core.feature.group</id>
@@ -2979,6 +2991,10 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+					<feature>
+                                    <id>com.wso2telco.dep.manage-service.feature.group</id>
+                                    <version>${com.wso2telco.manageapp.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>com.wso2telco.dep.hub.core.feature.group</id>
@@ -3527,6 +3543,10 @@
                             </destination>
                             <deleteOldProfileFiles>true</deleteOldProfileFiles>
                             <features>
+				<feature>
+                                    <id>com.wso2telco.dep.manage-service.feature.group</id>
+                                    <version>${com.wso2telco.manageapp.version}</version>
+                                </feature>
 
                                 <feature>
                                     <id>com.wso2telco.dep.hub.core.feature.group</id>
