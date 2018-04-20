@@ -888,8 +888,12 @@
 
     <files>
         <!--start of claim management feature-->
+        <!--<file>-->
+            <!--<source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/claim-config.xml</source>-->
+            <!--<outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>-->
+        <!--</file>-->
         <file>
-            <source>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/conf/claim-config.xml</source>
+            <source>src/main/conf/claim-config.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
         </file>
         <!--End of claim management feature-->
