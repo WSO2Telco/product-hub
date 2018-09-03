@@ -6,7 +6,7 @@
 
 | Branch | Build Status |
 | :------------ |:-------------
-| master | [![Build Status](http://ci.wso2telco.com/job/product-hub/badge/icon)](http://ci.wso2telco.com/job/product-hub)|
+| master | [![Build Status](http://ci.wso2telco.com:8080/job/product-hub/badge/icon)](http://ci.wso2telco.com/job/product-hub)|
 
 ---
 
