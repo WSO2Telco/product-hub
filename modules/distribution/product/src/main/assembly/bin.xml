@@ -1038,12 +1038,6 @@
         </file>
 
         <file>
-            <source>../../../config/bam.xml</source>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/etc</outputDirectory>
-            <filtered>true</filtered>
-            <fileMode>755</fileMode>
-        </file>
-        <file>
             <source>target/wso2carbon-core-${carbon.platform.version}/repository/conf/carbon.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/</outputDirectory>
             <filtered>true</filtered>
