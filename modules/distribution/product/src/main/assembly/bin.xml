@@ -52,6 +52,11 @@
         	    <exclude>**/repository/components/plugins/woden_${woden.version}.jar</exclude>
                 <!--note: to overwrite a file you need to exclude them first -->
                 <exclude>**/repository/resources/api_templates/velocity_template.xml</exclude>
+                <exclude>**repository/resources/default-tiers/default-app-tiers.xml</exclude>
+                <exclude>**repository/resources/default-tiers/default-tiers.xml</exclude>
+                <exclude>**repository/deployment/server/jaggeryapps/store/**</exclude>
+                <exclude>**repository/deployment/server/jaggeryapps/publisher/**</exclude>
+
                 <exclude>**/lib/org.wso2.ciphertool-1.0.0-wso2v2.jar</exclude>
                 <exclude>**/secret-conf.properties</exclude>
                 <exclude>**/repository/components/plugins/saxon*.jar</exclude>
@@ -292,14 +297,12 @@
                 <include>manage-service.war</include>
             </includes>
         </fileSet>
-
         <!-- end of telco webapps -->
 
-        <!--todo extract from com.wso2telco.dep.activiti_2.4.5.SNAPSHOT feature -->
-
+        <!--copy workflow bar files -->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/resources
+                ../../p2-profile/product/target/features/webapps/activiti-explorer/workflow
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/resources/workflow</outputDirectory>
             <includes>
@@ -316,13 +319,11 @@
                 <include>**/**.xml</include>
             </includes>
         </fileSet>
-        <!--End of  API Manager related -->
 
-        <!-- todo extract from features/com.wso2telco.dep.hub.core.feature/src/main/resources/sql/mysql/dep_db.sql -->
-        <!-- Start DEP Hub related dbscripts -->
+        <!-- Start DEP Hub related db-scripts -->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/dbscripts/
+                ../../p2-profile/product/target/features/hub-core/sql
             </directory>
             <outputDirectory>wso2telcohub-${pom.version}/dbscripts/dep-hub</outputDirectory>
             <includes>
@@ -331,30 +332,22 @@
         </fileSet>
         <!--End of DEP Hub related dbscripts -->
 
-        <!--todo  from core-modules-->
-        <!-- Start DEP Hub related modules -->
-        <!--<fileSet>-->
-            <!--<directory>-->
-                <!--../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/modules/-->
-            <!--</directory>-->
-            <!--<outputDirectory>wso2telcohub-${pom.version}/modules</outputDirectory>-->
-            <!--<includes>-->
-                <!--<include>**/**</include>-->
-            <!--</includes>-->
-        <!--</fileSet>-->
-        <!--End of DEP Hub related modules -->
 
-        <!--todo copy from features-->
         <!-- Start DEP Hub related jaggery apps -->
         <fileSet>
-            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/</outputDirectory>
-            <excludes>
-                <exclude>admin/**</exclude>
-                <exclude>api-publisher/**</exclude>
-                <exclude>api-store/**</exclude>
-                <exclude>portal/**</exclude>
-            </excludes>
+            <directory>../../p2-profile/product/target/features/jaggeryapps/store</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store</outputDirectory>
+            <includes>
+                <include>**/**</include>
+            </includes>
+        </fileSet>
+
+        <fileSet>
+            <directory>../../p2-profile/product/target/features/jaggeryapps/publisher</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/publisher</outputDirectory>
+            <includes>
+                <include>**/**</include>
+            </includes>
         </fileSet>
         <!--End of DEP Hub related jaggery apps -->
     </fileSets>

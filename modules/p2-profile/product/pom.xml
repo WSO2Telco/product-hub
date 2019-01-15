@@ -315,7 +315,6 @@
                                     </fileset>
                                 </unzip>
 
-                                com.wso2telco.dep.manage-service_2.1.1.SNAPSHOT.jar
                                 <!-- Extract manage-service -->
                                 <property name="tempdir9" value="target/features/webapps/manage-service"/>
                                 <mkdir dir="${tempdir9}"/>
@@ -324,6 +323,33 @@
                                         <include name="com.wso2telco.dep.manage-service_${com.wso2teloc.manageapp.feature}.jar"/>
                                     </fileset>
                                 </unzip>
+
+                                <!-- publisher UI -->
+                                <property name="tempdir10" value="target/features/publisher"/>
+                                <mkdir dir="${tempdir10}"/>
+                                <unzip dest="${tempdir10}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.publisher.ui_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                <!--extract jaggery apps -->
+                                <property name="tempdir11" value="target/features/jaggeryapps/publisher"/>
+                                <mkdir dir="${tempdir11}"/>
+                                <unzip dest="${tempdir11}">
+                                    <fileset dir="target/features/publisher/generated">
+                                        <include name="publisher.zip"/>
+                                    </fileset>
+                                </unzip>
+
+                                <property name="tempdir12" value="target/features/jaggeryapps/store"/>
+                                <mkdir dir="${tempdir12}"/>
+                                <unzip dest="${tempdir12}">
+                                    <fileset dir="target/features/store/generated">
+                                        <include name="store.zip"/>
+                                    </fileset>
+                                </unzip>
+
 
 
                                 <!--&lt;!&ndash;copy to dropins todo: change name and version&ndash;&gt;-->
