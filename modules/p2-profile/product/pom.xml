@@ -210,7 +210,6 @@
                             </featureArtifacts>
                         </configuration>
                     </execution>
-
                     <execution>
                         <id>publishing product</id>
                         <phase>package</phase>
@@ -227,9 +226,136 @@
                             <artifactRepository>file:${basedir}/target/p2-repo</artifactRepository>
                         </configuration>
                     </execution>
+                </executions>
 
+            </plugin>
+
+            <!-- extract wso2telco features -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>extract-features</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <!-- store-UI -->
+                                <property name="tempdir" value="target/features/store"/>
+                                <mkdir dir="${tempdir}"/>
+                                <unzip dest="${tempdir}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.store.ui_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                <!-- hub-core -->
+                                <property name="tempdir2" value="target/features/hub-core"/>
+                                <mkdir dir="${tempdir2}"/>
+                                <unzip dest="${tempdir2}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.hub.core_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                <!-- Extract aggregator-blacklist webapp -->
+                                <property name="tempdir3" value="target/features/webapps/aggregator-blacklist"/>
+                                <mkdir dir="${tempdir3}"/>
+                                <unzip dest="${tempdir3}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.aggregatorblacklist.webapp_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                <!-- Extract blacklist-whitelists-service webapp -->
+                                <property name="tempdir4" value="target/features/webapps/blacklist-whitelistservice"/>
+                                <mkdir dir="${tempdir4}"/>
+                                <unzip dest="${tempdir4}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.blacklistwhitelistservice.webapp_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                <!-- Extract workflow-service webapp -->
+                                <property name="tempdir5" value="target/features/webapps/workflow-service"/>
+                                <mkdir dir="${tempdir5}"/>
+                                <unzip dest="${tempdir5}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.workflow.service_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                <!-- Extract quota-service webapp -->
+                                <property name="tempdir6" value="target/features/webapps/quota-service"/>
+                                <mkdir dir="${tempdir6}"/>
+                                <unzip dest="${tempdir6}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.quota.service_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                <!-- Extract activiti-explorer -->
+                                <property name="tempdir7" value="target/features/webapps/activiti-explorer"/>
+                                <mkdir dir="${tempdir7}"/>
+                                <unzip dest="${tempdir7}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.activiti_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                <!-- Extract ratecard-service -->
+                                <property name="tempdir8" value="target/features/webapps/ratecard-service"/>
+                                <mkdir dir="${tempdir8}"/>
+                                <unzip dest="${tempdir8}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.ratecard.service_${com.wso2telco.dep.feature.version}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+                                com.wso2telco.dep.manage-service_2.1.1.SNAPSHOT.jar
+                                <!-- Extract manage-service -->
+                                <property name="tempdir9" value="target/features/webapps/manage-service"/>
+                                <mkdir dir="${tempdir9}"/>
+                                <unzip dest="${tempdir9}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.manage-service_${com.wso2teloc.manageapp.feature}.jar"/>
+                                    </fileset>
+                                </unzip>
+
+
+                                <!--&lt;!&ndash;copy to dropins todo: change name and version&ndash;&gt;-->
+                                <!--<copy todir="../../distribution/product/target/intgw/wso2am-2.5.0/repository/components/dropins" overwrite="false">-->
+                                    <!--<fileset dir="target/p2-repo/plugins/">-->
+                                    <!--</fileset>-->
+                                <!--</copy>-->
+
+                                <!--&lt;!&ndash;copy to modules todo: change name and version&ndash;&gt;-->
+                                <!--<copy todir="../../distribution/product/target/intgw/wso2am-2.5.0/modules" overwrite="false">-->
+                                    <!--<fileset dir="target/features/hub-core/modules">-->
+                                    <!--</fileset>-->
+                                <!--</copy>-->
+
+                                <!--&lt;!&ndash; Copy aggregator-blacklist webapp&ndash;&gt;-->
+                                <!--<copy file="target/features/webapps/aggregator-blacklist/generated/aggregator-blacklist.war"-->
+                                      <!--todir="../../distribution/product/target/intgw/wso2am-2.5.0/repository/deployment/server/webapps"/>-->
+
+                                <!--&lt;!&ndash; Copy blacklist-whitelists-service webapp&ndash;&gt;-->
+                                <!--<copy file="target/features/webapps/blacklist-whitelistservice/generated/blacklist-whitelist-service.war"-->
+                                      <!--todir="../../distribution/product/target/intgw/wso2am-2.5.0/repository/deployment/server/webapps"/>-->
+
+                                <!--&lt;!&ndash; Copy workflow-service webapp &ndash;&gt;-->
+                                <!--<copy file="target/features/webapps/workflow-service/generated/workflow-service.war"-->
+                                      <!--todir="../../distribution/product/target/intgw/wso2am-2.5.0/repository/deployment/server/webapps"/>-->
+
+                            </tasks>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 </project>
