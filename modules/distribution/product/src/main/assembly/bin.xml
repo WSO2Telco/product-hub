@@ -24,7 +24,9 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>target/wso2carbon-core-${carbon.platform.version}</directory>
+            <!--<directory>target/wso2carbon-core-${carbon.platform.version}</directory>-->
+            <!-- zip dir to build -->
+            <directory>target/intgw/wso2am-2.5.0</directory>
             <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
             <excludes>
                 <exclude>**/bin/wso2server.sh</exclude>
@@ -48,6 +50,8 @@
                 <exclude>**/registry.xml</exclude>
                 <exclude>**/master-datasources.xml</exclude>
         	    <exclude>**/repository/components/plugins/woden_${woden.version}.jar</exclude>
+                <!--note: to overwrite a file you need to exclude them first -->
+                <exclude>**/repository/resources/api_templates/velocity_template.xml</exclude>
                 <exclude>**/lib/org.wso2.ciphertool-1.0.0-wso2v2.jar</exclude>
                 <exclude>**/secret-conf.properties</exclude>
                 <exclude>**/repository/components/plugins/saxon*.jar</exclude>
@@ -126,7 +130,7 @@
             <directory>target</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/components/lib</outputDirectory>
             <includes>
-                <include>validator-handler-${com.wso2telco.dep.version}.jar</include>
+                <include>validator-hand-${com.wso2telco.dep.version}.jar</include>
             </includes>
         </fileSet>
 
@@ -156,153 +160,42 @@
         </excludes>
 	</fileSet>
 
-        <!-- Start API Manager related -->
+
+        <!--get all plugins rajith todo - remove 4 additional pluins-->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.kernel.version}/dbscripts/apimgt/
+                ../../p2-profile/product/target/p2-repo/plugins
             </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/apimgt</outputDirectory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/components/dropins</outputDirectory>
             <includes>
-                <include>**/**.sql</include>
-            </includes>
-        </fileSet>
-       <fileSet>
-            <directory>
-                ../resources/migration-1.0.0_to_1.2.0/
-            </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.0.0_to_1.2.0</outputDirectory>
-        </fileSet>
-	<fileSet>
-            <directory>
-                ../resources/migration-1.2.0_to_1.3.0/
-            </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.2.0_to_1.3.0</outputDirectory>
-        </fileSet>
-        <fileSet>
-            <directory>
-                ../resources/migration-1.3.0_to_1.4.0/
-            </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.3.0_to_1.4.0</outputDirectory>
-        </fileSet>
-
-        <fileSet>
-            <directory>
-                ../resources/migration-1.4.0_to_1.5.0/
-            </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.4.0_to_1.5.0</outputDirectory>
-        </fileSet>
-
-	<fileSet>
-            <directory>
-                ../resources/migration-1.5.0_to_1.6.0/
-            </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.5.0_to_1.6.0</outputDirectory>
-        </fileSet>
-
-	<fileSet>
-            <directory>
-                ../resources/migration-1.6.0_to_1.7.0/
-            </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.6.0_to_1.7.0</outputDirectory>
-        </fileSet>
-
-	<fileSet>
-            <directory>
-                ../resources/migration-1.7.0_to_1.8.0/
-            </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.7.0_to_1.8.0</outputDirectory>
-        </fileSet>
-
-    <fileSet>
-        <directory>
-            ../resources/migration-1.8.0_to_1.9.0/readme/
-        </directory>
-        <outputDirectory>wso2telcohub-${pom.version}/dbscripts/migration-1.8.0_to_1.9.0</outputDirectory>
-    </fileSet>
-
-    <fileSet>
-        <directory>
-            ../statistics/target/
-        </directory>
-        <outputDirectory>wso2telcohub-${pom.version}/dbscripts/stat/migration-1.9.0_to_1.10.0</outputDirectory>
-    </fileSet>
-
-
-	<!--fileSet>
-             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-publisher/</directory>
-             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/publisher</outputDirectory>
-	     <excludes>
-		<exclude>publisherLogo/**</exclude>
-		<exclude>publisherTheme/**</exclude>
-		<exclude>publisherSite/**</exclude>
-		<exclude>footer/**</exclude>
-		<exclude>localstyles.css</exclude>
-	     </excludes>
-         </fileSet>
-         <fileSet>
-             <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/api-store/</directory>
-             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store</outputDirectory>
-	     <excludes>
-		<exclude>storeLogo/**</exclude>
-		<exclude>storeSite/**</exclude>
-		<exclude>base-page/**</exclude>
-		<exclude>login/**</exclude>
-		<exclude>styles-layout.css</exclude>
-	     </excludes>
-         </fileSet-->
-
-        <!--fileSet>
-            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/admin/</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/admin</outputDirectory>
-        </fileSet>
-	<fileSet>
-            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/jaggeryapps/portal/</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/portal</outputDirectory>
-        </fileSet-->
-	<!--  copying modules xml -->
-        <fileSet>
-            <directory>../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps</directory>
-            <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
-            <includes>
-                <include>shindig.war</include>
+                <include>**/**.jar</include>
             </includes>
         </fileSet>
 
-        <!--todo  copy modules to wso2telco/modules-->
+        <!-- Start WSO2-Telco related changes-->
 
-        <!--todo files need to be updated -->
-	<!-- API Templates -->
-	    <fileSet>
-            <directory>../resources/api_templates</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/api_templates</outputDirectory>
-            <includes>
-                <include>**/**.xml</include>
-            </includes>
-        </fileSet>
-
-
-        <!-- todo update file sets -->
+        <!-- copying telco modules -->
         <fileSet>
-            <directory>src/main/conf/governance</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/resources</outputDirectory>
+            <directory>
+                ../../p2-profile/product/target/features/hub-core/modules
+            </directory>
+            <outputDirectory>wso2telcohub-${pom.version}/modules</outputDirectory>
             <includes>
                 <include>**/**</include>
             </includes>
         </fileSet>
 
-
-        <!-- todo -ask -->
-        <fileSet>
-            <directory>src/main/business-processes</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/business-processes</outputDirectory>
+	    <!-- api templates -->
+	    <fileSet>
+            <directory>../resources/api_templates</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/api_templates</outputDirectory>
             <includes>
-                <include>**/*.*</include>
+                <include>velocity_template.xml</include>
             </includes>
         </fileSet>
 
-        <!-- API Custom Sequences -->
-        <!--todo update the sequences-->
-	<fileSet>
+        <!-- API Custom Sequences only custom sequences are copied -->
+	    <fileSet>
             <directory>../resources/customsequences</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/customsequences</outputDirectory>
             <includes>
@@ -310,32 +203,34 @@
             </includes>
         </fileSet>
 
-        <!-- todo from feature file s-->
-        <!-- Copy aggregator-blacklist webapp-->
+        <!-- start copy wso2-telco webapps -->
 
+        <!-- copy aggregator-blacklist webapp -->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+                ../../p2-profile/product/target/features/webapps/aggregator-blacklist/generated
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
                 <include>aggregator-blacklist.war</include>
             </includes>
         </fileSet>
-        <!-- Copy blacklist-whitelist-service webapp-->
+
+        <!-- copy blacklist-whitelist-service webapp-->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+                ../../p2-profile/product/target/features/webapps/blacklist-whitelistservice/generated
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
                 <include>blacklist-whitelist-service.war</include>
             </includes>
         </fileSet>
-        <!-- Copy workflow-service webapp-->
+
+        <!-- copy workflow-service webapp-->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+                ../../p2-profile/product/target/features/webapps/workflow-service/generated
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
@@ -343,10 +238,10 @@
             </includes>
         </fileSet>
 
-        <!-- Copy quota-service webapp-->
+        <!-- copy quota-service webapp-->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+                ../../p2-profile/product/target/features/webapps/quota-service/generated
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
@@ -357,26 +252,29 @@
 	<!-- copy activiti webapps  -->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+                ../../p2-profile/product/target/features/webapps/activiti-explorer/webapps
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
                 <include>activiti-explorer.war</include>
             </includes>
         </fileSet>
-        <!-- Copy ratecard-service webapp-->
+
+        <!-- copy ratecard-service webapp-->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+                ../../p2-profile/product/target/features/webapps/ratecard-service/generated
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
                 <include>ratecard-service.war</include>
             </includes>
         </fileSet>
+
+        <!-- copy activiti-rest webapp -->
         <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+                ../../p2-profile/product/target/features/webapps/activiti-explorer/webapps
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
@@ -384,10 +282,10 @@
             </includes>
         </fileSet>
 	
-	<!-- manage-service.war -->	
-	  <fileSet>
+	    <!-- copy manage-service webapp -->
+	    <fileSet>
             <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/repository/deployment/server/webapps
+                ../../p2-profile/product/target/features/webapps/manage-service/generated
             </directory>
             <outputDirectory>${pom.artifactId}-${pom.version}/repository/deployment/server/webapps</outputDirectory>
             <includes>
@@ -395,6 +293,7 @@
             </includes>
         </fileSet>
 
+        <!-- end of telco webapps -->
 
         <!--todo extract from com.wso2telco.dep.activiti_2.4.5.SNAPSHOT feature -->
 
@@ -434,15 +333,15 @@
 
         <!--todo  from core-modules-->
         <!-- Start DEP Hub related modules -->
-        <fileSet>
-            <directory>
-                ../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/modules/
-            </directory>
-            <outputDirectory>wso2telcohub-${pom.version}/modules</outputDirectory>
-            <includes>
-                <include>**/**</include>
-            </includes>
-        </fileSet>
+        <!--<fileSet>-->
+            <!--<directory>-->
+                <!--../../p2-profile/product/target/wso2carbon-core-${carbon.platform.version}/dep-hub/modules/-->
+            <!--</directory>-->
+            <!--<outputDirectory>wso2telcohub-${pom.version}/modules</outputDirectory>-->
+            <!--<includes>-->
+                <!--<include>**/**</include>-->
+            <!--</includes>-->
+        <!--</fileSet>-->
         <!--End of DEP Hub related modules -->
 
         <!--todo copy from features-->
