@@ -19,12 +19,25 @@
          </send>
       </inSequence>
       <outSequence>
-         <property name="messageType" value="text/xml" scope="axis2" type="STRING"/>
+         <property name="messageType" scope="axis2" type="STRING" value="text/xml"/>
+         <filter xpath="//jsonObject">
+            <then>
+               <enrich>
+                  <source clone="true" xpath="//jsonObject/*"/>
+                  <target property="BPS_PAYLOAD" type="property"/>
+               </enrich>
+               <enrich>
+                  <source clone="true" property="BPS_PAYLOAD" type="property"/>
+                  <target type="body"/>
+               </enrich>
+            </then>
+            <else/>
+         </filter>
          <send/>
       </outSequence>
    </target>
    <publishWSDL>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                         xmlns:ns1="http://org.apache.axis2/xsd"
                         xmlns:ns="http://callback.workflow.apimgt.carbon.wso2.org"
                         xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
