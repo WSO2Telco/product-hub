@@ -50,17 +50,6 @@
 
             </excludes>
         </fileSet>
-        <fileSet>
-            <directory>target/wso2carbon-core-${carbon.platform.version}</directory>
-            <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
-            <includes>
-                <include>**/*.sh</include>
-            </includes>
-	    <excludes>
-                <exclude>**/wso2server.sh</exclude>
-	    </excludes>
-            <fileMode>755</fileMode>
-        </fileSet>
 
         <fileSet>
             <directory>target</directory>
@@ -80,12 +69,18 @@
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/apim-synapse-config/</outputDirectory>
         </fileSet>
 
-        <!--get all plugins rajith todo - remove 4 additional pluins-->
+        <!--get all plugins rajith todo - remove 4 additional plugins properly -->
         <fileSet>
             <directory>
                 ../../p2-profile/product/target/p2-repo/plugins
             </directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/components/dropins</outputDirectory>
+            <excludes>
+                <exclude>dnsjava_2.1.1.wso2v1.jar</exclude>
+                <exclude>io.github.openfeign.feign-core_9.3.1.jar</exclude>
+                <exclude>io.github.openfeign.feign-jackson_9.3.1.jar</exclude>
+                <exclude>libphonenumber_7.4.2.wso2v1.jar</exclude>
+            </excludes>
             <includes>
                 <include>**/**.jar</include>
             </includes>
@@ -327,9 +322,16 @@
         </file>
 
         <file>
-            <source>../../p2-profile/product/target/features/hub-core/config/axis2/axis2.xml</source>
+            <source>../../p2-profile/product/target/features/hub-core/config/axis2.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf/axis2</outputDirectory>
             <destName>axis2.xml</destName>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/features/hub-core/config/registry.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <destName>registry.xml</destName>
+            <fileMode>644</fileMode>
         </file>
 
         <file>
@@ -338,6 +340,7 @@
             <destName>api-manager.xml</destName>
             <fileMode>644</fileMode>
         </file>
+
 
         <file>
             <source>../../p2-profile/product/target/features/hub-core/config/user-mgt.xml</source>

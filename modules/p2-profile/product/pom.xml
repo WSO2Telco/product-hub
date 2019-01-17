@@ -74,32 +74,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <inherited>false</inherited>
-                <executions>
-                    <execution>
-                        <id>1-unpack-p2-agent-distribution</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.wso2.carbon</groupId>
-                                    <artifactId>wso2carbon-core</artifactId>
-                                    <version>${carbon.kernel.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>target</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.wso2.maven</groupId>
                 <artifactId>carbon-p2-plugin</artifactId>
                 <executions>
@@ -349,33 +323,6 @@
                                         <include name="store.zip"/>
                                     </fileset>
                                 </unzip>
-
-
-
-                                <!--&lt;!&ndash;copy to dropins todo: change name and version&ndash;&gt;-->
-                                <!--<copy todir="../../distribution/product/target/intgw/wso2am-2.5.0/repository/components/dropins" overwrite="false">-->
-                                    <!--<fileset dir="target/p2-repo/plugins/">-->
-                                    <!--</fileset>-->
-                                <!--</copy>-->
-
-                                <!--&lt;!&ndash;copy to modules todo: change name and version&ndash;&gt;-->
-                                <!--<copy todir="../../distribution/product/target/intgw/wso2am-2.5.0/modules" overwrite="false">-->
-                                    <!--<fileset dir="target/features/hub-core/modules">-->
-                                    <!--</fileset>-->
-                                <!--</copy>-->
-
-                                <!--&lt;!&ndash; Copy aggregator-blacklist webapp&ndash;&gt;-->
-                                <!--<copy file="target/features/webapps/aggregator-blacklist/generated/aggregator-blacklist.war"-->
-                                      <!--todir="../../distribution/product/target/intgw/wso2am-2.5.0/repository/deployment/server/webapps"/>-->
-
-                                <!--&lt;!&ndash; Copy blacklist-whitelists-service webapp&ndash;&gt;-->
-                                <!--<copy file="target/features/webapps/blacklist-whitelistservice/generated/blacklist-whitelist-service.war"-->
-                                      <!--todir="../../distribution/product/target/intgw/wso2am-2.5.0/repository/deployment/server/webapps"/>-->
-
-                                <!--&lt;!&ndash; Copy workflow-service webapp &ndash;&gt;-->
-                                <!--<copy file="target/features/webapps/workflow-service/generated/workflow-service.war"-->
-                                      <!--todir="../../distribution/product/target/intgw/wso2am-2.5.0/repository/deployment/server/webapps"/>-->
-
                             </tasks>
                         </configuration>
                     </execution>

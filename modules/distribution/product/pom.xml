@@ -64,34 +64,6 @@
     <build>
         <plugins>
 
-            <!-- test for now -->
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-antrun-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>download-files</id>-->
-                        <!--<phase>prepare-package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>run</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<tasks>-->
-                                <!--<property name="tempdir" value="target/intgw"/>-->
-                                <!--<mkdir dir="${tempdir}"/>-->
-                                <!--<unzip dest="${tempdir}">-->
-                                    <!--<fileset dir="am">-->
-                                        <!--<include name="wso2am-2.5.0.zip"/>-->
-                                    <!--</fileset>-->
-                                <!--</unzip>-->
-                            <!--</tasks>-->
-                        <!--</configuration>-->
-
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
-            <!-- end test for now -->
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -120,82 +92,6 @@
                             <overWriteSnapshots>true</overWriteSnapshots>-->
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>unpack-wso2carbon</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.wso2.carbon</groupId>
-                                    <artifactId>wso2carbon-core</artifactId>
-                                    <version>${carbon.kernel.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>target</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>unpack-rest-publisher</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.wso2.carbon.apimgt</groupId>
-                                    <artifactId>org.wso2.carbon.apimgt.rest.api.publisher.feature</artifactId>
-                                    <version>${carbon.apimgt.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>target</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>unpack-rest-store</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.wso2.carbon.apimgt</groupId>
-                                    <artifactId>org.wso2.carbon.apimgt.rest.api.store.feature</artifactId>
-                                    <version>${carbon.apimgt.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>target</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>unpack-rest-admin</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.wso2.carbon.apimgt</groupId>
-                                    <artifactId>org.wso2.carbon.apimgt.rest.api.admin.feature</artifactId>
-                                    <version>${carbon.apimgt.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>target</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
                 </executions>
             </plugin>
 
@@ -203,78 +99,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
-                    <execution>
-                        <id>extract-docs-from-components</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <tasks>
-                                <property name="tempdir" value="target/docs-temp" />
-                                <mkdir dir="${tempdir}" />
-                                <unzip dest="${tempdir}">
-                                    <fileset dir="target">
-                                        <include name="wso2telcohub-${project.version}.zip" />
-                                    </fileset>
-                                </unzip>
-                                <copy todir="target/wso2carbon-core-${carbon.platform.version}/repository/components/" overwrite="false">
-                                    <fileset dir="${tempdir}/wso2telcohub-${project.version}/repository/components/">
-                                    </fileset>
-                                </copy>
-                                <delete file="target/wso2telcohub-${project.version}.zip" />
-                                <delete dir="${tempdir}" />
-                                <mkdir dir="${tempdir}" />
-                                <unzip dest="${tempdir}">
-                                    <fileset dir="target/wso2carbon-core-${carbon.platform.version}/repository/components/plugins/">
-                                        <include name="*.ui*.jar" />
-                                    </fileset>
-                                </unzip>
-                                <move todir="${tempdir}/web/" includeemptydirs="false">
-                                    <fileset dir="${tempdir}/web/">
-                                        <exclude name="**/yui/**" />
-                                        <exclude name="**/ajax/**" />
-                                        <exclude name="**/editarea/**" />
-                                        <exclude name="**/codepress/**" />
-                                        <exclude name="**/WEB-INF/**" />
-                                        <exclude name="**/diffview/**" />
-                                        <include name="**/*.html" />
-                                    </fileset>
-                                    <!--mapper type="glob" from="*.html" to="*.xml" /-->
-                                </move>
-                                <delete dir="src/site/xdoc" />
-                                <mkdir dir="src/site/xdoc" />
-                                <copy todir="src/site/xdoc" overwrite="false" includeemptydirs="false">
-                                    <fileset dir="${tempdir}/web">
-                                        <exclude name="**/yui/**" />
-                                        <exclude name="**/ajax/**" />
-                                        <exclude name="**/WEB-INF/**" />
-                                        <exclude name="**/diffview/**" />
-                                        <exclude name="**/*.html" />
-                                        <exclude name="**/*.js" />
-                                        <exclude name="**/*.jsp" />
-                                        <exclude name="**/*.xsl" />
-                                        <exclude name="*.*" />
-                                    </fileset>
-                                </copy>
-                                <copy todir="src/site" overwrite="false" includeemptydirs="false">
-                                    <fileset dir="../../../docs">
-                                    </fileset>
-                                </copy>
-                                <copy todir="target/site/" overwrite="false" includeemptydirs="false">
-                                    <fileset dir="src/site/xdoc/">
-                                        <include name="**/images/*.*" />
-                                    </fileset>
-                                </copy>
-                                <zip destfile="target/site/publisher-api-docs.zip" basedir="target/features/" includes="org.wso2.carbon.apimgt.rest.api.publisher*/api-docs/" />
-                                <zip destfile="target/site/store-api-docs.zip" basedir="target/features/" includes="org.wso2.carbon.apimgt.rest.api.store*/api-docs/" />
-                                <zip destfile="target/site/admin-api-docs.zip" basedir="target/features/" includes="org.wso2.carbon.apimgt.rest.api.admin*/api-docs/" />
-                                <delete dir="features" />
-                                <delete dir="plugins" />
-                                <delete dir="${tempdir}" />
-                            </tasks>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>clean_target</id>
                         <phase>install</phase>
@@ -294,25 +118,25 @@
                         </goals>
                     </execution>
 
-                    <execution>
-                        <id>download-files</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <tasks>
-                                <property name="tempdir" value="target/intgw"/>
-                                <mkdir dir="${tempdir}"/>
-                                <unzip dest="${tempdir}">
-                                    <fileset dir="am">
-                                        <include name="wso2am-2.5.0.zip"/>
-                                    </fileset>
-                                </unzip>
-                            </tasks>
-                        </configuration>
+                    <!--<execution>-->
+                        <!--<id>download-files</id>-->
+                        <!--<phase>prepare-package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>run</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<tasks>-->
+                                <!--<property name="tempdir" value="target/intgw"/>-->
+                                <!--<mkdir dir="${tempdir}"/>-->
+                                <!--<unzip dest="${tempdir}">-->
+                                    <!--<fileset dir="am">-->
+                                        <!--<include name="wso2am-2.5.0.zip"/>-->
+                                    <!--</fileset>-->
+                                <!--</unzip>-->
+                            <!--</tasks>-->
+                        <!--</configuration>-->
 
-                    </execution>
+                    <!--</execution>-->
 
                 </executions>
             </plugin>
@@ -330,28 +154,58 @@
                 </executions>
             </plugin>
 
-
+            <!--Download fresh APIManager -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>download-files</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <!-- download file -->
+                                <get src="https://s3.amazonaws.com/sftp-release-binaries/sftp/apim25/wso2am-2.5.0.zip"
+                                     dest="${project.build.directory}/wso2am-2.5.0.zip"
+                                     verbose="false"
+                                     usetimestamp="true"/>
+                                <property name="tempdir" value="target/intgw"/>
+                                <mkdir dir="${tempdir}"/>
+                                <unzip dest="${tempdir}">
+                                    <fileset dir="target">
+                                        <include name="wso2am-2.5.0.zip"/>
+                                    </fileset>
+                                </unzip>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- end of download-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
-                    <execution>
-                        <id>pre_dist</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>attached</goal>
-                        </goals>
-                        <configuration>
-                            <appendAssemblyId>false</appendAssemblyId>
-                            <filters>
-                                <filter>${basedir}/src/main/assembly/filter.properties</filter>
-                            </filters>
-                            <descriptors>
-                                <descriptor>src/main/assembly/dist.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
+                    <!--<execution>-->
+                        <!--<id>pre_dist</id>-->
+                        <!--<phase>test</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>attached</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<appendAssemblyId>false</appendAssemblyId>-->
+                            <!--<filters>-->
+                                <!--<filter>${basedir}/src/main/assembly/filter.properties</filter>-->
+                            <!--</filters>-->
+                            <!--<descriptors>-->
+                                <!--<descriptor>src/main/assembly/dist.xml</descriptor>-->
+                            <!--</descriptors>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
                     <execution>
                         <id>dist</id>
                         <phase>package</phase>
@@ -390,51 +244,7 @@
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
                 <artifactId>replacer</artifactId>
                 <version>1.5.2</version>
-                    <!-- Start enabling MQTT -->
-                    <!-- End disabling MQTT -->
-
-                    <!-- Replace the Datasource in the thrift-authentication.xml file -->
-                    <!-- END-->
-
-                    <!-- Update Owasp.CsrfGuard.properties file location to fix IBM JDK issue -->
-                    <!-- END-->
             </plugin>
-
-
-            <!--Download fresh APIManager -->
-
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-antrun-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>download-files</id>-->
-                        <!--<phase>prepare-package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>run</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<tasks>-->
-                                <!--&lt;!&ndash; download file &ndash;&gt;-->
-                                <!--<get src="https://s3.amazonaws.com/sftp-release-binaries/sftp/apim25/wso2am-2.5.0.zip"-->
-                                     <!--dest="${project.build.directory}/wso2am-2.5.0.zip"-->
-                                     <!--verbose="false"-->
-                                     <!--usetimestamp="true"/>-->
-                                <!--<property name="tempdir" value="target/intgw"/>-->
-                                <!--<mkdir dir="${tempdir}"/>-->
-                                <!--<unzip dest="${tempdir}">-->
-                                    <!--<fileset dir="target">-->
-                                        <!--<include name="wso2am-2.5.0.zip"/>-->
-                                    <!--</fileset>-->
-                                <!--</unzip>-->
-                            <!--</tasks>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
-
-            <!-- end of download-->
-
             <!-- Skip deploying the product zip to nexus -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
