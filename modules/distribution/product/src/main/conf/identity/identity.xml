@@ -85,7 +85,7 @@
                        iii. PrivateAssociationReplicationStore
         -->
         <!-- Specify full qualified class name of the class which going to use as private association store -->
-        <!-- 
+        <!--
 		<OpenIDPrivateAssociationStoreClass>org.wso2.carbon.identity.provider.openid.PrivateAssociationCryptoStore</OpenIDPrivateAssociationStoreClass>
 	-->
         <!-- The expiration time (in minutes) for the OpenID association -->
@@ -197,7 +197,7 @@
                 <GrantTypeValidatorImplClass>org.wso2.carbon.identity.oauth.common.NTLMAuthenticationValidator</GrantTypeValidatorImplClass>
                 <GrantTypeHandlerImplClass>org.wso2.carbon.identity.oauth2.token.handlers.grant.iwa.ntlm.NTLMAuthenticationGrantHandlerWithHandshake</GrantTypeHandlerImplClass>
             </SupportedGrantType>
-        </SupportedGrantTypes>
+        </SupportedGrantTypes   >
         <OAuthCallbackHandlers>
             <OAuthCallbackHandler Class="org.wso2.carbon.apimgt.keymgt.util.APIManagerOAuthCallbackHandler"/>
         </OAuthCallbackHandlers>
@@ -355,7 +355,7 @@
         <EventListener enable="true"
             name="org.wso2.carbon.user.mgt.workflow.userstore.UserStoreActionListener"
             orderId="10" type="org.wso2.carbon.user.core.listener.UserOperationEventListener"/>
-        <EventListener enable="false"
+        <EventListener enable="true"
             name="org.wso2.carbon.identity.mgt.IdentityMgtEventListener"
             orderId="50" type="org.wso2.carbon.user.core.listener.UserOperationEventListener"/>
         <EventListener enable="true"
