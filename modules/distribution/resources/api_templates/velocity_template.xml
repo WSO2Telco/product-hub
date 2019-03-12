@@ -150,7 +150,7 @@
 #if($responseCacheEnabled)
 <property name="request_id_temp" expression="$trp:REQUEST_ID"/>
 <header name="REQUEST_ID" scope="transport" action="remove"/>
-<cache scope="per-host" collector="false" hashGenerator="org.wso2.caching.digest.REQUESTHASHGenerator" timeout="$!responseCacheTimeOut">
+<cache scope="per-host" collector="false" hashGenerator="org.wso2.carbon.mediator.cache.digest.REQUESTHASHGenerator" timeout="$!responseCacheTimeOut">
     <implementation type="memory" maxSize="500"/>
 </cache>
 <header name="REQUEST_ID" expression="get-property('request_id_temp')" scope="transport" action="set"/>
