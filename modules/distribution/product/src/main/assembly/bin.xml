@@ -59,6 +59,15 @@
             </includes>
         </fileSet>
 
+        <!-- audit log handler-->
+        <fileSet>
+            <directory>target</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/components/lib</outputDirectory>
+            <includes>
+                <include>apim-loghandler-${com.wso2telco.dep.version}.jar</include>
+            </includes>
+        </fileSet>
+
         <fileSet>
             <directory>src/main/conf/synapse-configs</directory>
             <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs</outputDirectory>
