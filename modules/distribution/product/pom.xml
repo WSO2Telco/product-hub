@@ -95,6 +95,15 @@
                                     <outputDirectory>target</outputDirectory>
                                     <destFileName>apim-loghandler-${com.wso2telco.dep.version}.jar</destFileName>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.wso2telco.dep</groupId>
+                                    <artifactId>api-invocation-handler</artifactId>
+                                    <version>${com.wso2telco.dep.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>target</outputDirectory>
+                                    <destFileName>api-invocation-handler-${com.wso2telco.dep.version}.jar</destFileName>
+                                </artifactItem>
                             </artifactItems>
                             <!--<outputDirectory>${project.build.directory}/jars</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
