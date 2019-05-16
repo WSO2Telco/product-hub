@@ -1,16 +1,16 @@
 
-# APIGATE AXP INTERNAL GATEWAY
+# APIGATE Accelerator Platform 
 
         
 ---
 
 | Branch | Build Status |
 | :------------ |:-------------
-| master | [![Build Status](http://ci.wso2telco.com:8080/job/product-hub/badge/icon)](http://ci.wso2telco.com/job/product-hub)|
+| master | [![Build Status](http://ci.wso2telco.com:8080/job/product-hub/badge/icon)](http://ci.wso2telco.com:8080/view/IGW%20400%20Nightly%20Build/job/product-hub-NB/)|
 
 ---
 
-APIGATE AXP is an API management and monetization 
+APIGATE Accelerator Platform (Apigate AXP) is an API management and monetization 
 platform which supports all aspects of an API business, including creating, publishing, 
 consuming, discovery and monetization of APIs.
 
@@ -32,13 +32,13 @@ Internal Gateway Features
 6. General
     * Compatibility with WSO2 IAM version 5.6.0 as the Key Manager Profile
     * Bug Fixes
-    * Emails are not generating for API subscription and subscription approvals
-    * Request-response-logger is not available in IGW 4.0.0
-    * Some links are not navigating to the correct pages in store
-    * APIs are not showing in correct alignment in publisher portal
-    * Displaying list view and tile view of APIs in store
-    * Unable to scroll down when user click on a tag in the store
-    * IGW logo changes
+        * Emails are not generating for API subscription and subscription approvals
+        * Request-response-logger is not available in IGW 4.0.0
+        * Some links are not navigating to the correct pages in store
+        * APIs are not showing in correct alignment in publisher portal
+        * Displaying list view and tile view of APIs in store
+        * Unable to scroll down when user click on a tag in the store
+        * IGW logo changes
 
 System Requirements
 ==================================
@@ -77,7 +77,7 @@ supported from evaluation to production. Our unique approach ensures that all su
 leverages our open development methodology and is provided by the very same engineers 
 who build the technology.
 
-For additional support information please refer to https://support.wso2telco.com
+For additional support information please refer to [Apigate Support](https://support.wso2telco.com)
 
 Known issues of APIGATE AXP INTERNAL GATEWAY
 =====================================

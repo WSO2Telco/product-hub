@@ -24,13 +24,13 @@ Internal Gateway Features
 6. General
     * Compatibility with WSO2 IAM version 5.6.0 as the Key Manager Profile
     * Bug Fixes
-    * Emails are not generating for API subscription and subscription approvals
-    * Request-response-logger is not available in IGW 4.0.0
-    * Some links are not navigating to the correct pages in store
-    * APIs are not showing in correct alignment in publisher portal
-    * Displaying list view and tile view of APIs in store
-    * Unable to scroll down when user click on a tag in the store
-    * IGW logo changes
+        * Emails are not generating for API subscription and subscription approvals
+        * Request-response-logger is not available in IGW 4.0.0
+        * Some links are not navigating to the correct pages in store
+        * APIs are not showing in correct alignment in publisher portal
+        * Displaying list view and tile view of APIs in store
+        * Unable to scroll down when user click on a tag in the store
+        * IGW logo changes
 
 System Requirements
 ==================================
