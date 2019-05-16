@@ -22,7 +22,7 @@
     <parent>
         <groupId>com.wso2telco.product.dep</groupId>
         <artifactId>am-distribution-parent</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <version>4.0.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -144,11 +144,11 @@
                         <!--</goals>-->
                         <!--<configuration>-->
                             <!--<tasks>-->
-                                <!--<property name="tempdir" value="target/intgw"/>-->
-                                <!--<mkdir dir="${tempdir}"/>-->
+                                <!--<property name="tempdir" value="target/intgw" />-->
+                                <!--<mkdir dir="${tempdir}" />-->
                                 <!--<unzip dest="${tempdir}">-->
                                     <!--<fileset dir="am">-->
-                                        <!--<include name="wso2am-2.5.0.zip"/>-->
+                                        <!--<include name="wso2am-2.5.0.zip" />-->
                                     <!--</fileset>-->
                                 <!--</unzip>-->
                             <!--</tasks>-->
@@ -186,15 +186,12 @@
                         <configuration>
                             <tasks>
                                 <!-- download file -->
-                                <get src="https://s3.amazonaws.com/sftp-release-binaries/sftp/apim25/wso2am-2.5.0.zip"
-                                     dest="${project.build.directory}/wso2am-2.5.0.zip"
-                                     verbose="false"
-                                     usetimestamp="true"/>
-                                <property name="tempdir" value="target/intgw"/>
-                                <mkdir dir="${tempdir}"/>
+                                <get src="https://s3.amazonaws.com/sftp-release-binaries/sftp/apim25/wso2am-2.5.0.zip" dest="${project.build.directory}/wso2am-2.5.0.zip" verbose="false" usetimestamp="true" />
+                                <property name="tempdir" value="target/intgw" />
+                                <mkdir dir="${tempdir}" />
                                 <unzip dest="${tempdir}">
                                     <fileset dir="target">
-                                        <include name="wso2am-2.5.0.zip"/>
+                                        <include name="wso2am-2.5.0.zip" />
                                     </fileset>
                                 </unzip>
                             </tasks>
