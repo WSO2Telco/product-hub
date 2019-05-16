@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
- ~ Copyright  (c) 2015-2016, WSO2.Telco Inc. (http://www.wso2telco.com) All Rights Reserved.
- ~ 
- ~ WSO2.Telco Inc. licences this file to you under  the Apache License, Version 2.0 (the "License");
+ ~ Copyright  (c) 2015-2016, Apigate Sdn.Bhd. (http://www.apigate.com) All Rights Reserved.
+ ~
+ ~ Apigate Sdn.Bhd. licences this file to you under  the Apache License, Version 2.0 (the "License");
  ~ you may not use this file except in compliance with the License.
  ~ You may obtain a copy of the License at
- ~ 
+ ~
  ~   http://www.apache.org/licenses/LICENSE-2.0
- ~ 
+ ~
  ~ Unless required by applicable law or agreed to in writing, software
  ~ distributed under the License is distributed on an "AS IS" BASIS,
  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,134 +19,118 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-        <meta content="text/html; charset=iso-8859-1" http-equiv="content-type"/>
-        <title>WSO2Telco DEP(Digital Enablement Platform) API Manager</title>
-    </head>
-    <body>
-        <div id="main-content">
-            <h1>WSO2Telco DEP(Digital Enablement Platform) API Manager Released!</h1>
+<head>
+    <meta content="text/html; charset=iso-8859-1" http-equiv="content-type"/>
+    <title>APIGATE AXP INTERNAL GATEWAY 4.0.0</title>
+</head>
+<body>
+<div id="main-content">
+    <h1> APIGATE AXP INTERNAL GATEWAY 4.0.0 Released!</h1>
 
-            <p>
-                The WSO2Telco team is pleased to announce the release of version 2.0.0 of
-                the Open Source DEP API Manager.
-            </p>
+    <p>
+        The Apigate team is pleased to announce the release of version 4.0.0 of
+        the Open Source APIGATE AXP Internal Gateway.
+    </p>
 
-            <p>
-                WSO2Telco DEP(Digital Enablement Platform) is an API management and monetization platform which supports all 
-				aspects of an API business, including creating, publishing, consuming, discovery 
-				and monetization of APIs.
-            </p>
-            
-            <p>
-                WSO2Telco DEP can function as an: 
-            </p>
-            <ul>
-                <li><b>External Gateway:</b> Expose and govern all your APIs using a common platform.</li>
-                <li><b>Internal Gateway:</b> Expose and share APIs within an organizations business units. APIs can be restricted to specific user groups and API governance can be controlled by the API owners.</li>
-            </ul>
+    <p>
+        APIGATE AXP (Accelerator Platform) INTERNAL GATEWAY is an API management and monetization platform which supports all
+        aspects of an API business, including creating, publishing, consuming, discovery
+        and monetization of APIs.
+    </p>
 
-            <p>
-                For more information on WSO2Telco DEP Gateway please visit <a href="https://wso2telco.com/gateways">
-                https://wso2telco.com/gateways</a>.
-            </p>
+    <h2>How to Run</h2>
+    <ol>
+        <li>Extract the downloaded zip</li>
+        <li>Go to the bin directory in the extracted folder</li>
+        <li>Run the wso2server.sh or wso2server.bat as appropriate</li>
+        <li>Launch a web browser and navigate to https://localhost:9443/publisher
+            to access the API provider webapp
+        </li>
+        <li>Navigate to https://localhost:9443/store to access the API store</li>
+        <li>Use "admin", "admin" as the username and password to login as an admin</li>
+    </ol>
 
-            <h2>How to Run</h2>
-            <ol>
-                <li>Extract the downloaded zip</li>
-                <li>Go to the bin directory in the extracted folder</li>
-                <li>Run the wso2server.sh or wso2server.bat as appropriate</li>
-                <li>Launch a web browser and navigate to http://localhost:9763/publisher
-                    to access the API provider webapp
-                </li>
-                <li>Navigate to http://localhost:9763/store to access the API store</li>
-                <li>Use "admin", "admin" as the username and password to login as an admin</li>
+
+    <h2>Key Features of Apigate AXP Internal Gateway</h2>
+    <ul>
+        <li>Improved UI for Manage Application</li>
+        <li>Improved traceability, ability to trace API calls with a unique ID</li>
+        <li>Enable response caching for APIs</li>
+        <li>
+            Dep Upgrade to APIM 2.5.0
+            <ol>API Gateway/Microgateway</ol>
+            <ol>Allowing low-latency secure access to microservices</ol>
+            <ol>Protection against malicious XML and JSON Payloads at the API Gateway</ol>
+            <ol>Ability to upload certs to access back-end services using self-signed certs</ol>
+        </li>
+        <li>
+            Access Control
+            <ul>Ability to use any header to carry the Bearer token to the Gateway instead of the Authorization header</ul>
+        </li>
+        <li>
+            General
+            <ol>Compatibility with WSO2 IAM version 5.6.0 as the Key Manager Profile</ol>
+            <ol>Bug Fixes
+                <ol>Emails are not generating for API subscription and subscription approvals</ol>
+                <ol>Request-response-logger is not available in IGW 4.0.0</ol>
+                <ol>Some links are not navigating to the correct pages in store</ol>
+                <ol>APIs are not showing in correct alignment in publisher portal</ol>
+                <ol>Displaying list view and tile view of APIs in store</ol>
+                <ol>Unable to scroll down when user click on a tag in the store</ol>
+                <ol>IGW logo changes</ol>
             </ol>
+        </li>
+    </ul>
 
-            
-            <h2>Key Features of WSO2Telco DEP API Manager</h2>
-            <p>
-                Following is a categorization of the core features supported by WSO2Telco DEP API Manager
-                based on the target user group.
-            </p>
-            <ul>
-                <li>
-                    Internal Gateway:
-                    <ul>
-                        <li>Freely download and deploy Mobile Connect features</li>
-                        <li>Complete API management capabilities provided by the renowned WSO2 API Manager</li>
-                        <li>Discovery and governance layer for internal APIs and microservices framework</li>
-                        <li>Application and subscription approval workflow enabling governance, ownership, and accountability to be maintained for all approved applications supporting multiple teams that publish APIs</li>
-                        <li>Manage access and discoverability of APIs based on user roles</li>
-                        <li>Library of connectors to integrate to most standard-based components and common vendor interfaces</li>
-                    </ul>
-                </li>
-                <li>
-                    External Gateway:
-                    <ul>
-                        <li>Full featured API management</li>
-                        <li>Smart orchestration and workflow</li>
-                        <li>Secure exposure of MNO services over REST APIs</li>
-                        <li>Built-in MNO-specific adapters (SMPP, Webservices and Diameter)</li>
-                        <li>Insulates the MNO core network elements from external developers</li>
-                        <li>Built-in Mobile Connect compliant Identity Gateway and Authenticator libraries</li>
-                        <li>Built in ACR module for anonymising MSISDNs locally</li>
-                        <li>Pre-built integration to the Hub and other GSMA API Exchanges</li>
-                    </ul>
-                </li>
-            </ul>
+    <h2>Known Issues</h2>
+    <ul>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-407">https://jira.wso2telco.com/jira/browse/INTGW-407</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-408">https://jira.wso2telco.com/jira/browse/INTGW-408</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-410">https://jira.wso2telco.com/jira/browse/INTGW-410</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-411">https://jira.wso2telco.com/jira/browse/INTGW-411</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-412">https://jira.wso2telco.com/jira/browse/INTGW-412</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-416">https://jira.wso2telco.com/jira/browse/INTGW-416</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-420">https://jira.wso2telco.com/jira/browse/INTGW-420</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-427">https://jira.wso2telco.com/jira/browse/INTGW-427</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-429">https://jira.wso2telco.com/jira/browse/INTGW-429</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-434">https://jira.wso2telco.com/jira/browse/INTGW-434</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-435">https://jira.wso2telco.com/jira/browse/INTGW-435</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-436">https://jira.wso2telco.com/jira/browse/INTGW-436</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-437">https://jira.wso2telco.com/jira/browse/INTGW-437</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-438">https://jira.wso2telco.com/jira/browse/INTGW-438</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-440">https://jira.wso2telco.com/jira/browse/INTGW-440</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-426">https://jira.wso2telco.com/jira/browse/INTGW-426</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-444">https://jira.wso2telco.com/jira/browse/INTGW-444</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-445">https://jira.wso2telco.com/jira/browse/INTGW-445</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-467">https://jira.wso2telco.com/jira/browse/INTGW-467</a></li>
+        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-469">https://jira.wso2telco.com/jira/browse/INTGW-469</a></li>
+    </ul>
 
-            <h2>Known Issues</h2>
-            <p>
-                All the open issues pertaining to WSO2Telco DEP API Manager are reported at the following
-                location:
-            </p>
-            <ul>
-                <li>
-                    <a href="https://jira.wso2telco.com/jira/projects/DEPAM/issues?filter=allopenissues">
-                        WSO2Telco DEP API Manager open issues
-                    </a>
-                </li>
-            </ul>
+    <h2>How You Can Contribute</h2>
+    <h3>
+        Reporting Issues
+    </h3>
+    <p>
+        We encourage you to report issues, documentation faults and feature requests
+        regarding
+        APIGATE AXP Internal Gateway through the public <a href="https://jira.wso2telco.com/jira/projects/INTGW/issues"> Apigate AXP Internal Gateway Jira</a>.
+    </p>
 
-            <h2>How You Can Contribute</h2>
-            <h3>
-                Mailing Lists
-            </h3>
-            <p>
-                Join our mailing list and correspond with the developers directly.
-            </p>
-            <ul>
-                <li>
-                    Developer List :
-                    <a href="mailto:dev@wso2telco.org">dev@wso2telco.org</a>
-                </li>
-            </ul>
-            <h3>
-                Reporting Issues
-            </h3>
-            <p>
-                We encourage you to report issues, documentation faults and feature requests
-                regarding
-                WSO2Telco DEP API Manager through the public<a href="https://jira.wso2telco.com/jira/projects/DEPAM/issues"> WSO2Telco DEP API Manager
-                JIRA</a>.
-            </p>
+    <h2>Support</h2>
+    <p>
+        We are committed to ensuring that your enterprise middleware deployment is
+        completely supported from evaluation to production. Our unique approach
+        ensures that all support leverages our open development methodology and is
+        provided by the very same engineers who build the technology.
+    </p>
+    <p>
+        For more details and to take advantage of this unique opportunity please
+        visit <a href="https://support.wso2telco.com">apigate support</a>.
+    </p>
 
-            <h2>Support</h2>
-            <p>
-                We are committed to ensuring that your enterprise middleware deployment is
-                completely supported from evaluation to production. Our unique approach
-                ensures that all support leverages our open development methodology and is
-                provided by the very same engineers who build the technology.
-            </p>
-            <p>
-                For more details and to take advantage of this unique opportunity please
-                visit <a href="http://wso2telco.com/services">http://wso2telco.com/services</a>.
-            </p>
-            
-            <p>
-                <i>-- The WSO2Telco Team --</i>
-            </p>
-        </div>
-    </body>
+    <p>
+        <i>-- The Apigate Team --</i>
+    </p>
+</div>
+</body>
 </html>
