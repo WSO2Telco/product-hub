@@ -49,11 +49,11 @@
     <properties>
 
         <!-- WSO2 Telco versions -->
-        <com.wso2telco.dep.version>3.0.0</com.wso2telco.dep.version>
+        <com.wso2telco.dep.version>3.0.1-SNAPSHOT</com.wso2telco.dep.version>
         <com.wso2telco.core.version>2.4.5</com.wso2telco.core.version>
-	    <com.wso2telco.manageapp.version>2.1.1</com.wso2telco.manageapp.version>
-        <com.wso2telco.dep.feature.version>3.0.0</com.wso2telco.dep.feature.version>
-        <com.wso2teloc.manageapp.feature>2.1.1</com.wso2teloc.manageapp.feature>
+	    <com.wso2telco.manageapp.version>2.1.2-SNAPSHOT</com.wso2telco.manageapp.version>
+        <com.wso2telco.dep.feature.version>3.0.1.SNAPSHOT</com.wso2telco.dep.feature.version>
+        <com.wso2teloc.manageapp.feature>2.1.2.SNAPSHOT</com.wso2teloc.manageapp.feature>
         <!-- APIM Component Version -->
         <carbon.apimgt.version>6.0.4</carbon.apimgt.version>
         <carbon.apimgt.imp.pkg.version>[6.0.0, 7.0.0)</carbon.apimgt.imp.pkg.version>
