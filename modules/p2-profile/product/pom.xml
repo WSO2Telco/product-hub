@@ -61,7 +61,7 @@
     <parent>
         <groupId>com.wso2telco.product.dep</groupId>
         <artifactId>am-p2-profile-gen-parent</artifactId>
-        <version>4.0.0-SNAPSHOT</version>
+        <version>4.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -218,109 +218,109 @@
                         <configuration>
                             <tasks>
                                 <!-- store-UI -->
-                                <property name="tempdir" value="target/features/store"/>
-                                <mkdir dir="${tempdir}"/>
+                                <property name="tempdir" value="target/features/store" />
+                                <mkdir dir="${tempdir}" />
                                 <unzip dest="${tempdir}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.store.ui_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.store.ui_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- hub-core -->
-                                <property name="tempdir2" value="target/features/hub-core"/>
-                                <mkdir dir="${tempdir2}"/>
+                                <property name="tempdir2" value="target/features/hub-core" />
+                                <mkdir dir="${tempdir2}" />
                                 <unzip dest="${tempdir2}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.hub.core_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.hub.core_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- Extract aggregator-blacklist webapp -->
-                                <property name="tempdir3" value="target/features/webapps/aggregator-blacklist"/>
-                                <mkdir dir="${tempdir3}"/>
+                                <property name="tempdir3" value="target/features/webapps/aggregator-blacklist" />
+                                <mkdir dir="${tempdir3}" />
                                 <unzip dest="${tempdir3}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.aggregatorblacklist.webapp_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.aggregatorblacklist.webapp_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- Extract blacklist-whitelists-service webapp -->
-                                <property name="tempdir4" value="target/features/webapps/blacklist-whitelistservice"/>
-                                <mkdir dir="${tempdir4}"/>
+                                <property name="tempdir4" value="target/features/webapps/blacklist-whitelistservice" />
+                                <mkdir dir="${tempdir4}" />
                                 <unzip dest="${tempdir4}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.blacklistwhitelistservice.webapp_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.blacklistwhitelistservice.webapp_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- Extract workflow-service webapp -->
-                                <property name="tempdir5" value="target/features/webapps/workflow-service"/>
-                                <mkdir dir="${tempdir5}"/>
+                                <property name="tempdir5" value="target/features/webapps/workflow-service" />
+                                <mkdir dir="${tempdir5}" />
                                 <unzip dest="${tempdir5}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.workflow.service_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.workflow.service_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- Extract quota-service webapp -->
-                                <property name="tempdir6" value="target/features/webapps/quota-service"/>
-                                <mkdir dir="${tempdir6}"/>
+                                <property name="tempdir6" value="target/features/webapps/quota-service" />
+                                <mkdir dir="${tempdir6}" />
                                 <unzip dest="${tempdir6}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.quota.service_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.quota.service_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- Extract activiti-explorer -->
-                                <property name="tempdir7" value="target/features/webapps/activiti-explorer"/>
-                                <mkdir dir="${tempdir7}"/>
+                                <property name="tempdir7" value="target/features/webapps/activiti-explorer" />
+                                <mkdir dir="${tempdir7}" />
                                 <unzip dest="${tempdir7}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.activiti_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.activiti_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- Extract ratecard-service -->
-                                <property name="tempdir8" value="target/features/webapps/ratecard-service"/>
-                                <mkdir dir="${tempdir8}"/>
+                                <property name="tempdir8" value="target/features/webapps/ratecard-service" />
+                                <mkdir dir="${tempdir8}" />
                                 <unzip dest="${tempdir8}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.ratecard.service_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.ratecard.service_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- Extract manage-service -->
-                                <property name="tempdir9" value="target/features/webapps/manage-service"/>
-                                <mkdir dir="${tempdir9}"/>
+                                <property name="tempdir9" value="target/features/webapps/manage-service" />
+                                <mkdir dir="${tempdir9}" />
                                 <unzip dest="${tempdir9}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.manage-service_${com.wso2teloc.manageapp.feature}.jar"/>
+                                        <include name="com.wso2telco.dep.manage-service_${com.wso2teloc.manageapp.feature}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!-- publisher UI -->
-                                <property name="tempdir10" value="target/features/publisher"/>
-                                <mkdir dir="${tempdir10}"/>
+                                <property name="tempdir10" value="target/features/publisher" />
+                                <mkdir dir="${tempdir10}" />
                                 <unzip dest="${tempdir10}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.publisher.ui_${com.wso2telco.dep.feature.version}.jar"/>
+                                        <include name="com.wso2telco.dep.publisher.ui_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
                                 </unzip>
 
                                 <!--extract jaggery apps -->
-                                <property name="tempdir11" value="target/features/jaggeryapps/publisher"/>
-                                <mkdir dir="${tempdir11}"/>
+                                <property name="tempdir11" value="target/features/jaggeryapps/publisher" />
+                                <mkdir dir="${tempdir11}" />
                                 <unzip dest="${tempdir11}">
                                     <fileset dir="target/features/publisher/generated">
-                                        <include name="publisher.zip"/>
+                                        <include name="publisher.zip" />
                                     </fileset>
                                 </unzip>
 
-                                <property name="tempdir12" value="target/features/jaggeryapps/store"/>
-                                <mkdir dir="${tempdir12}"/>
+                                <property name="tempdir12" value="target/features/jaggeryapps/store" />
+                                <mkdir dir="${tempdir12}" />
                                 <unzip dest="${tempdir12}">
                                     <fileset dir="target/features/store/generated">
-                                        <include name="store.zip"/>
+                                        <include name="store.zip" />
                                     </fileset>
                                 </unzip>
                             </tasks>
