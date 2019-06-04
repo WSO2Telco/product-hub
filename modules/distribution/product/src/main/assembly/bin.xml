@@ -462,6 +462,29 @@
             <fileMode>644</fileMode>
         </file>
 
+        <file>
+            <source>
+                ../../p2-profile/product/target/features/hub-core/synapse-configs/sequences/_auth_failure_handler_.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs/default/sequences</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/features/hub-core/synapse-configs/sequences/_throttle_out_handler_.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs/default/sequences</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>
+                ../../p2-profile/product/target/features/hub-core/synapse-configs/sequences/fault.xml
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/synapse-configs/default/sequences</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
 
 
         <!--todo  extract the features and move to relevant locations  -->
