@@ -106,4 +106,4 @@ requests through the APIGATE AXP JIRA system:
     https://jira.wso2telco.com/jira/projects/INTGW/issues
 
 --------------------------------------------------------------------------------
-(c) Copyright 2016 Apigate.
+(c) Copyright 2019 Apigate.
