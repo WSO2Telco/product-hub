@@ -87,7 +87,7 @@
             <outputDirectory>wso2telcohub-${pom.version}/repository/resources/apim-synapse-config/</outputDirectory>
         </fileSet>
 
-        <!--get all plugins rajith todo - remove 4 additional plugins properly -->
+        <!--get all plugins todo - remove 4 additional plugins properly -->
         <fileSet>
             <directory>
                 ../../p2-profile/product/target/p2-repo/plugins
