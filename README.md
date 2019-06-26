@@ -57,7 +57,7 @@ Installation & Running
 ==================================
 
 1. Extract the downloaded zip file and go to the 'bin' directory
-2. Run the wso2server.sh or wso2server.bat as appropriate
+2. Run the axpserver.sh or axpserver.bat as appropriate
 3. API Publisher web application is running at https://localhost:9443/publisher. You may login
    to the Publisher using the default administrator credentials (user: admin, pass: admin).
 4. API Store web application is running at https://localhost:9443/store. You may login
