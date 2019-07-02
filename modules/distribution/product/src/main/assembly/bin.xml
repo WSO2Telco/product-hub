@@ -315,14 +315,14 @@
         </file>
 
         <file>
-            <source>src/main/startup-scripts/wso2server.sh</source>
+            <source>src/main/startup-scripts/axpserver.sh</source>
             <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
             <filtered>true</filtered>
             <fileMode>755</fileMode>
         </file>
 
         <file>
-            <source>src/main/startup-scripts/wso2server.bat</source>
+            <source>src/main/startup-scripts/axpserver.bat</source>
             <outputDirectory>wso2telcohub-${pom.version}/bin/</outputDirectory>
             <filtered>true</filtered>
             <fileMode>755</fileMode>

@@ -1,5 +1,5 @@
 ================================================================================
-                         APIGATE AXP INTERNAL GATEWAY 4.0.0
+                         APIGATE AXP INTERNAL GATEWAY 4.0.1
 ================================================================================
 
 APIGATE AXP is an API management and monetization
@@ -11,26 +11,7 @@ Key Features
 
 Internal Gateway Features
 -------------------------
-1. Improved UI for Manage Application
-2. Improved traceability, ability to trace API calls with a unique ID
-3. Enable response caching for APIs
-4. Dep Upgarde to APIM 2.5.0
-    * API Gateway/Microgateway
-    * Allowing low-latency secure access to microservices
-    * Protection against malicious XML and JSON Payloads at the API Gateway
-    * Ability to upload certs to access back-end services using self-signed certs
-5. Access Control
-    * Ability to use any header to carry the Bearer token to the Gateway instead of the ‘Authorization’ header
-6. General
-    * Compatibility with WSO2 IAM version 5.6.0 as the Key Manager Profile
-    * Bug Fixes
-        * Emails are not generating for API subscription and subscription approvals
-        * Request-response-logger is not available in IGW 4.0.0
-        * Some links are not navigating to the correct pages in store
-        * APIs are not showing in correct alignment in publisher portal
-        * Displaying list view and tile view of APIs in store
-        * Unable to scroll down when user click on a tag in the store
-        * IGW logo changes
+1.
 
 System Requirements
 ==================================
@@ -49,7 +30,7 @@ Installation & Running
 ==================================
 
 1. Extract the downloaded zip file and go to the 'bin' directory
-2. Run the wso2server.sh or wso2server.bat as appropriate
+2. Run the axpserver.sh or axpserver.bat as appropriate
 3. API Publisher web application is running at https://localhost:9443/publisher. You may login
    to the Publisher using the default administrator credentials (user: admin, pass: admin).
 4. API Store web application is running at https://localhost:9443/store. You may login
@@ -59,7 +40,7 @@ Documentation
 ==============
 
 On-line product documentation is available at:
-       https://docs.apigate.com/display/MI/INT-GW-4.0.0
+       https://docs.apigate.com/display/MI/INT-GW-4.0.1
 
 Support
 ==================================
@@ -71,31 +52,12 @@ who build the technology.
 
 For additional support information please refer to https://support.wso2telco.com
 
-Known issues of APIGATE AXP INTERNAL GATEWAY 4.0.0
+Known issues of APIGATE AXP INTERNAL GATEWAY 4.0.1
 =====================================
 
-All the open issues pertaining to APIGATE AXP INTERNAL GATEWAY 4.0.0 :
+All the open issues pertaining to APIGATE AXP INTERNAL GATEWAY 4.0.1 :
 
-    https://jira.wso2telco.com/jira/browse/INTGW-407
-    https://jira.wso2telco.com/jira/browse/INTGW-408
-    https://jira.wso2telco.com/jira/browse/INTGW-410
-    https://jira.wso2telco.com/jira/browse/INTGW-411
-    https://jira.wso2telco.com/jira/browse/INTGW-412
-    https://jira.wso2telco.com/jira/browse/INTGW-416
-    https://jira.wso2telco.com/jira/browse/INTGW-420
-    https://jira.wso2telco.com/jira/browse/INTGW-427
-    https://jira.wso2telco.com/jira/browse/INTGW-429
-    https://jira.wso2telco.com/jira/browse/INTGW-434
-    https://jira.wso2telco.com/jira/browse/INTGW-435
-    https://jira.wso2telco.com/jira/browse/INTGW-436
-    https://jira.wso2telco.com/jira/browse/INTGW-437
-    https://jira.wso2telco.com/jira/browse/INTGW-438
-    https://jira.wso2telco.com/jira/browse/INTGW-440
-    https://jira.wso2telco.com/jira/browse/INTGW-426
-    https://jira.wso2telco.com/jira/browse/INTGW-444
-    https://jira.wso2telco.com/jira/browse/INTGW-445
-    https://jira.wso2telco.com/jira/browse/INTGW-467
-    https://jira.wso2telco.com/jira/browse/INTGW-469
+    https://jira.wso2telco.com/jira/browse/***
 
 Issue Tracker
 ==================================
