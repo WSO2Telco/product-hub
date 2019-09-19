@@ -47,6 +47,7 @@
                 <exclude>**repository/deployment/server/jaggeryapps/store/**</exclude>
                 <exclude>**repository/deployment/server/jaggeryapps/publisher/**</exclude>
                 <exclude>**/user-mgt.xml</exclude>
+                <exclude>**/api-manager.xml</exclude>
 
             </excludes>
         </fileSet>
