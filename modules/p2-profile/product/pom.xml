@@ -135,9 +135,6 @@
                                     com.wso2telco.dep:com.wso2telco.dep.logging.extension.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
-                                    com.wso2telco.dep:com.wso2telco.dep.mediator.feature:${com.wso2telco.dep.version}
-                                </featureArtifactDef>
-                                <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.manage.ui.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
