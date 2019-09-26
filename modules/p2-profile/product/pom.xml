@@ -291,7 +291,7 @@
                                 <mkdir dir="${tempdir9}" />
                                 <unzip dest="${tempdir9}">
                                     <fileset dir="target/p2-repo/features">
-                                        <include name="com.wso2telco.dep.manage-service_${com.wso2teloc.manageapp.feature}.jar" />
+                                        <include name="com.wso2telco.dep.manage-service_${com.wso2telco.manageapp.feature}.jar" />
                                     </fileset>
                                 </unzip>
 
