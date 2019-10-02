@@ -177,6 +177,9 @@
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.server.startup.observer.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.usermasking.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
 
                             </featureArtifacts>
                         </configuration>
