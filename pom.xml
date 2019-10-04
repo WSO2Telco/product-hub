@@ -49,11 +49,11 @@
     <properties>
 
         <!-- WSO2 Telco versions -->
-        <com.wso2telco.dep.version>3.0.1-SNAPSHOT</com.wso2telco.dep.version>
+        <com.wso2telco.dep.version>3.0.2-SNAPSHOT</com.wso2telco.dep.version>
         <com.wso2telco.core.version>2.4.6-SNAPSHOT</com.wso2telco.core.version>
 	    <com.wso2telco.manageapp.version>2.1.2-SNAPSHOT</com.wso2telco.manageapp.version>
         <!--feature snapshot version e.g: 3.0.0.SNAPSHOT-->
-        <com.wso2telco.dep.feature.version>3.0.1.SNAPSHOT</com.wso2telco.dep.feature.version>
+        <com.wso2telco.dep.feature.version>3.0.2.SNAPSHOT</com.wso2telco.dep.feature.version>
         <com.wso2telco.manageapp.feature>2.1.2.SNAPSHOT</com.wso2telco.manageapp.feature>
         <!-- APIM Component Version -->
         <carbon.apimgt.version>6.0.4</carbon.apimgt.version>
