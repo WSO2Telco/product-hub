@@ -36,7 +36,7 @@ System Requirements
    with MS IE 7. In addition to JavaScript, ActiveX should also be enabled
    with IE. This can be achieved by setting your security level to
    medium or lower.
-5. To build APIGATE AXP INTERNAL GATEWAY from the Source distribution, it is necessary that you have
+5. To build APIGATE AXP EXTERNAL GATEWAY from the Source distribution, it is necessary that you have
    JDK 1.8 version and Maven 3.3.9
 
 Installation & Running
