@@ -19,7 +19,26 @@ Key Features
 
 Internal Gateway Features
 -------------------------
-1. 
+1)Productized MBSS compliance
+
+        -Centralized login functionality
+        -Ability to lock user accounts upon repeated failed attempts
+        -Session management feature
+        -Ability to define user activity periods
+        -Password recovery via email link
+        -Account suspension feature/email notification
+        -Change/reset password feature & password validator
+        -Facilitate for the user to create password while account is created by admin
+        -Display last login time in store
+        -Periodic password change feature
+        -Idle account locking feature
+        -Password History validation
+
+2)Security Improvements - password validator in store 
+3)Ability to secure APIs with Basic Authentication
+4)Logging user activity
+5)Generate REST API from SOAP Backend
+6)Support for Open API Specification (Swagger) version 3.0
 
 System Requirements
 ==================================
@@ -60,8 +79,23 @@ who build the technology.
 
 For additional support information please refer to [Apigate Support](https://support.wso2telco.com)
 
-Known issues of APIGATE AXP INTERNAL GATEWAY
+Known issues  of APIGATE AXP INTERNAL GATEWAY
 =====================================
+
+1 	https://jira.wso2telco.com/jira/browse/INTGW-635
+2 	https://jira.wso2telco.com/jira/browse/INTGW-636 
+3 	https://jira.wso2telco.com/jira/browse/INTGW-694 
+4 	https://jira.wso2telco.com/jira/browse/INTGW-695 
+5 	https://jira.wso2telco.com/jira/browse/INTGW-534 
+6 	https://jira.wso2telco.com/jira/browse/INTGW-537
+7 	https://jira.wso2telco.com/jira/browse/INTGW-671
+8 	https://jira.wso2telco.com/jira/browse/INTGW-865
+9 	https://jira.wso2telco.com/jira/browse/INTGW-811 
+10 	https://jira.wso2telco.com/jira/browse/INTGW-859	
+11 	https://jira.wso2telco.com/jira/browse/INTGW-863
+12 	https://jira.wso2telco.com/jira/browse/INTGW-862 
+13 	https://jira.wso2telco.com/jira/browse/INTGW-866 
+14 	https://jira.wso2telco.com/jira/browse/INTGW-444
 
 All the open issues pertaining to APIGATE AXP INTERNAL GATEWAY 4.0.1 :
 
