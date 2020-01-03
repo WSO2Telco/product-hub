@@ -202,7 +202,7 @@
         <url>https://github.com/WSO2Telco/product-hub.git</url>
         <developerConnection>scm:git:https://github.com/WSO2Telco/product-hub.git</developerConnection>
         <connection>scm:git:https://github.com/WSO2Telco/product-hub.git</connection>
-        <tag>product-hub-v4.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <snapshotRepository>
