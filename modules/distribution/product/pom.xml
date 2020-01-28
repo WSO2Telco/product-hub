@@ -22,7 +22,7 @@
     <parent>
         <groupId>com.wso2telco.product.dep</groupId>
         <artifactId>am-distribution-parent</artifactId>
-        <version>4.0.1-SNAPSHOT</version>
+        <version>4.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -186,7 +186,7 @@
                         <configuration>
                             <tasks>
                                 <!-- download file -->
-                                <get src="https://sftp-release-binaries.s3.amazonaws.com/sftp/apim25/wso2am-2.5.0%2B1561479996720.full.zip" dest="${project.build.directory}/wso2am-2.5.0.zip" verbose="false" usetimestamp="true" />
+                                <get src="https://sftp-release-binaries.s3.amazonaws.com/sftp/apim25/wso2am-2.5.0%2B1576853859524.full.zip" dest="${project.build.directory}/wso2am-2.5.0.zip" verbose="false" usetimestamp="true" />
                                 <property name="tempdir" value="target/intgw" />
                                 <mkdir dir="${tempdir}" />
                                 <unzip dest="${tempdir}">

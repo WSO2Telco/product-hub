@@ -29,7 +29,7 @@
     <groupId>com.wso2telco.product.dep</groupId>
     <artifactId>dep-product-parent</artifactId>
     <packaging>pom</packaging>
-    <version>4.0.1-SNAPSHOT</version>
+    <version>4.0.2-SNAPSHOT</version>
     <name>WSO2 Telco HUB - Aggregator Module</name>
     <url>http://wso2.com/products/api-manager</url>
     <description>WSO2Telco Digital Enablement Hub</description>
@@ -49,10 +49,10 @@
     <properties>
 
         <!-- WSO2 Telco versions -->
-        <com.wso2telco.dep.version>3.0.1-SNAPSHOT</com.wso2telco.dep.version>
+        <com.wso2telco.dep.version>3.0.2-SNAPSHOT</com.wso2telco.dep.version>
         <com.wso2telco.core.version>2.4.5</com.wso2telco.core.version>
 	    <com.wso2telco.manageapp.version>2.1.2-SNAPSHOT</com.wso2telco.manageapp.version>
-        <com.wso2telco.dep.feature.version>3.0.1.SNAPSHOT</com.wso2telco.dep.feature.version>
+        <com.wso2telco.dep.feature.version>3.0.2.SNAPSHOT</com.wso2telco.dep.feature.version>
         <com.wso2teloc.manageapp.feature>2.1.2.SNAPSHOT</com.wso2teloc.manageapp.feature>
         <!-- APIM Component Version -->
         <carbon.apimgt.version>6.0.4</carbon.apimgt.version>
