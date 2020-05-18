@@ -44,8 +44,8 @@
                 <exclude>**/repository/resources/api_templates/velocity_template.xml</exclude>
                 <exclude>**repository/resources/default-tiers/default-app-tiers.xml</exclude>
                 <exclude>**repository/resources/default-tiers/default-tiers.xml</exclude>
-                <exclude>**repository/deployment/server/jaggeryapps/store/**</exclude>
-                <exclude>**repository/deployment/server/jaggeryapps/publisher/**</exclude>
+<!--                <exclude>**repository/deployment/server/jaggeryapps/store/**</exclude>-->
+<!--                <exclude>**repository/deployment/server/jaggeryapps/publisher/**</exclude>-->
                 <exclude>**/user-mgt.xml</exclude>
                 <exclude>**/api-manager.xml</exclude>
 

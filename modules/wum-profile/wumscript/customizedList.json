@@ -1,0 +1,63 @@
+{
+    "admin": {
+        "updated": [],
+        "added": []
+    },
+    "publisher": {
+        "updated": [
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/css/custom.css",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/libs/theme-wso2_1.0/css/theme-wso2.css",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/libs/load-tabs.js",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/footer/template.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/item-implement/js/api-implementation.js",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/item-manage/template.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/listing/template.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/menu/actions/template.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/menu/left/template.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/sso/filter/template.jag"
+        ],
+        "added": []
+    },
+    "store": {
+        "updated": [
+            "/repository/deployment/server/jaggeryapps/store/modules/manager/manager.jag",
+            "/repository/deployment/server/jaggeryapps/store/modules/manager/module.jag",
+            "/repository/deployment/server/jaggeryapps/store/modules/subscription/list.jag",
+            "/repository/deployment/server/jaggeryapps/store/modules/user/module.jag",
+            "/repository/deployment/server/jaggeryapps/store/modules/user/user.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/blocks/api/api-info/ajax/api-info.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/blocks/api/api-info/block.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/blocks/subscription/subscription-list/ajax/subscription-list.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/blocks/subscription/subscription-remove/ajax/subscription-remove.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/blocks/user/user-info/block.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/conf/locales/jaggery/locale_default.json",
+            "/repository/deployment/server/jaggeryapps/store/site/conf/locales/jaggery/locale_en.json",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/css/custom.css",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/js/applications.js",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/js/script.js",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/libs/datepicker/js/daterangepicker.js",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/libs/theme-wso2_1.0/css/theme-wso2.css",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/api/api-info/js/api-info.js",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/api/api-info/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/api/api-listing-all/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/api/provider-apis/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/api/recently-added/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/application/application-add/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/application/application-edit/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/application/application-list/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/application/application-view/initializer.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/menu/header/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/menu/primary/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/page/base/initializer.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/page/base/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/sso/filter/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/sso/logout/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/subscription/subscribed-apis/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/tag/tag-cloud/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/user/login/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/site/themes/wso2/templates/user/user-info/template.jag",
+            "/repository/deployment/server/jaggeryapps/store/jaggery.conf"
+        ],
+        "added": []
+    }
+}
