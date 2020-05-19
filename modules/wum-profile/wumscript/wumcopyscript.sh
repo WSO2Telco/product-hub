@@ -18,15 +18,11 @@ done
 return 10
 }
 
-
-
 replaceModule(){
 rm -rf $jagAppsDir/${1}
 mv $jagAppsDir/${2} $jagAppsDir/${1}
 return 10
 }
-
-
 
 createTempDir(){
 mkdir -p $jagAppsDir/${1}
@@ -35,13 +31,9 @@ return 10
 }
 
 
-
-
 cd ../../
 customizedList=$(pwd)/modules/wum-profile/wumscript/customizedList.json
 jagAppsDir=$(pwd)/modules/p2-profile/product/target/features/jaggeryapps
-
-
 
 
 echo "Script Starting --- "
@@ -50,8 +42,6 @@ copyFilesToTemp 'store' 'store-temp'
 copyFilesToTemp 'publisher' 'publisher-temp'
 replaceModule 'store' 'store-temp'
 replaceModule 'publisher' 'publisher-temp'
-
-
 
 echo "done ---"
 

@@ -22,12 +22,27 @@
 
 <build>
 <plugins>
+
     <plugin>
         <artifactId>exec-maven-plugin</artifactId>
         <groupId>org.codehaus.mojo</groupId>
         <executions>
             <execution>
-                <id>wum artifact build script</id>
+                <id>script permission allow</id>
+                <phase>generate-sources</phase>
+                <goals>
+                    <goal>exec</goal>
+                </goals>
+                <configuration>
+                    <executable>chmod</executable>
+                    <arguments>
+                        <argument>777</argument>
+                        <argument>${basedir}/wumscript/wumcopyscript.sh</argument>
+                    </arguments>
+                </configuration>
+            </execution>
+            <execution>
+                <id>wum script run </id>
                 <phase>generate-sources</phase>
                 <goals>
                     <goal>exec</goal>
@@ -38,6 +53,7 @@
             </execution>
         </executions>
     </plugin>
+
 </plugins>
 </build>
 
