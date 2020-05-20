@@ -37,6 +37,7 @@ jagAppsDir=$(pwd)/modules/p2-profile/product/target/features/jaggeryapps
 
 
 echo "Script Starting --- "
+apt-get install jq -y
 createTempDir 'publisher-temp' 'store-temp'
 copyFilesToTemp 'store' 'store-temp'
 copyFilesToTemp 'publisher' 'publisher-temp'
