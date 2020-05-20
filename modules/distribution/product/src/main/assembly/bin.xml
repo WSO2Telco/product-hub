@@ -44,8 +44,8 @@
                 <exclude>**/repository/resources/api_templates/velocity_template.xml</exclude>
                 <exclude>**repository/resources/default-tiers/default-app-tiers.xml</exclude>
                 <exclude>**repository/resources/default-tiers/default-tiers.xml</exclude>
-                <exclude>**repository/deployment/server/jaggeryapps/store/**</exclude>
-                <exclude>**repository/deployment/server/jaggeryapps/publisher/**</exclude>
+<!--                <exclude>**repository/deployment/server/jaggeryapps/store/**</exclude>-->
+<!--                <exclude>**repository/deployment/server/jaggeryapps/publisher/**</exclude>-->
                 <exclude>**/user-mgt.xml</exclude>
                 <exclude>**/api-manager.xml</exclude>
 
@@ -252,23 +252,23 @@
         <!--End of DEP Hub related dbscripts -->
 
 
-        <!-- Start DEP Hub related jaggery apps -->
-        <fileSet>
-            <directory>../../p2-profile/product/target/features/jaggeryapps/store</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store</outputDirectory>
-            <includes>
-                <include>**/**</include>
-            </includes>
-        </fileSet>
+<!--        &lt;!&ndash; Start DEP Hub related jaggery apps &ndash;&gt;-->
+<!--        <fileSet>-->
+<!--            <directory>../../p2-profile/product/target/features/jaggeryapps/store</directory>-->
+<!--            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/store</outputDirectory>-->
+<!--            <includes>-->
+<!--                <include>**/**</include>-->
+<!--            </includes>-->
+<!--        </fileSet>-->
 
-        <fileSet>
-            <directory>../../p2-profile/product/target/features/jaggeryapps/publisher</directory>
-            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/publisher</outputDirectory>
-            <includes>
-                <include>**/**</include>
-            </includes>
-        </fileSet>
-        <!--End of DEP Hub related jaggery apps -->
+<!--        <fileSet>-->
+<!--            <directory>../../p2-profile/product/target/features/jaggeryapps/publisher</directory>-->
+<!--            <outputDirectory>wso2telcohub-${pom.version}/repository/deployment/server/jaggeryapps/publisher</outputDirectory>-->
+<!--            <includes>-->
+<!--                <include>**/**</include>-->
+<!--            </includes>-->
+<!--        </fileSet>-->
+<!--        &lt;!&ndash;End of DEP Hub related jaggery apps &ndash;&gt;-->
     </fileSets>
 
     <files>
