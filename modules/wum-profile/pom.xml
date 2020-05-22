@@ -14,48 +14,132 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>am-wum-profile-gen-parent</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>WSO2 Telco DEP - Wum Profile Generation Parent</name>
     <url>http://wso2.com/products/api-manager</url>
     <description>WSO2 Telco DEP WUM Profile Generation Parent</description>
 
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
-<build>
-<plugins>
+<!--    <build>-->
+<!--    <plugins>-->
+<!--        <plugin>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-shade-plugin</artifactId>-->
+<!--            <executions>-->
+<!--                <execution>-->
+<!--                    <phase>package</phase>-->
+<!--                    <goals>-->
+<!--                        <goal>shade</goal>-->
+<!--                    </goals>-->
+<!--                    <configuration>-->
+<!--                        <transformers>-->
+<!--                            <transformer-->
+<!--                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
+<!--                                <mainClass>com.wum.WumMerger</mainClass>-->
+<!--                            </transformer>-->
+<!--                        </transformers>-->
+<!--                    </configuration>-->
+<!--                </execution>-->
+<!--            </executions>-->
+<!--        </plugin>-->
+<!--        <plugin>-->
+<!--            <artifactId>exec-maven-plugin</artifactId>-->
+<!--            <groupId>org.codehaus.mojo</groupId>-->
+<!--            <executions>-->
+<!--                <execution>-->
+<!--                    <id>wum jar run</id>-->
+<!--                    <phase>generate-sources</phase>-->
+<!--                    <goals>-->
+<!--                        <goal>exec</goal>-->
+<!--                    </goals>-->
+<!--                    <configuration>-->
+<!--                        <executable>java -jar ${basedir}/target/*.jar</executable>-->
+<!--                    </configuration>-->
+<!--                </execution>-->
+<!--            </executions>-->
+<!--        </plugin>-->
+<!--    </plugins>-->
+<!--    </build>-->
 
-    <plugin>
-        <artifactId>exec-maven-plugin</artifactId>
-        <groupId>org.codehaus.mojo</groupId>
-        <executions>
-            <execution>
-                <id>script permission allow</id>
-                <phase>generate-sources</phase>
-                <goals>
-                    <goal>exec</goal>
-                </goals>
-                <configuration>
-                    <executable>chmod</executable>
-                    <arguments>
-                        <argument>777</argument>
-                        <argument>${basedir}/wumscript/wumcopyscript.sh</argument>
-                    </arguments>
-                </configuration>
-            </execution>
-            <execution>
-                <id>wum script run </id>
-                <phase>generate-sources</phase>
-                <goals>
-                    <goal>exec</goal>
-                </goals>
-                <configuration>
-                    <executable>${basedir}/wumscript/wumcopyscript.sh</executable>
-                </configuration>
-            </execution>
-        </executions>
-    </plugin>
+    <!--
+    <build>
+    <plugins>
 
-</plugins>
-</build>
+        <plugin>
+            <artifactId>exec-maven-plugin</artifactId>
+            <groupId>org.codehaus.mojo</groupId>
+            <executions>
+                <execution>
+                    <id>script permission allow</id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>chmod</executable>
+                        <arguments>
+                            <argument>777</argument>
+                            <argument>${basedir}/wumscript/wumcopyscript.sh</argument>
+                        </arguments>
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>wum script run </id>
+                    <phase>generate-sources</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>${basedir}/wumscript/wumcopyscript.sh</executable>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
 
+    </plugins>
+    </build>
+    -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>wum jar run</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.wum.WumMerger</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
