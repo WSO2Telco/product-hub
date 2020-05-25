@@ -1,12 +1,12 @@
-package com.wum;
+package com.wso2telco.wum;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,9 +14,9 @@ import org.json.simple.parser.ParseException;
 import org.apache.commons.io.FileUtils;
 
 public class WumMerger {
-    private static final Log log = LogFactory.getLog(WumMerger.class);
+    private static final Logger LOGGER = Logger.getLogger(WumMerger.class.getName());
     public static void main(String[] args) {
-        log.info("[[[[[[[[[[[[[[[[[ SCRIPT STARTED ]]]]]]]]]]]]]]]]]]]]]");
+        LOGGER.info("WUM-MERGER STARTED ... ");
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader("modules/wum-profile/src/main/resources/customizedList.json"))
         {
@@ -24,11 +24,10 @@ public class WumMerger {
             JSONArray wumList = (JSONArray) obj;
 
             for (int i = 0; i < wumList.size(); i++) {
-                mergeChanges((JSONObject) wumList.get(i),"store");
-                mergeChanges((JSONObject) wumList.get(i),"publisher");
+                mergeChanges((JSONObject) wumList.get(i),"store", true, true);
+                mergeChanges((JSONObject) wumList.get(i),"publisher", true, true);
             }
-
-
+            LOGGER.info("... WUM-MERGER FINISHED");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -37,12 +36,18 @@ public class WumMerger {
             e.printStackTrace();
         }
     }
-    private static void mergeChanges(JSONObject wum, String module)
+    private static void mergeChanges(JSONObject wum, String module, Boolean mergeUpdatedFiles, Boolean mergeAddedFiles)
     {
         JSONObject wObject = (JSONObject) wum.get(module);
-        JSONArray updated = (JSONArray) wObject.get("updated");
-        JSONArray added = (JSONArray) wObject.get("added"); // TODO: Implement
-
+        JSONArray fileList = new JSONArray();
+        if(mergeUpdatedFiles) fileList = (JSONArray) wObject.get("updated");
+        if(mergeAddedFiles) {
+            JSONArray added = (JSONArray) wObject.get("added");
+            fileList.addAll(added);
+        }
+        doMerge(module, fileList);
+    }
+    private static void doMerge(String module,JSONArray jsonArray){
         String pwd = System.getProperty("user.dir");
         String jaggeryAppsDir = pwd + "/modules/p2-profile/product/target/features/jaggeryapps";
         File originalFolder = new File(jaggeryAppsDir + "/" + module);
@@ -53,9 +58,9 @@ public class WumMerger {
          */
         try {
 
-            if (updated != null) {
-                for (int i=0; i<updated.size();i++){
-                    String file = (String) updated.get(i);
+            if (jsonArray != null) {
+                for (int i=0; i<jsonArray.size();i++){
+                    String file = (String) jsonArray.get(i);
                     file = file.replace("/repository/deployment/server/jaggeryapps/"+module,"");
 
                     File from = new File(jaggeryAppsDir+"/"+module+file);
@@ -70,9 +75,8 @@ public class WumMerger {
                 FileUtils.copyDirectory(tempFolder, originalFolder);
                 FileUtils.deleteDirectory(tempFolder);
 
-                System.out.println(module.toUpperCase() +" Module Updated Successfully !!");
+                LOGGER.info(module.toUpperCase() +" Module Updated Successfully !!");
             }
-
         } catch (IOException ex) {
             ex.printStackTrace();
         }
