@@ -185,12 +185,12 @@
                                         <include name="wso2am-2.5.0.zip" />
                                     </fileset>
                                 </unzip>
-                                <copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/publisher">
-                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/publisher"/>
-                                </copy>
-                                <copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/store">
-                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/store"/>
-                                </copy>
+<!--                                <copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/publisher">-->
+<!--                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/publisher"/>-->
+<!--                                </copy>-->
+<!--                                <copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/store">-->
+<!--                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/store"/>-->
+<!--                                </copy>-->
                             </tasks>
                         </configuration>
                     </execution>
