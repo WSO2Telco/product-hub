@@ -141,6 +141,9 @@
                                     com.wso2telco.dep:com.wso2telco.dep.store.ui.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.admin.ui.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.publisher.ui.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
                                 <featureArtifactDef>
@@ -323,6 +326,24 @@
                                         <include name="store.zip" />
                                     </fileset>
                                 </unzip>
+
+                                <!-- admin UI -->
+                                <property name="tempdir13" value="target/features/admin" />
+                                <mkdir dir="${tempdir13}" />
+                                <unzip dest="${tempdir13}">
+                                    <fileset dir="target/p2-repo/features">
+                                        <include name="com.wso2telco.dep.admin.ui_${com.wso2telco.dep.feature.version}.jar" />
+                                    </fileset>
+                                </unzip>
+
+                                <property name="tempdir14" value="target/features/jaggeryapps/admin" />
+                                <mkdir dir="${tempdir14}" />
+                                <unzip dest="${tempdir14}">
+                                    <fileset dir="target/features/admin/generated">
+                                        <include name="admin.zip" />
+                                    </fileset>
+                                </unzip>
+
                             </tasks>
                         </configuration>
                     </execution>

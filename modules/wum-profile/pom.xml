@@ -19,10 +19,10 @@
     <url>http://wso2.com/products/api-manager</url>
     <description>WSO2 Telco DEP WUM Profile Generation Parent</description>
 
-<!--    <properties>-->
-<!--        <maven.compiler.source>1.8</maven.compiler.source>-->
-<!--        <maven.compiler.target>1.8</maven.compiler.target>-->
-<!--    </properties>-->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
 
     <build>
         <plugins>

@@ -26,6 +26,7 @@ public class WumMerger {
             for (int i = 0; i < wumList.size(); i++) {
                 mergeChanges((JSONObject) wumList.get(i),"store", true, true);
                 mergeChanges((JSONObject) wumList.get(i),"publisher", true, true);
+                mergeChanges((JSONObject) wumList.get(i),"admin", true, true);
             }
             LOGGER.info("... WUM-MERGER FINISHED");
         } catch (FileNotFoundException e) {
