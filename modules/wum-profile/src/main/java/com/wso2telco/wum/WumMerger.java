@@ -5,8 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.wso2telco.wum.exceptions.WumException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -15,7 +16,7 @@ import org.apache.commons.io.FileUtils;
 
 public class WumMerger {
     private static final Logger LOGGER = Logger.getLogger(WumMerger.class.getName());
-    public static void main(String[] args) {
+    public static void main(String[] args) throws WumException {
         LOGGER.info("WUM-MERGER STARTED ... ");
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader("modules/wum-profile/src/main/resources/customizedList.json"))
@@ -37,8 +38,7 @@ public class WumMerger {
             e.printStackTrace();
         }
     }
-    private static void mergeChanges(JSONObject wum, String module, Boolean mergeUpdatedFiles, Boolean mergeAddedFiles)
-    {
+    private static void mergeChanges(JSONObject wum, String module, Boolean mergeUpdatedFiles, Boolean mergeAddedFiles) throws WumException {
         JSONObject wObject = (JSONObject) wum.get(module);
         JSONArray fileList = new JSONArray();
         if(mergeUpdatedFiles) fileList = (JSONArray) wObject.get("updated");
@@ -48,7 +48,7 @@ public class WumMerger {
         }
         doMerge(module, fileList);
     }
-    private static void doMerge(String module,JSONArray jsonArray){
+    private static void doMerge(String module,JSONArray jsonArray) throws WumException {
         String pwd = System.getProperty("user.dir");
         String jaggeryAppsDir = pwd + "/modules/p2-profile/product/target/features/jaggeryapps";
         File originalFolder = new File(jaggeryAppsDir + "/" + module);
@@ -75,11 +75,16 @@ public class WumMerger {
                 FileUtils.deleteDirectory(originalFolder);
                 FileUtils.copyDirectory(tempFolder, originalFolder);
                 FileUtils.deleteDirectory(tempFolder);
-
+                if(tempFolder.exists()){
+                    throw new WumException("TEMP-FOLDER STILL FOUND EXCEPTION"+tempFolder.toString());
+                }
                 LOGGER.info(module.toUpperCase() +" Module Updated Successfully !!");
             }
+            
         } catch (IOException ex) {
             ex.printStackTrace();
+            LOGGER.info("<< WUM ABORTED >> Check the file list and re initiate ..");
+            throw new WumException(ex);
         }
     }
 }
