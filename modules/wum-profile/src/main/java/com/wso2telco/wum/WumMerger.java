@@ -76,7 +76,7 @@ public class WumMerger {
                 FileUtils.copyDirectory(tempFolder, originalFolder);
                 FileUtils.deleteDirectory(tempFolder);
                 if(tempFolder.exists()){
-                    throw new WumException("TEMP-FOLDER STILL FOUND EXCEPTION"+tempFolder.toString());
+                    throw new WumException(module+"-temp STILL FOUND EXCEPTION"+tempFolder.toString());
                 }
                 LOGGER.info(module.toUpperCase() +" Module Updated Successfully !!");
             }
