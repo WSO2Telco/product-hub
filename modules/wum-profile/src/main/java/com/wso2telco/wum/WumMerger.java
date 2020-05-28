@@ -46,7 +46,7 @@ public class WumMerger {
             JSONArray added = (JSONArray) wObject.get("added");
             fileList.addAll(added);
         }
-        doMerge(module, fileList);
+        if (fileList.size()>0) doMerge(module, fileList);
     }
     private static void doMerge(String module,JSONArray jsonArray) throws WumException {
         String pwd = System.getProperty("user.dir");
