@@ -487,6 +487,21 @@
             <fileMode>644</fileMode>
         </file>
 
+	<file>
+            <source>
+                ../../p2-profile/product/target/features/hub-core/config/ip-validation.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
+
+	<file>
+            <source>
+                ../../p2-profile/product/target/features/hub-core/config/noauth-validation.properties
+            </source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <fileMode>644</fileMode>
+        </file>
 
         <!--todo  extract the features and move to relevant locations  -->
         <!--
