@@ -43,7 +43,6 @@ copyFilesToTemp 'store' 'store-temp'
 copyFilesToTemp 'publisher' 'publisher-temp'
 replaceModule 'store' 'store-temp'
 replaceModule 'publisher' 'publisher-temp'
-
 echo "done ---"
 
 
