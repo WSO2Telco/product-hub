@@ -183,6 +183,13 @@
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.usermasking.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
+				<featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.ipvalidate.handler.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+				<featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.noauth.handler.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+
 
                             </featureArtifacts>
                         </configuration>
