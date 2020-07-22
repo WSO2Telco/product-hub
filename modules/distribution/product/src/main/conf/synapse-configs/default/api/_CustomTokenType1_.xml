@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="_CustomTokenType1_"
+     context="/oauth">
+   <resource methods="POST" url-mapping="/*" faultSequence="_token_fault_">
+      <inSequence>
+         <property name="client_id"
+                   expression="json-eval($.client_id)"
+                   scope="default"
+                   type="STRING"
+                   description="Get API Key"/>
+         <property name="client_id"
+                   expression="fn:normalize-space($ctx:client_id)"
+                   scope="default"
+                   type="STRING"
+                   pattern="((^(?!null).*$)|(^(null).+$))"
+                   group="1"/>
+         <property name="client_secret"
+                   expression="json-eval($.client_secret)"
+                   scope="default"
+                   type="STRING"
+                   description="Get API Secret"/>
+         <property name="granttype"
+                   expression="json-eval($.grant_type)"
+                   scope="default"
+                   type="STRING"
+                   description="Grant Type"/>
+         <property name="client_secret"
+                   expression="fn:normalize-space($ctx:client_secret)"
+                   scope="default"
+                   type="STRING"
+                   pattern="((^(?!null).*$)|(^(null).+$))"
+                   group="1"/>
+         <property name="bearerTokenValue"
+                   expression="fn:concat(get-property('client_id'), ':', get-property('client_secret'))"
+                   scope="default"
+                   type="STRING"
+                   description="Concat client id and secret"/>
+         <property name="encodedBearerTokenValue"
+                   expression="base64Encode(get-property('bearerTokenValue'))"
+                   scope="default"
+                   type="STRING"
+                   description="Encode token value"/>
+         <property name="headerValue"
+                   expression="fn:concat('Basic ', get-property('encodedBearerTokenValue'))"
+                   scope="default"
+                   type="STRING"
+                   description="Calculate Header Value"/>
+         <header name="Authorization"
+                 scope="transport"
+                 expression="get-property('headerValue')"/>
+         <property name="uri.var.grant_type"
+                   expression="$url:grant_type"
+                   scope="default"
+                   type="STRING"/>
+         <filter source="boolean(get-property('uri.var.grant_type'))" regex="false">
+            <then>
+               <payloadFactory description="Payload" media-type="json">
+                        <format>
+                            {
+                                "grant_type" : "$1"
+                            }
+                </format>
+            <args>
+                            <arg evaluator="xml" expression="$ctx:granttype"/>
+                        </args>
+                    </payloadFactory>
+            </then>
+            <else/>
+         </filter>
+         <property name="messageType"
+                   value="application/x-www-form-urlencoded"
+                   scope="axis2"
+                   type="STRING"/>
+         <property name="uri.var.portnum"
+                   expression="get-property('keyManager.port')"
+                   scope="default"
+                   type="STRING"/>
+         <property name="uri.var.hostname"
+                   expression="get-property('keyManager.hostname')"
+                   scope="default"
+                   type="STRING"/>
+         <send>
+            <endpoint>
+               <http uri-template="https://{uri.var.hostname}:{uri.var.portnum}/oauth2/token">
+                  <timeout>
+                     <duration>60000</duration>
+                     <responseAction>fault</responseAction>
+                  </timeout>
+               </http>
+            </endpoint>
+         </send>
+      </inSequence>
+      <outSequence>
+         
+         <send/>
+      </outSequence>
+   </resource>
+   <handlers>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.ext.APIManagerCacheExtensionHandler"/>
+      <handler class="org.wso2.carbon.apimgt.gateway.handlers.common.SynapsePropertiesHandler"/>
+   </handlers>
+</api>
