@@ -39,7 +39,7 @@
             "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/documentation/inline-editor/js/inline.js",
             "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/item-design/js/api-design.js",
             "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/overview/template.jag",
-	    "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/images/logo-white.png"
+	        "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/images/logo-white.png"
         ],
         "added": []
     },
