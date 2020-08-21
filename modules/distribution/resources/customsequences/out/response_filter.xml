@@ -1,0 +1,4 @@
+<sequence xmlns="http://ws.apache.org/ns/synapse" name="response_filter">
+	<property name="jsonPayload" expression="json-eval($.)"/>
+    <class name="com.wso2telco.dep.responsefilter.ResponseFilterMediator"/>
+</sequence>
