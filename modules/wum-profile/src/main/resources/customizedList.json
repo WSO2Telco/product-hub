@@ -39,9 +39,19 @@
             "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/documentation/inline-editor/js/inline.js",
             "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/item-design/js/api-design.js",
             "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/overview/template.jag",
-	    "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/images/logo-white.png"
+	        "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/images/logo-white.png",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/libs/enjoyhint-3.1.0/js/cloud-enjoyhint-script-data.js",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/menu/left/template.jag"
         ],
-        "added": []
+        "added": [
+            "/repository/deployment/server/jaggeryapps/publisher/site/blocks/swagger-gen/ajax/manage-alerts.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/blocks/swagger-gen/block.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/pages/swagger-gen.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/swagger-gen/css/swaggergen.css",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/swagger-gen/initializer.jag",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/swagger-gen/js/swaggergen.js",
+            "/repository/deployment/server/jaggeryapps/publisher/site/themes/wso2/templates/swagger-gen/template.jag"
+        ]
     },
     "store": {
         "updated": [
