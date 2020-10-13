@@ -186,7 +186,7 @@
                         <configuration>
                             <tasks>
                                 <!-- download file -->
-                                <get src="https://sftp-release-binaries.s3.amazonaws.com/sftp/apim25/wso2am-2.5.0%2B1561479996720.full.zip" dest="${project.build.directory}/wso2am-2.5.0.zip" verbose="false" usetimestamp="true" />
+                                <get src="https://sftp-release-binaries.s3.amazonaws.com/sftp/apim25/wso2am-2.5.0%2B1588256020350-IGW.zip" dest="${project.build.directory}/wso2am-2.5.0.zip" verbose="false" usetimestamp="true" />
                                 <property name="tempdir" value="target/intgw" />
                                 <mkdir dir="${tempdir}" />
                                 <unzip dest="${tempdir}">
