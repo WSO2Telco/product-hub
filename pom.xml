@@ -29,7 +29,7 @@
     <groupId>com.wso2telco.product.dep</groupId>
     <artifactId>dep-product-parent</artifactId>
     <packaging>pom</packaging>
-    <version>4.0.2-SNAPSHOT</version>
+    <version>4.0.2</version>
     <name>WSO2 Telco HUB - Aggregator Module</name>
     <url>http://wso2.com/products/api-manager</url>
     <description>WSO2Telco Digital Enablement Hub</description>
