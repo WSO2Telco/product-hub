@@ -1,6 +1,8 @@
 [{
     "admin": {
-        "updated": [],
+        "updated": [
+	    "/repository/deployment/server/jaggeryapps/admin/site/themes/wso2/templates/conditions/edit/template.jag"
+      ],
         "added": []
     },
     "publisher": {
