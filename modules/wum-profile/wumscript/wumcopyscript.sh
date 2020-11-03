@@ -27,6 +27,7 @@ return 10
 createTempDir(){
 mkdir -p $jagAppsDir/${1}
 mkdir -p $jagAppsDir/${2}
+mkdir -p $jagAppsDir/${3}
 return 10
 }
 
@@ -38,11 +39,13 @@ jagAppsDir=$(pwd)/modules/p2-profile/product/target/features/jaggeryapps
 
 echo "Script Starting --- "
 apt-get install jq -y
-createTempDir 'publisher-temp' 'store-temp'
+createTempDir 'publisher-temp' 'store-temp' 'admin-temp'
 copyFilesToTemp 'store' 'store-temp'
 copyFilesToTemp 'publisher' 'publisher-temp'
+copyFilesToTemp 'admin' 'admin-temp'
 replaceModule 'store' 'store-temp'
 replaceModule 'publisher' 'publisher-temp'
+replaceModule 'admin' 'admin-temp'
 
 echo "done ---"
 
