@@ -1,5 +1,5 @@
 
-# APIGATE Accelerator Platform 
+# AXP Accelerator Platform 
 
         
 ---
@@ -10,7 +10,7 @@
 
 ---
 
-APIGATE Accelerator Platform (Apigate AXP) is an API management and monetization 
+AXP Accelerator Platform (AXP) is an API management and monetization 
 platform which supports all aspects of an API business, including creating, publishing, 
 consuming, discovery and monetization of APIs.
 
@@ -19,7 +19,11 @@ Key Features
 
 Internal Gateway Features
 -------------------------
-1. 
+1. Custom TOKEN API Implementation
+2. Custom Authentication Handler Implementation
+3. Custom JWT token implementation
+4. Admin Portal
+5. Traffic Manager
 
 System Requirements
 ==================================
@@ -31,7 +35,7 @@ System Requirements
    with MS IE 7. In addition to JavaScript, ActiveX should also be enabled
    with IE. This can be achieved by setting your security level to
    medium or lower.
-5. To build APIGATE AXP from the Source distribution, it is necessary that you have
+5. To build AXP from the Source distribution, it is necessary that you have
    JDK 1.8 version and Maven 3.3.9
 
 Installation & Running
@@ -48,7 +52,7 @@ Documentation
 ==============
 
 On-line product documentation is available at:
-       https://docs.apigate.com/display/MI/INT-GW-4.0.1
+       https://docs.apigate.com/display/MI/INT-GW-4.1.0
 
 Support
 ==================================
@@ -58,12 +62,12 @@ supported from evaluation to production. Our unique approach ensures that all su
 leverages our open development methodology and is provided by the very same engineers 
 who build the technology.
 
-For additional support information please refer to [Apigate Support](https://support.wso2telco.com)
+For additional support information please refer to [AXP Support](https://aifel.atlassian.net)
 
-Known issues of APIGATE AXP INTERNAL GATEWAY
+Known issues of AXP INTERNAL GATEWAY
 =====================================
 
-All the open issues pertaining to APIGATE AXP INTERNAL GATEWAY 4.0.1 :
+All the open issues pertaining to AXP INTERNAL GATEWAY 4.1.0 :
 
     https://jira.wso2telco.com/jira/browse/**
     
@@ -73,7 +77,7 @@ Issue Tracker
 Help us make our software better. Please submit any bug reports or feature
 requests through the WSO2Telco JIRA system:
 
-    https://jira.wso2telco.com/jira/projects/INTGW/issues
+    https://aifel.atlassian.net/projects/INTGW/issues
     
 ### Big Thanks
 
@@ -83,4 +87,4 @@ Cross-browser Testing Platform and Open Source &#10084; Provided by
 	
 	
 --------------------------------------------------------------------------------
-(c) Copyright 2019 Apigate.
+(c) Copyright 2020 AXP.
