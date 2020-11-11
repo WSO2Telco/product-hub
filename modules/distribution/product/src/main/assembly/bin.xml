@@ -26,7 +26,7 @@
         <fileSet>
             <!--<directory>target/wso2carbon-core-${carbon.platform.version}</directory>-->
             <!-- zip dir to build -->
-            <directory>target/intgw/wso2am-2.5.0</directory>
+            <directory>target/intgw/wso2am-3.2.0</directory>
             <outputDirectory>wso2telcohub-${pom.version}</outputDirectory>
             <excludes>
                 <exclude>**/bin/wso2server.sh</exclude>

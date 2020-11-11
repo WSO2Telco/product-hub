@@ -177,15 +177,15 @@
                         <configuration>
                             <tasks>
                                 <!-- download file -->
-				<get src="http://localhost:8000/wso2am-3.2.0+1604414706677.full.zip" dest="${project.build.directory}/wso2am-2.5.0.zip" verbose="false" usetimestamp="true" />
+				<get src="http://localhost:8000/wso2am-3.2.0+1604414706677.full.zip" dest="${project.build.directory}/wso2am-3.2.0.zip" verbose="false" usetimestamp="true" />
                                 <property name="tempdir" value="target/intgw" />
                                 <mkdir dir="target/intgw" />
                                 <unzip dest="target/intgw">
                                     <fileset dir="target">
-                                        <include name="wso2am-2.5.0.zip" />
+                                        <include name="wso2am-3.2.0.zip" />
                                     </fileset>
                                 </unzip>
-				<copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/admin">
+				<!--copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/admin">
                                     <fileset dir="../../p2-profile/product/target/features/jaggeryapps/admin" />
 				</copy>
                                 <copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/publisher">
@@ -193,7 +193,7 @@
                                 </copy>
                                 <copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/store">
                                     <fileset dir="../../p2-profile/product/target/features/jaggeryapps/store" />
-                                </copy>
+                                </copy-->
                             </tasks>
                         </configuration>
                     </execution>

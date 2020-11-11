@@ -137,15 +137,15 @@
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.manage.ui.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
-                                <featureArtifactDef>
+                                <!--featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.store.ui.feature:${com.wso2telco.dep.version}
-                                </featureArtifactDef>
-                                <featureArtifactDef>
+                                </featureArtifactDef-->
+                                <!--featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.admin.ui.feature:${com.wso2telco.dep.version}
-                                </featureArtifactDef>
-                                <featureArtifactDef>
+                                </featureArtifactDef-->
+                                <!--featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.publisher.ui.feature:${com.wso2telco.dep.version}
-                                </featureArtifactDef>
+                                </featureArtifactDef-->
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.sandbox.ui.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
@@ -234,13 +234,13 @@
                         <configuration>
                             <tasks>
                                 <!-- store-UI -->
-                                <property name="tempdir" value="target/features/store" />
+                                <!--property name="tempdir" value="target/features/store" />
                                 <mkdir dir="${tempdir}" />
                                 <unzip dest="${tempdir}">
                                     <fileset dir="target/p2-repo/features">
                                         <include name="com.wso2telco.dep.store.ui_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
-                                </unzip>
+                                </unzip-->
 
                                 <!-- hub-core -->
                                 <property name="tempdir2" value="target/features/hub-core" />
@@ -315,16 +315,16 @@
                                 </unzip>
 
                                 <!-- publisher UI -->
-                                <property name="tempdir10" value="target/features/publisher" />
+                                <!--property name="tempdir10" value="target/features/publisher" />
                                 <mkdir dir="${tempdir10}" />
                                 <unzip dest="${tempdir10}">
                                     <fileset dir="target/p2-repo/features">
                                         <include name="com.wso2telco.dep.publisher.ui_${com.wso2telco.dep.feature.version}.jar" />
                                     </fileset>
-                                </unzip>
+                                </unzip-->
 
                                 <!--extract jaggery apps -->
-                                <property name="tempdir11" value="target/features/jaggeryapps/publisher" />
+                                <!--property name="tempdir11" value="target/features/jaggeryapps/publisher" />
                                 <mkdir dir="${tempdir11}" />
                                 <unzip dest="${tempdir11}">
                                     <fileset dir="target/features/publisher/generated">
@@ -338,10 +338,10 @@
                                     <fileset dir="target/features/store/generated">
                                         <include name="store.zip" />
                                     </fileset>
-                                </unzip>
+                                </unzip-->
 
                                 <!-- admin UI -->
-                                <property name="tempdir13" value="target/features/admin" />
+                                <!--property name="tempdir13" value="target/features/admin" />
                                 <mkdir dir="${tempdir13}" />
                                 <unzip dest="${tempdir13}">
                                     <fileset dir="target/p2-repo/features">
@@ -355,7 +355,7 @@
                                     <fileset dir="target/features/admin/generated">
                                         <include name="admin.zip" />
                                     </fileset>
-                                </unzip>
+                                </unzip-->
 
                             </tasks>
                         </configuration>
