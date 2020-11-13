@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!--
- ~ Copyright  (c) 2015-2016, Apigate Sdn.Bhd. (http://www.apigate.com) All Rights Reserved.
- ~
- ~ Apigate Sdn.Bhd. licences this file to you under  the Apache License, Version 2.0 (the "License");
- ~ you may not use this file except in compliance with the License.
- ~ You may obtain a copy of the License at
- ~
- ~   http://www.apache.org/licenses/LICENSE-2.0
- ~
- ~ Unless required by applicable law or agreed to in writing, software
- ~ distributed under the License is distributed on an "AS IS" BASIS,
- ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- ~ See the License for the specific language governing permissions and
- ~ limitations under the License.
-  -->
 
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -21,19 +6,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta content="text/html; charset=iso-8859-1" http-equiv="content-type"/>
-    <title>APIGATE AXP INTERNAL GATEWAY 4.0.0</title>
+    <title>AXP EXTERNAL GATEWAY 4.0.2</title>
 </head>
 <body>
 <div id="main-content">
-    <h1> APIGATE AXP INTERNAL GATEWAY 4.0.0 Released!</h1>
+    <h1> AXP EXTERNAL GATEWAY 4.0.2 Released!</h1>
 
     <p>
-        The Apigate team is pleased to announce the release of version 4.0.0 of
-        the Open Source APIGATE AXP Internal Gateway.
+        The AXP team is pleased to announce the release of version 4.0.2 of
+        the Open Source AXP External Gateway.
     </p>
 
     <p>
-        APIGATE AXP (Accelerator Platform) INTERNAL GATEWAY is an API management and monetization platform which supports all
+        AXP (Accelerator Platform) EXTERNAL GATEWAY is an API management and monetization platform which supports all
         aspects of an API business, including creating, publishing, consuming, discovery
         and monetization of APIs.
     </p>
@@ -51,59 +36,24 @@
     </ol>
 
 
-    <h2>Key Features of Apigate AXP Internal Gateway</h2>
+    <h2>Key Features of AXP External Gateway</h2>
     <ul>
-        <li>Improved UI for Manage Application</li>
-        <li>Improved traceability, ability to trace API calls with a unique ID</li>
-        <li>Enable response caching for APIs</li>
-        <li>
-            Dep Upgrade to APIM 2.5.0
-            <ol>API Gateway/Microgateway</ol>
-            <ol>Allowing low-latency secure access to microservices</ol>
-            <ol>Protection against malicious XML and JSON Payloads at the API Gateway</ol>
-            <ol>Ability to upload certs to access back-end services using self-signed certs</ol>
-        </li>
-        <li>
-            Access Control
-            <ul>Ability to use any header to carry the Bearer token to the Gateway instead of the Authorization header</ul>
-        </li>
-        <li>
-            General
-            <ol>Compatibility with WSO2 IAM version 5.6.0 as the Key Manager Profile</ol>
-            <ol>Bug Fixes
-                <ol>Emails are not generating for API subscription and subscription approvals</ol>
-                <ol>Request-response-logger is not available in IGW 4.0.0</ol>
-                <ol>Some links are not navigating to the correct pages in store</ol>
-                <ol>APIs are not showing in correct alignment in publisher portal</ol>
-                <ol>Displaying list view and tile view of APIs in store</ol>
-                <ol>Unable to scroll down when user click on a tag in the store</ol>
-                <ol>IGW logo changes</ol>
-            </ol>
-        </li>
+        <li>Custom TOKEN API Implementation</li>
+        <li>Custom Authentication Handler Implementation</li>
+        <li>Custom JWT Token implementation</li>
+        <li>Response filtering feature</li>
+        <li>Traffic Manager and Advanced Throttling (<a href="https://docs.apigate.com/pages/viewpage.action?spaceKey=MI&title=Traffic+Manager+Configurations">TM Configurations</a>)</li>
+        <li>Tier edit feature</li>
+        <li>Audit log improvements</li>
+        <li>Request-Response logger for AM</li>
     </ul>
 
     <h2>Known Issues</h2>
     <ul>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-407">https://jira.wso2telco.com/jira/browse/INTGW-407</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-408">https://jira.wso2telco.com/jira/browse/INTGW-408</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-410">https://jira.wso2telco.com/jira/browse/INTGW-410</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-411">https://jira.wso2telco.com/jira/browse/INTGW-411</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-412">https://jira.wso2telco.com/jira/browse/INTGW-412</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-416">https://jira.wso2telco.com/jira/browse/INTGW-416</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-420">https://jira.wso2telco.com/jira/browse/INTGW-420</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-427">https://jira.wso2telco.com/jira/browse/INTGW-427</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-429">https://jira.wso2telco.com/jira/browse/INTGW-429</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-434">https://jira.wso2telco.com/jira/browse/INTGW-434</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-435">https://jira.wso2telco.com/jira/browse/INTGW-435</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-436">https://jira.wso2telco.com/jira/browse/INTGW-436</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-437">https://jira.wso2telco.com/jira/browse/INTGW-437</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-438">https://jira.wso2telco.com/jira/browse/INTGW-438</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-440">https://jira.wso2telco.com/jira/browse/INTGW-440</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-426">https://jira.wso2telco.com/jira/browse/INTGW-426</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-444">https://jira.wso2telco.com/jira/browse/INTGW-444</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-445">https://jira.wso2telco.com/jira/browse/INTGW-445</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-467">https://jira.wso2telco.com/jira/browse/INTGW-467</a></li>
-        <li><a href="https://jira.wso2telco.com/jira/browse/INTGW-469">https://jira.wso2telco.com/jira/browse/INTGW-469</a></li>
+        <li><a href="https://aifel.atlassian.net/browse/EXTGW-542">https://aifel.atlassian.net/browse/EXTGW-542</a></li>
+        <li><a href="https://aifel.atlassian.net/browse/EXTGW-547">https://aifel.atlassian.net/browse/EXTGW-547</a></li>
+        <li><a href="https://aifel.atlassian.net/browse/EXTGW-525">https://aifel.atlassian.net/browse/EXTGW-525</a></li>
+        <li><a href="https://aifel.atlassian.net/browse/EXTGW-533">https://aifel.atlassian.net/browse/EXTGW-533</a></li>
     </ul>
 
     <h2>How You Can Contribute</h2>
@@ -113,7 +63,7 @@
     <p>
         We encourage you to report issues, documentation faults and feature requests
         regarding
-        APIGATE AXP Internal Gateway through the public <a href="https://jira.wso2telco.com/jira/projects/INTGW/issues"> Apigate AXP Internal Gateway Jira</a>.
+        AXP External Gateway through the public <a href="https://aifel.atlassian.net/jira/software/c/projects/EXTGW/issues"> AXP External Gateway Jira</a>.
     </p>
 
     <h2>Support</h2>
@@ -125,11 +75,11 @@
     </p>
     <p>
         For more details and to take advantage of this unique opportunity please
-        visit <a href="https://support.wso2telco.com">apigate support</a>.
+        visit <a href="https://aifel.atlassian.net">AXP Support</a>.
     </p>
 
     <p>
-        <i>-- The Apigate Team --</i>
+        <i>-- The AXP Team --</i>
     </p>
 </div>
 </body>
