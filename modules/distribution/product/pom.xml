@@ -22,7 +22,7 @@
     <parent>
         <groupId>com.wso2telco.product.dep</groupId>
         <artifactId>am-distribution-parent</artifactId>
-        <version>4.0.2-SNAPSHOT</version>
+        <version>4.0.3-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -186,13 +186,13 @@
                                     </fileset>
                                 </unzip>
 				<copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/admin">
-                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/admin"/>
+                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/admin" />
 				</copy>
                                 <copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/publisher">
-                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/publisher"/>
+                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/publisher" />
                                 </copy>
                                 <copy todir="target/intgw/wso2am-2.5.0/repository/deployment/server/jaggeryapps/store">
-                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/store"/>
+                                    <fileset dir="../../p2-profile/product/target/features/jaggeryapps/store" />
                                 </copy>
                             </tasks>
                         </configuration>
