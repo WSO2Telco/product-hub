@@ -1,8 +1,8 @@
 ================================================================================
-                         APIGATE AXP EXTERNAL GATEWAY 3.0.0
+                         AXP EXTERNAL GATEWAY 4.0.2
 ================================================================================
 
-APIGATE AXP is an API management and monetization
+AXP is an API management and monetization
 platform which supports all aspects of an API business, including creating, publishing,
 consuming, discovery and monetization of APIs.
 
@@ -23,8 +23,19 @@ External Gateway Features
     * Ability to use any header to carry the Bearer token to the Gateway instead of the ‘Authorization’ header
     * Ability to restrict view/edit rights of APIs to selected user groups on the API Publisher
 5. API Design and Documentation
-    * Allow adding additional properties for APIs and searching by them​
+    * Allow adding additional properties for APIs and searching by them.
     * Enhanced support for exposing SOAP services as REST APIs by auto-generating the REST interface by parsing the WSDL of the SOAP Service
+
+External Gateway New Features
+-----------------------------------------------
+1. Custom TOKEN API Implementation
+2. Custom JWT Token
+3. Custom Authentication Handler Implementation
+4. Response filtering
+5. Traffic Manager and Advanced Throttling
+6. Tier edit feature
+7. Audit log improvements
+8. Request-Response logger for AM
 
 System Requirements
 ==================================
@@ -36,7 +47,7 @@ System Requirements
    with MS IE 7. In addition to JavaScript, ActiveX should also be enabled
    with IE. This can be achieved by setting your security level to
    medium or lower.
-5. To build APIGATE AXP EXTERNAL GATEWAY from the Source distribution, it is necessary that you have
+5. To build  AXP EXTERNAL GATEWAY from the Source distribution, it is necessary that you have
    JDK 1.8 version and Maven 3.3.9
 
 Installation & Running
@@ -63,15 +74,15 @@ supported from evaluation to production. Our unique approach ensures that all su
 leverages our open development methodology and is provided by the very same engineers
 who build the technology.
 
-For additional support information please refer to https://support.wso2telco.com
+For additional support information please refer to https://aifel.atlassian.net
 
 Issue Tracker
 ==================================
 
 Help us make our software better. Please submit any bug reports or feature
-requests through the APIGATE AXP JIRA system:
+requests through the AXP JIRA system:
 
-    https://jira.wso2telco.com/jira/projects/EXTGW/issues
+    https://aifel.atlassian.net/jira/software/c/projects/EXTGW/issues
 
 --------------------------------------------------------------------------------
-(c) Copyright 2019 Apigate.
+(c) Copyright 2020 AXP.
