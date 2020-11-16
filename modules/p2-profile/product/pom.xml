@@ -61,7 +61,7 @@
     <parent>
         <groupId>com.wso2telco.product.dep</groupId>
         <artifactId>am-p2-profile-gen-parent</artifactId>
-        <version>4.0.1</version>
+        <version>4.1.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -179,6 +179,15 @@
                                 <!-- server startup observer -->
                                 <featureArtifactDef>
                                     com.wso2telco.dep:com.wso2telco.dep.server.startup.observer.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+				<featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.ipvalidate.handler.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+				<featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.noauth.handler.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.responsefilter.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
 
                             </featureArtifacts>
