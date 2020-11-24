@@ -5,10 +5,11 @@
    <resource methods="POST" url-mapping="/*" faultSequence="_token_fault_">
       <inSequence>
          <property name="client_id"
-                   expression="json-eval($.client_id)"
+                   expression="$body//client_id"
                    scope="default"
                    type="STRING"
                    description="Get API Key"/>
+	
          <property name="client_id"
                    expression="fn:normalize-space($ctx:client_id)"
                    scope="default"
@@ -16,12 +17,12 @@
                    pattern="((^(?!null).*$)|(^(null).+$))"
                    group="1"/>
          <property name="client_secret"
-                   expression="json-eval($.client_secret)"
+                   expression="$body//client_secret"
                    scope="default"
                    type="STRING"
                    description="Get API Secret"/>
          <property name="granttype"
-                   expression="json-eval($.grant_type)"
+                   expression="$body//grant_type"
                    scope="default"
                    type="STRING"
                    description="Grant Type"/>
@@ -31,6 +32,7 @@
                    type="STRING"
                    pattern="((^(?!null).*$)|(^(null).+$))"
                    group="1"/>
+	
          <property name="bearerTokenValue"
                    expression="fn:concat(get-property('client_id'), ':', get-property('client_secret'))"
                    scope="default"
@@ -50,24 +52,20 @@
                  scope="transport"
                  expression="get-property('headerValue')"/>
          <property name="uri.var.grant_type"
-                   expression="$url:grant_type"
+                   expression="$body//grant_type"
                    scope="default"
                    type="STRING"/>
-         <filter source="boolean(get-property('uri.var.grant_type'))" regex="false">
-            <then>
-               <payloadFactory description="Payload" media-type="json">
-                        <format>
+   
+	<payloadFactory description="Payload" media-type="json">
+                <format>
                             {
                                 "grant_type" : "$1"
                             }
                 </format>
-            <args>
-                            <arg evaluator="xml" expression="$ctx:granttype"/>
+            		<args>
+                            <arg evaluator="xml" expression="$body//grant_type"/>
                         </args>
-                    </payloadFactory>
-            </then>
-            <else/>
-         </filter>
+         </payloadFactory>
          <property name="messageType"
                    value="application/x-www-form-urlencoded"
                    scope="axis2"
@@ -92,7 +90,7 @@
          </send>
       </inSequence>
       <outSequence>
-         
+
          <send/>
       </outSequence>
    </resource>
