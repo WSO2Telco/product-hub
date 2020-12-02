@@ -190,6 +190,9 @@
                                     com.wso2telco.dep:com.wso2telco.dep.responsefilter.feature:${com.wso2telco.dep.version}
                                 </featureArtifactDef>
 
+                                <featureArtifactDef>
+                                    com.wso2telco.dep:com.wso2telco.dep.lifecycleextension.feature:${com.wso2telco.dep.version}
+                                </featureArtifactDef>
                             </featureArtifacts>
                         </configuration>
                     </execution>
