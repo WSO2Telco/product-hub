@@ -34,6 +34,7 @@
                 <exclude>**/conf/axis2/axis2.xml</exclude>
                 <exclude>**/conf/security/Owasp.CsrfGuard.Carbon.properties</exclude-->
 		        <exclude>**/log4j.properties</exclude>
+                <exclude>**/log4j2.properties</exclude>
                 <exclude>**/version.txt</exclude>
                 <exclude>**/README.txt</exclude>
                 <exclude>**/LICENSE.txt</exclude>
@@ -277,6 +278,12 @@
             <source>src/main/conf/log4j.properties</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <destName>log4j.properties</destName>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/main/conf/log4j2.properties</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
+            <destName>log4j2.properties</destName>
             <filtered>true</filtered>
         </file>
         <file>
