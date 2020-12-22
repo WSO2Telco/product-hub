@@ -40,6 +40,8 @@
                 <exclude>**/release-notes.html</exclude>
                 <exclude>**/registry.xml</exclude>
                 <exclude>**/master-datasources.xml</exclude>
+                <exclude>**/APILifeCycle.xml</exclude>
+                <exclude>**/tenant-conf.json</exclude>
                 <!--note: to overwrite a file you need to exclude them first -->
                 <exclude>**/repository/resources/api_templates/velocity_template.xml</exclude>
                 <exclude>**repository/resources/default-tiers/default-app-tiers.xml</exclude>
@@ -341,6 +343,20 @@
             <source>../../p2-profile/product/target/features/hub-core/config/registry.xml</source>
             <outputDirectory>wso2telcohub-${pom.version}/repository/conf</outputDirectory>
             <destName>registry.xml</destName>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/features/hub-core/resources/lifecycles/APILifeCycle.xml</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/resources/lifecycles</outputDirectory>
+            <destName>APILifeCycle.xml</destName>
+            <fileMode>644</fileMode>
+        </file>
+
+        <file>
+            <source>../../p2-profile/product/target/features/hub-core/resources/tenant-conf.json</source>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/resources</outputDirectory>
+            <destName>tenant-conf.json</destName>
             <fileMode>644</fileMode>
         </file>
 
