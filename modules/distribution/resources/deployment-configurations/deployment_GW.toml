@@ -76,20 +76,32 @@ url = "jdbc:mysql://localhost:3306/devtprodapimgtdb?autoReconnect=true&amp;relax
 username = "root"
 password = "1qaz@WSX"
 
+#[database.shared_db]
+#type = "mysql"
+#url = "jdbc:mysql://localhost:3306/devtprodregdb?autoReconnect=true&amp;relaxAutoCommit=true&amp;useSSL=false&amp;"
+#username = "root"
+#password = "1qaz@WSX"
+
+#[database.user]
+#type = "mysql"
+#url = "jdbc:mysql://localhost:3306/devtproduserstoredb?autoReconnect=true&amp;relaxAutoCommit=true&amp;useSSL=false&amp;"
+#username = "root"
+#password = "1qaz@WSX"
+
+#[database.apim_db]
+#type = "h2"
+#url = "jdbc:h2:./repository/database/WSO2AM_DB;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE"
+#username = "wso2carbon"
+#password = "wso2carbon"
+
 [database.shared_db]
-type = "mysql"
-url = "jdbc:mysql://localhost:3306/devtprodregdb?autoReconnect=true&amp;relaxAutoCommit=true&amp;useSSL=false&amp;"
-username = "root"
-password = "1qaz@WSX"
+type = "h2"
+url = "jdbc:h2:./repository/database/WSO2SHARED_DB;DB_CLOSE_ON_EXIT=FALSE"
+username = "wso2carbon"
+password = "wso2carbon"
 
-[database.user]
-type = "mysql"
-url = "jdbc:mysql://localhost:3306/devtproduserstoredb?autoReconnect=true&amp;relaxAutoCommit=true&amp;useSSL=false&amp;"
-username = "root"
-password = "1qaz@WSX"
-
-[realm_manager]
-data_source = "WSO2USER_DB"
+#[realm_manager]
+#data_source = "WSO2USER_DB"
 
 [keystore.tls]
 file_name =  "wso2carbon.jks"
