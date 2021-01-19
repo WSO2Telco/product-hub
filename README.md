@@ -1,5 +1,5 @@
 
-# APIGATE Accelerator Platform 
+# AXP Accelerator Platform 
 
         
 ---
@@ -10,35 +10,17 @@
 
 ---
 
-APIGATE Accelerator Platform (Apigate AXP) is an API management and monetization 
+AXP Accelerator Platform (AXP) is an API management and monetization 
 platform which supports all aspects of an API business, including creating, publishing, 
 consuming, discovery and monetization of APIs.
 
 Key Features
 =============
 
-Internal Gateway Features
+Gateway Features
 -------------------------
-1. Improved UI for Manage Application
-2. Improved traceability, ability to trace API calls with a unique ID
-3. Enable response caching for APIs
-4. Dep Upgrade to APIM 2.5.0
-    * API Gateway/Microgateway
-    * Allowing low-latency secure access to microservices
-    * Protection against malicious XML and JSON Payloads at the API Gateway
-    * Ability to upload certs to access back-end services using self-signed certs
-5. Access Control
-    * Ability to use any header to carry the Bearer token to the Gateway instead of the ‘Authorization’ header
-6. General
-    * Compatibility with WSO2 IAM version 5.6.0 as the Key Manager Profile
-    * Bug Fixes
-        * Emails are not generating for API subscription and subscription approvals
-        * Request-response-logger is not available in IGW 4.0.0
-        * Some links are not navigating to the correct pages in store
-        * APIs are not showing in correct alignment in publisher portal
-        * Displaying list view and tile view of APIs in store
-        * Unable to scroll down when user click on a tag in the store
-        * IGW logo changes
+1. Internal Gateway and External Gateway Workflows supported
+2. WSO2 APM Version 3.2.0 features - https://apim.docs.wso2.com/en/latest/getting-started/about-this-release/
 
 System Requirements
 ==================================
@@ -50,24 +32,101 @@ System Requirements
    with MS IE 7. In addition to JavaScript, ActiveX should also be enabled
    with IE. This can be achieved by setting your security level to
    medium or lower.
-5. To build APIGATE AXP from the Source distribution, it is necessary that you have
+5. To build AXP from the Source distribution, it is necessary that you have
    JDK 1.8 version and Maven 3.3.9
 
 Installation & Running
 ==================================
 
-1. Extract the downloaded zip file and go to the 'bin' directory
-2. Run the wso2server.sh or wso2server.bat as appropriate
-3. API Publisher web application is running at https://localhost:9443/publisher. You may login
-   to the Publisher using the default administrator credentials (user: admin, pass: admin).
-4. API Store web application is running at https://localhost:9443/store. You may login
-   to the Store using the default administrator credentials (user: admin, pass: admin).
 
-Documentation
+Databases
+=========
+
+
+    Create databases with following names
+        devtproduserstoredb
+        devtprodregdb
+        devtprodapimgtdb
+        devtproddepdb
+        devtprodratedb
+        devtprodapistatsdb
+        devtprodactivitidb
+
+    source 
+        wso2telcohub-5.0.0-SNAPSHOT/dbscripts/mysql.sql for devtproduserstoredb
+        wso2telcohub-5.0.0-SNAPSHOT/dbscripts/mysql.sql for devtprodregdb
+        wso2telcohub-5.0.0-SNAPSHOT/dbscripts/apimgt/mysql.sql for devtprodapimgtdb
+        wso2telcohub-5.0.0-SNAPSHOT/dbscripts/dep-hub/mysql/dep_db.sql for devtproddepdb
+        wso2telcohub-5.0.0-SNAPSHOT/dbscripts/dep-hub/mysql/rate_db.sql for devtprodratedb
+        wso2telcohub-5.0.0-SNAPSHOT/dbscripts/dep-hub/mysql/stats_db.sql for devtprodapistatsdb
+        Tables will be created on runtime for devtprodactivitidb
+
+Run add the following table under AM DB - devtprodapimgtdb
+
+CREATE TABLE IF NOT EXISTS AM_API_SCOPES (
+   API_ID  INTEGER NOT NULL,
+   SCOPE_ID  INTEGER NOT NULL,
+   FOREIGN KEY (API_ID) REFERENCES AM_API (API_ID) ON DELETE CASCADE  ON UPDATE CASCADE,
+   FOREIGN KEY (SCOPE_ID) REFERENCES IDN_OAUTH2_SCOPE (SCOPE_ID) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE = INNODB;
+
+
+
+Deploying pack
+============
+TM - Profile Setup
 ==============
+Goto /bin
+chmod 777 profilesetup.sh wso2server.sh
+backup internal#data#v1.war in run profilesetup.sh
+copy internal#data#v1.war to Attached the deployment.toml files for each pack. tm/deployment.toml - Replace trafficmanager instance deployment.toml in /repository/conf/deployment.toml
+Download and copy mysql-connector-java-5.1.40-bin.jar to /lib
+mysql-connector-java-5.1.40-bin.jar - http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar
+start server /bin/
+sh wso2server.sh -Dprofile=traffic-manager
 
-On-line product documentation is available at:
-       https://docs.apigate.com/display/MI/INT-GW-4.0.0
+
+Gateway Setup
+============
+
+Goto /bin
+
+chmod 777 profilesetup.sh wso2server.sh
+backup internal#data#v1.war in run profilesetup.sh
+copy internal#data#v1.war to Attached the deployment.toml files for each pack. gw/deployment.toml - Replace gateway instance deployment.toml in /repository/conf/deployment.toml
+Download and copy mysql-connector-java-5.1.40-bin.jar to /lib
+mysql-connector-java-5.1.40-bin.jar - http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar
+
+start server /bin/
+sh wso2server.sh -Dprofile=gateway-worker
+
+
+Portal Setup
+==========
+
+ptl/deployment.toml - Replace portal instance deployment.toml in /repository/conf/deployment.toml
+Download and copy mysql-connector-java-5.1.40-bin.jar to /lib
+mysql-connector-java-5.1.40-bin.jar - http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar
+
+start server /bin/
+sh wso2server.sh
+
+
+Go to Admin portal with admin user credentials.Under resident key manager add admin username and password for key manager.
+
+KM Setup
+========
+
+download km pack from - https://sftp-release-binaries.s3.amazonaws.com/sftp/apim320/wso2is-km-5.10.0%2B1605108146035.full.zip
+https://apim.docs.wso2.com/en/latest/install-and-setup/setup/distributed-deployment/configuring-wso2-identity-server-as-a-key-manager/
+Refer the guide and execute Step 4 - Configure WSO2 IS with WSO2 API-M
+Repleace deployment.toml file as below instruction.
+km/deployment.toml - Replace keymanager instance deployment.toml in /repository/conf/deployment.toml
+Download and copy mysql-connector-java-5.1.40-bin.jar to /lib
+mysql-connector-java-5.1.40-bin.jar - http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar
+
+start server /bin/
+sh wso2server.sh ( will do a profile start later )
 
 Support
 ==================================
@@ -77,34 +136,9 @@ supported from evaluation to production. Our unique approach ensures that all su
 leverages our open development methodology and is provided by the very same engineers 
 who build the technology.
 
-For additional support information please refer to [Apigate Support](https://support.wso2telco.com)
+For additional support information please refer to [AXP Support](https://support.wso2telco.com)
 
-Known issues of APIGATE AXP INTERNAL GATEWAY
-=====================================
-
-All the open issues pertaining to APIGATE AXP INTERNAL GATEWAY 4.0.0 :
-
-    https://jira.wso2telco.com/jira/browse/INTGW-407
-    https://jira.wso2telco.com/jira/browse/INTGW-408
-    https://jira.wso2telco.com/jira/browse/INTGW-410
-    https://jira.wso2telco.com/jira/browse/INTGW-411
-    https://jira.wso2telco.com/jira/browse/INTGW-412
-    https://jira.wso2telco.com/jira/browse/INTGW-416
-    https://jira.wso2telco.com/jira/browse/INTGW-420
-    https://jira.wso2telco.com/jira/browse/INTGW-427
-    https://jira.wso2telco.com/jira/browse/INTGW-429
-    https://jira.wso2telco.com/jira/browse/INTGW-434
-    https://jira.wso2telco.com/jira/browse/INTGW-435
-    https://jira.wso2telco.com/jira/browse/INTGW-436
-    https://jira.wso2telco.com/jira/browse/INTGW-437
-    https://jira.wso2telco.com/jira/browse/INTGW-438
-    https://jira.wso2telco.com/jira/browse/INTGW-440
-    https://jira.wso2telco.com/jira/browse/INTGW-426
-    https://jira.wso2telco.com/jira/browse/INTGW-444
-    https://jira.wso2telco.com/jira/browse/INTGW-445
-    https://jira.wso2telco.com/jira/browse/INTGW-467
-    https://jira.wso2telco.com/jira/browse/INTGW-469
-    
+   
 Issue Tracker
 ==================================
 
@@ -121,4 +155,4 @@ Cross-browser Testing Platform and Open Source &#10084; Provided by
 	
 	
 --------------------------------------------------------------------------------
-(c) Copyright 2016 Apigate.
+(c) Copyright 2021 AXP.
