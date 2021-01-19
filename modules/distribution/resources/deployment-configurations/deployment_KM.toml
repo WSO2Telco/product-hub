@@ -1,0 +1,112 @@
+[server]
+hostname = "localhost"
+node_ip = "127.0.0.1"
+base_path = "https://$ref{server.hostname}:${carbon.management.port}"
+serverDetails = "WSO2 IS as KM 5.10.0"
+mode = "single"
+userAgent = "WSO2 IS as KM 5.10.0"
+offset="2"
+
+[super_admin]
+username = "admin"
+password = "admin"
+create_admin_account = true
+
+[user_store]
+type = "database_unique_id"
+
+[database.apim_db]
+type = "mysql"
+url = "jdbc:mysql://localhost:3306/devtprodapimgtdb?autoReconnect=true&amp;relaxAutoCommit=true&amp;useSSL=false&amp;"
+username = "root"
+password = "1qaz@WSX"
+
+[database.shared_db]
+type = "mysql"
+url = "jdbc:mysql://localhost:3306/devtprodregdb?autoReconnect=true&amp;relaxAutoCommit=true&amp;useSSL=false&amp;"
+username = "root"
+password = "1qaz@WSX"
+
+[database.user]
+type = "mysql"
+url = "jdbc:mysql://localhost:3306/devtproduserstoredb?autoReconnect=true&amp;relaxAutoCommit=true&amp;useSSL=false&amp;"
+username = "root"
+password = "1qaz@WSX"
+
+[realm_manager]
+data_source = "WSO2USER_DB"
+
+[keystore.primary]
+name = "wso2carbon.jks"
+password = "wso2carbon"
+
+[[event_listener]]
+id = "mutual_tls_authenticator"
+type = "org.wso2.carbon.identity.core.handler.AbstractIdentityHandler"
+name = "org.wso2.carbon.identity.oauth2.token.handler.clientauth.mutualtls.MutualTLSClientAuthenticator"
+order = "158"
+enable = false
+
+[[apim.throttling.url_group]]
+traffic_manager_urls = ["tcp://localhost:9614"]
+traffic_manager_auth_urls = ["ssl://localhost:9714"]
+type = "loadbalance"
+
+
+[[event_listener]]
+id = "token_revocation"
+type = "org.wso2.carbon.identity.core.handler.AbstractIdentityHandler"
+name = "org.wso2.is.notification.ApimOauthEventInterceptor"
+order = 1
+
+#Traffic Manager endpoint
+[event_listener.properties]
+notification_endpoint = "https://localhost:9446/internal/data/v1/notify"
+username = "${admin.username}"
+password = "${admin.password}"
+'header.X-WSO2-KEY-MANAGER' = "WSO2IS"
+
+[[resource.access_control]]
+context = "(.)/keymanager-operations/user-info/claims(.)"
+secure = true
+http_method = "GET"
+permissions = "/permission/admin/manage/identity/usermgt/list"
+scopes = "internal_user_mgt_list"
+
+[[resource.access_control]]
+context = "(.*)/keymanager-operations/user-info/claims/generate"
+secure = true
+http_method = "POST"
+permissions = "/permission/admin/manage/identity/usermgt/list"
+scopes = "internal_user_mgt_list"
+
+[[resource.access_control]]
+context = "(.*)/keymanager-operations/dcr/register"
+secure = true
+http_method = "POST"
+permissions = "/permission/admin/manage/identity/applicationmgt/create"
+scopes = "internal_application_mgt_create"
+
+[[resource.access_control]]
+context = "(.*)/keymanager-operations/dcr/register(.*)"
+secure = true
+http_method = "GET"
+permissions = "/permission/admin/manage/identity/applicationmgt/view"
+scopes = "internal_application_mgt_view"
+
+[[resource.access_control]]
+context = "(.*)/keymanager-operations/dcr/register(.*)"
+secure = true
+http_method = "PUT"
+permissions = "/permission/admin/manage/identity/applicationmgt/update"
+scopes = "internal_application_mgt_update"
+
+[[resource.access_control]]
+context = "(.*)/keymanager-operations/dcr/register(.*)"
+secure = true
+http_method = "DELETE"
+permissions = "/permission/admin/manage/identity/applicationmgt/delete"
+scopes = "internal_application_mgt_delete"
+
+[tenant_context.rewrite]
+custom_webapps = ["/keymanager-operations/"]

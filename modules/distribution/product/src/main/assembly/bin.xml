@@ -250,6 +250,17 @@
                 <include>**/**</include>
             </includes>
         </fileSet>
+
+
+        <fileSet>
+            <directory>../resources/deployment-configurations</directory>
+            <outputDirectory>wso2telcohub-${pom.version}/repository/conf/</outputDirectory>
+            <includes>
+                <include>*.*</include>
+            </includes>
+        </fileSet>
+
+
         <!--End of DEP Hub related dbscripts -->
 
 
