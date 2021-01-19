@@ -109,6 +109,17 @@ Download and copy mysql-connector-java-5.1.40-bin.jar to /lib
 mysql-connector-java-5.1.40-bin.jar - http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar
 
 start server /bin/
+
+Add following parameter based on deployment type
+
+External Gateway
+================
+-DDEPLOYMENT_TYPE=external_gateway \
+
+Internal Gateway
+=================
+-DDEPLOYMENT_TYPE=internal_gateway_type2 \
+
 sh wso2server.sh
 
 

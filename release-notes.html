@@ -119,6 +119,16 @@
                                             mysql-connector-java-5.1.40-bin.jar - http://central.maven.org/maven2/mysql/mysql-connector-java/5.1.40/mysql-connector-java-5.1.40.jar<br>
                                             <br>
                                             start server <Product-Home>/bin/<br>
+                                                Add following parameter based on deployment type<br>
+                                                External Gateway<br>
+                                                ================<br>
+                                                -DDEPLOYMENT_TYPE=external_gateway \ <br>
+                                                <br><br>
+                                                Internal Gateway<br>
+                                                =================<br>
+                                                -DDEPLOYMENT_TYPE=internal_gateway_type2 \<br><br><br><br>
+                                                sh wso2server.sh ( will do a profile start later )<br>
+                                                <br><br>
                                                 sh wso2server.sh<br>
                                                 Go to Admin portal with admin user credentials.Under resident key manager add admin username and password for key manager.<br>
                                                 <br>
